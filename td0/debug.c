@@ -5,10 +5,10 @@
 
 //fonction factorielle
 int factorielle(int x){
-  int res;
+  int res=1;
   if(x == 0) return 0;
-  while(x > 1){
-    res *= (x-1);
+  while(x != 1){
+    res = res*x;
     x = x-1;
   }
   return res;
@@ -19,15 +19,16 @@ int somme(int x){
   int res = 0;
   int i = 0;
   while(i <= x){
-    i++;       /*incrementation 
-    res += i-1;/* fin de boucle */
+	res = res +i;
+    i++;       //incrementation 
+    /* fin de boucle */
   }
   return res;
 }
 
 //fonction maximum
 int maximum(int x, int y){
-  if(x = y || y > x)
+  if(x == y || y > x)
     return y;
   else 
     return x;
