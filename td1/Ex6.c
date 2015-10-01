@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int PA(int X, int Y, int compteur)
+int PA(int X, int Y)
 {
 	int x,y;
 	int a,b;
@@ -37,12 +37,13 @@ int PA(int X, int Y, int compteur)
 	if (b==X)
 	{
 		printf("%d et %d sont des amis \n", X,Y);
-		compteur++;
+		return 1;
 	}
 	else
+	{
 		printf("%d et %d ne sont pas des amis \n", X,Y);
-	
-	return compteur;
+		return 0;
+	}
 }
 
 void PB(int nmax)
@@ -50,33 +51,34 @@ void PB(int nmax)
 	int X,Y;
 	int compteur=0;
 	
-	X=nmax;
-	Y=1;
+	X=1;
+	Y=nmax;
 	
-	while(X<0)
+	while(Y>=nmax)
 	{
-		while (Y>=nmax)
+		while (X<=nmax)
 		{
-			compteur=PA(X,Y,compteur)+ compteur;
-			Y++;
+			compteur=PA(X,Y)+ compteur;
+			X++;
 		}
-		X--;
+		X=1;
+		Y--;
 	}
-	printf("Il y a %d couples plus petits que %d \n",compteur,nmax);
+	printf("Il y a %d couples pour un nmax de %d \n",compteur,nmax);
 }
 
-int main(){
+int main()
+{
 
 	int X,Y;
 	int nmax;
-	int compteur=0;
 	
 	printf("Partie A \n");
 	printf("Choississez un nombre X : ");
 	scanf("%d",&X);
 	printf("Choississez un nombre Y : ");
 	scanf("%d",&Y);
-	compteur=PA(X,Y, compteur);
+	PA(X,Y);
 	printf("Partie B \n");
 	printf("Choississez un nombre au pif \n");
 	scanf("%d",&nmax);
