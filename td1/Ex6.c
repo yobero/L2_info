@@ -50,6 +50,7 @@ void PB(int nmax)
 {
 	int X,Y;
 	int compteur=0;
+	int calcul=0;
 	
 	X=1;
 	Y=nmax;
@@ -60,11 +61,13 @@ void PB(int nmax)
 		{
 			compteur=PA(X,Y)+ compteur;
 			X++;
+			calcul++;
 		}
 		X=1;
 		Y--;
 	}
 	printf("Il y a %d couples pour un nmax de %d \n",compteur,nmax);
+	printf("Le programme a fait %d différents \n",calcul);
 }
 
 int main()
