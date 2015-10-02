@@ -54,9 +54,9 @@ void PB(int nmax)
 	X=1;
 	Y=nmax;
 	
-	while(Y>=nmax)
+	while(Y>0)
 	{
-		while (X<=nmax)
+		while (X<Y)
 		{
 			compteur=PA(X,Y)+ compteur;
 			X++;
