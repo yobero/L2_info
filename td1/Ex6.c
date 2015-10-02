@@ -67,7 +67,7 @@ void PB(int nmax)
 		Y--;
 	}
 	printf("Il y a %d couples pour un nmax de %d \n",compteur,nmax);
-	printf("Le programme a fait %d différents \n",calcul);
+	printf("Le programme a fait %d differents \n",calcul);
 }
 
 int main()
