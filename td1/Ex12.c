@@ -88,6 +88,23 @@ void insertion(int T[N], int a)// Dans l'ordre
 	
 }
 
+void inversion(int T[N])
+{
+	int tmp;
+	int n=0;
+	int m=N-1;
+	
+	while (n<m)
+	{
+		tmp=T[n];
+		T[n]=T[m];
+		T[m]=tmp;
+		
+		n=n+1;
+		m=m-1;
+	}
+}
+
 int main()
 {
 	int T[N];
@@ -102,4 +119,5 @@ int main()
 	//scanf("%d \n",&a); PROBLEME
 	insertion(T,a);
 	
+	inversion(T);
 }
