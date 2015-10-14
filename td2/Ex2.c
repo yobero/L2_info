@@ -76,18 +76,33 @@ void minimum(TABLEAU T)
 	printf("La plus petite valeur du tableau est %d \n",c);
 }
 
-TABLEAU decalage(TABLEAU T, int l)
+TABLEAU decalage(TABLEAU T, int l,int s)
 {
-	T.TAILLE = T.TAILLE + 1;
-	int i=T.TAILLE-1;
+	int i;
 	
-	while(i-1>=l)
+	if (s==0)
 	{
-		T.tab[i]=T.tab[i-1];
+		T.TAILLE = T.TAILLE + 1;
+		i=T.TAILLE-1;
 		
-		i--;
+		while(i-1>=l)
+		{
+			T.tab[i]=T.tab[i-1];
+		
+			i--;
+		}
+		T.tab[0]=0;
 	}
-	T.tab[0]=0;
+	else
+	{	
+		while(l<T.TAILLE)
+		{
+			T.tab[l]=T.tab[l+1];
+		
+			l++;
+		}
+		T.TAILLE = T.TAILLE - 1;
+	}
 	
 	return T;
 }
@@ -118,11 +133,67 @@ TABLEAU tri(TABLEAU T)
 	return T;
 }
 
-TABLEAU insertion(TABLEAU T)
+TABLEAU insertion(TABLEAU T, int valeur)
 {
-	int l;
+	int i=0;
+	
+	//localisation
+	while (valeur>T.tab[i])
+		i=i+1;
+	
+	T=decalage(T,i,0); //La fonction decalage augmente la TAILLE  de 1
+	
+	T.tab[i]=valeur;
+	
+	return T;
+}
+
+TABLEAU inverstion (TABLEAU T)
+{
+	int i=0;
+	int j=T.TAILLE-1;
+	int tmp;
+	
+	while (i<j)
+	{
+		tmp=T.tab[i];
+		T.tab[i]=T.tab[j];
+		T.tab[j]=tmp;
+		
+		j--;
+		i++;
+	}
 	
 	
+	return T;
+}
+
+TABLEAU  suppression(TABLEAU T)
+{
+	int h=alea(T.TAILLE);
+	printf("h vaut %d et T.TAILLE vaut %d \n",h,T.TAILLE);
+	
+	T=decalage(T,h,1);
+	
+	return T;
+}
+
+TABLEAU supDouble(TABLEAU T)
+{
+	int i=1;
+	int c=0;
+	int tmp=T.tab[0];
+	
+	while(c<T.TAILLE)
+	{
+		if (tmp == T.tab[i])
+			T=decalage(T,i,1);
+		else
+		{
+			tmp=T.tab[i];
+			i++; c++;
+		}
+	}
 	
 	return T;
 }
@@ -130,6 +201,7 @@ TABLEAU insertion(TABLEAU T)
 int main()
 {
 	TABLEAU T;
+	int valeur = 7;
 	
 	//Initialisation pour la fonction aleatoire
 	srand(time(NULL));
@@ -141,10 +213,22 @@ int main()
 	
 	minimum(T);
 	
-	T=decalage(T,0);
+	T=decalage(T,0,0);
 	affichage(T);
 	
 	T=tri(T);
+	affichage(T);
+	
+	T=insertion(T,valeur);
+	affichage(T);
+	
+	/*T=inverstion(T);
+	affichage(T);*/
+	
+	T=suppression(T);
+	affichage(T);
+	
+	T=supDouble(T);
 	affichage(T);
 	
 	return 0;
