@@ -107,22 +107,93 @@ TABLEAU decalage(TABLEAU T, int l,int s)
 	return T;
 }
 
-TABLEAU tri(TABLEAU T)
+TABLEAU triInsertion(TABLEAU T,int* lecture,int* ecriture)
+{
+	int i=1;
+	int tmp,c;
+	int j=0;
+	
+	while (i<T.TAILLE)
+	{
+		while (j<i)
+		{
+			if (T.tab[i]<T.tab[j])			//2
+			{
+				c=i;
+				tmp = T.tab[i];				//1
+				while (c-1>=j)
+				{
+					T.tab[c] = T.tab[c-1];	///1
+					c--;
+				}
+				T.tab[c] = tmp;				///1
+				j=i;
+			}
+			
+			j++;
+		}
+		j=0;
+		i++;
+	}
+	
+	return T;
+}
+
+TABLEAU triSelection(TABLEAU T,int* lecture,int* ecriture)
+{
+	int i=1;
+	int tmp,c ;
+	int n=0;
+	
+	tmp = n;
+	
+	while (n<T.TAILLE)
+	{
+		while (i<T.TAILLE)
+		{
+			if (T.tab[n] > T.tab[i] && T.tab[tmp]> T.tab[i])//1
+				tmp=i;
+			
+			*lecture = *lecture + 4;
+			
+			i++;
+		}
+		c=T.tab[n];					//1
+		
+		*lecture = *lecture +1;
+		
+		T.tab[n]=T.tab[tmp];		///1
+		T.tab[tmp]=c;				///1
+		
+		*ecriture = *ecriture +2;
+		
+		n++;
+		tmp=n;
+		i=n+1;
+	}
+	
+	return T;
+}
+
+TABLEAU triBulle(TABLEAU T,int* lecture, int* ecriture) //Tri à bulle
 {
 	int i=T.TAILLE-1;
 	int tmp;
-	int l=0;
+	int l=0; //compteur
 	
 	while (l<T.TAILLE)
 	{
 		while(i-1>=l)
 		{
-			if (T.tab[i-1]>T.tab[i])
-			{
+			if (T.tab[i-1]>T.tab[i]) 	//1
+			{	
 				tmp=T.tab[i];
-				T.tab[i]=T.tab[i-1];
-				T.tab[i-1]=tmp;
+				T.tab[i]=T.tab[i-1]; 	///1
+				T.tab[i-1]=tmp;			///1
+				
+				*ecriture = *ecriture +1;
 			}
+			*lecture=*lecture +1;
 			
 			i=i-1;
 		}
@@ -182,18 +253,56 @@ TABLEAU supDouble(TABLEAU T)
 {
 	int i=1;
 	int c=0;
-	int tmp=T.tab[0];
 	
 	while(c<T.TAILLE)
 	{
-		if (tmp == T.tab[i])
-			T=decalage(T,i,1);
-		else
+		while(i<T.TAILLE)
 		{
-			tmp=T.tab[i];
-			i++; c++;
+			if (T.tab[i] == T.tab[c])
+				T=decalage(T,i,1);
+				
+			i++;
 		}
+			c++;
+			i=c+1;
 	}
+	
+	return T;
+}
+
+TABLEAU choixTri(TABLEAU T)
+{
+	int t;
+	
+	int lecture=0;
+	int ecriture=0;
+	
+	printf("Quel tri veut tu ? \n");
+	printf("1 => tri a bulle \n");
+	printf("2 => tri par selection\n");
+	printf("3 => tri par insertion  ");
+	
+	scanf("%d",&t);
+	
+	if(t==1)
+	{
+		T=triBulle(T,&lecture,&ecriture);
+		printf("Il y a eu %d lectures du tableau et %d ecritures de celui ci pour le tri a bulle\n",lecture,ecriture);
+	}
+	lecture=0; ecriture=0;
+	if(t==2)
+	{
+		T=triSelection(T,&lecture,&ecriture);
+		printf("Il y a eu %d lectures du tableau et %d ecritures de celui ci pour le tri par selection\n",lecture,ecriture);
+	}
+	lecture=0; ecriture=0;
+	if (t==3)
+	{
+		T=triInsertion(T,&lecture,&ecriture);
+		printf("Il y a eu %d lectures du tableau et %d ecritures de celui ci pour le trie par insertion\n",lecture,ecriture);
+	}
+	lecture=0; ecriture=0;
+	
 	
 	return T;
 }
@@ -216,9 +325,6 @@ int main()
 	T=decalage(T,0,0);
 	affichage(T);
 	
-	T=tri(T);
-	affichage(T);
-	
 	T=insertion(T,valeur);
 	affichage(T);
 	
@@ -229,6 +335,9 @@ int main()
 	affichage(T);
 	
 	T=supDouble(T);
+	affichage(T);
+	
+	T=choixTri(T); //NOUVEAU
 	affichage(T);
 	
 	return 0;
