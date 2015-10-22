@@ -159,7 +159,7 @@ liste concat(liste l, liste p)			//fonction corrigé
 	return l;
 }
 
-liste fusion(liste l,liste p)
+liste fusion(liste l,liste p)			//fonction corrigé
 {
 	liste debut,fin;
 	
@@ -207,9 +207,11 @@ liste fusion(liste l,liste p)
 int main ()
 {
 	liste l;
+	liste p;
 	int compteur;
 	
 	l=creerListeVides(l);
+	p=creerListeVides(p);
 	
 	///l=ajout(l); //Fonction merdique !!!!!!!!!!!!!
 	
@@ -220,10 +222,17 @@ int main ()
 		t=alea();
 		l=ajoutDebut(l,t);
 	}
+	t=1;
+	while(t!=0)
+	{
+		t=alea();
+		p=ajoutDebut(p,t);
+	}
 	
 	afficheListe(l); ///Fonctionnelle
+	afficheListe(p);
 	compteur=nombreElements(l);
-	printf("il y a %d elements \n",compteur);
+	printf("il y a %d elements dans la premiere liste \n",compteur);
 	
 	return 0;
 }
