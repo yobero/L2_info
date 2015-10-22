@@ -123,12 +123,20 @@ TABLEAU triInsertion(TABLEAU T,int* lecture,int* ecriture)
 				tmp = T.tab[i];				//1
 				while (c-1>=j)
 				{
-					T.tab[c] = T.tab[c-1];	///1
+					T.tab[c] = T.tab[c-1];	///1 + 1
+					*lecture = *lecture +1;
+					*ecriture = *ecriture +1;
+					
 					c--;
 				}
 				T.tab[c] = tmp;				///1
+				
+				*ecriture = *ecriture +1;
+				
 				j=i;
 			}
+			
+			*lecture = *lecture +3;
 			
 			j++;
 		}
@@ -162,10 +170,11 @@ TABLEAU triSelection(TABLEAU T,int* lecture,int* ecriture)
 		
 		*lecture = *lecture +1;
 		
-		T.tab[n]=T.tab[tmp];		///1
+		T.tab[n]=T.tab[tmp];		///1 +1
 		T.tab[tmp]=c;				///1
 		
 		*ecriture = *ecriture +2;
+		*lecture = *lecture +1;
 		
 		n++;
 		tmp=n;
@@ -188,10 +197,11 @@ TABLEAU triBulle(TABLEAU T,int* lecture, int* ecriture) //Tri à bulle
 			if (T.tab[i-1]>T.tab[i]) 	//1
 			{	
 				tmp=T.tab[i];
-				T.tab[i]=T.tab[i-1]; 	///1
+				T.tab[i]=T.tab[i-1]; 	///1 +1
 				T.tab[i-1]=tmp;			///1
 				
 				*ecriture = *ecriture +1;
+				*lecture=*lecture +1;
 			}
 			*lecture=*lecture +1;
 			
@@ -306,6 +316,8 @@ TABLEAU choixTri(TABLEAU T)
 	
 	return T;
 }
+
+
 
 int main()
 {
