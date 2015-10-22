@@ -64,13 +64,9 @@ liste tri(liste l)
 	return sauv;
 }
 
-liste ajoutDebut(liste l)
+liste ajoutDebut(liste l,int t)
 {
 	liste elt = malloc(sizeof(liste));
-	int t;
-	
-	printf("Choisir une valeur a ajouter dans la liste ");
-	scanf("%d",&t);
 	
 	elt->val = t;
 	elt->suiv =l;
@@ -78,13 +74,9 @@ liste ajoutDebut(liste l)
 	return elt;
 }
 
-liste ajoutFin(liste l)
+liste ajoutFin(liste l,int t)
 {
 	liste elt = malloc(sizeof(liste));
-	int t;
-	
-	printf("Choisir une valeur a ajouter dans la liste ");
-	scanf("%d",&t);
 	
 	elt->val = t;
 	elt->suiv = NULL;
@@ -93,7 +85,27 @@ liste ajoutFin(liste l)
 	return l;
 }
 
-int recherche (liste l,int e) //e la valeur à rechercher
+liste ajout(liste l)
+{
+	liste p=l;
+	int t=1;
+	int a=0;
+	while (t!=0)
+	{
+		t=alea();
+		if (a==0)
+			p=ajoutDebut(p,t);
+		else
+			p=ajoutFin(p,t);
+		
+		p=p->suiv;
+	}
+	p=NULL;
+	
+	return l;
+}
+
+int recherche (liste l,int e) //e la valeur à rechercher FONCTION CORRIGE
 {
 	if (listeVide)
 		return 0;
@@ -114,7 +126,7 @@ int nombreElements(liste l)
 	return compteur;
 }
 
-liste retirer(liste l, int e)
+liste retirer(liste l, int e) //fonction corrigé
 {
 	liste tmp=l;
 	
@@ -139,16 +151,25 @@ liste retirer(liste l, int e)
 	return l;
 }
 
+liste concat(liste l, liste p)			//fonction corrigé
+{
+	if (listeVide(l))
+		return p;
+	l->suiv = concat(l->suiv,p);
+	return l;
+}
+
 int main ()
 {
 	liste l;
 	int compteur;
 	
 	l=creerListeVides(l);
-	l= ajoutDebut(l);
-	afficheListe(l);
 	
-	compteur=nombreElements(l);
+	l=ajout(l);
+	
+	afficheListe(l);
+	//compteur=nombreElements(l);
 	
 	return 0;
 }
