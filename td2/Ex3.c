@@ -114,6 +114,31 @@ int nombreElements(liste l)
 	return compteur;
 }
 
+liste retirer(liste l, int e)
+{
+	liste tmp=l;
+	
+	if(listeVide(l))
+		return l;
+	if(l->val == e)
+	{
+		tmp = l->suiv;
+		free(l);
+		return tmp;
+	}
+	
+	while(tmp->suiv->val != e && tmp->suiv != NULL)
+		tmp = tmp->suiv;
+	
+	if (tmp->suiv != NULL)
+	{
+		liste v = tmp->suiv;
+		tmp->suiv = tmp->suiv->suiv;
+		free(v);
+	}
+	return l;
+}
+
 int main ()
 {
 	liste l;
