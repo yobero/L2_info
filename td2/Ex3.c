@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define N 10
 
@@ -85,7 +86,7 @@ liste ajoutFin(liste l,int t)
 	return l;
 }
 
-liste ajout(liste l)
+liste ajout(liste l) //a revoir
 {
 	liste p=l;
 	int t=1;
@@ -97,8 +98,6 @@ liste ajout(liste l)
 			p=ajoutDebut(p,t);
 		else
 			p=ajoutFin(p,t);
-		
-		p=p->suiv;
 	}
 	p=NULL;
 	
@@ -166,9 +165,9 @@ int main ()
 	
 	l=creerListeVides(l);
 	
-	l=ajout(l);
+	l=ajout(l); //Fonction merdique !!!!!!!!!!!!!
 	
-	afficheListe(l);
+	afficheListe(l); ///Fonctionnelle
 	//compteur=nombreElements(l);
 	
 	return 0;
