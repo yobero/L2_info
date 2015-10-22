@@ -39,6 +39,7 @@ void afficheListe (liste l)
 		printf("%d ", l->val);
 		l = l->suiv;
 	}
+	printf("\n");
 }
 
 liste tri(liste l)
@@ -75,7 +76,7 @@ liste ajoutDebut(liste l,int t)
 	return elt;
 }
 
-liste ajoutFin(liste l,int t)
+liste ajoutFin(liste l,int t) //Segmentation fault
 {
 	liste elt = malloc(sizeof(liste));
 	
@@ -165,10 +166,19 @@ int main ()
 	
 	l=creerListeVides(l);
 	
-	l=ajout(l); //Fonction merdique !!!!!!!!!!!!!
+	///l=ajout(l); //Fonction merdique !!!!!!!!!!!!!
+	
+	int t=1;
+	
+	while(t!=0)
+	{
+		t=alea();
+		l=ajoutDebut(l,t);
+	}
 	
 	afficheListe(l); ///Fonctionnelle
-	//compteur=nombreElements(l);
+	compteur=nombreElements(l);
+	printf("il y a %d elements \n",compteur);
 	
 	return 0;
 }
