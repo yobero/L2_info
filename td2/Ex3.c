@@ -159,6 +159,51 @@ liste concat(liste l, liste p)			//fonction corrigé
 	return l;
 }
 
+liste fusion(liste l,liste p)
+{
+	liste debut,fin;
+	
+	if(listeVide(l))
+		return p;
+	if(listeVide(p))
+		return l;
+	
+	if(l->val < p->val)
+	{
+		debut = l;
+		fin = l;
+		l=l->suiv;
+	}
+	else
+	{
+		debut = p;
+		fin = p;
+		p=p->suiv;
+	}
+	
+	while (l!= NULL && p !=NULL)
+	{
+		if (l->val < p->val)
+		{
+			fin ->suiv = l;
+			l=l->suiv;
+			fin = fin->suiv;
+		}
+		else
+		{
+			fin->suiv = p;
+			p=p->suiv;
+			fin =fin->suiv;
+		}
+	}
+	if (l == NULL)
+		fin->suiv = p;
+	else
+		fin->suiv = l;
+	
+	return debut;
+}
+
 int main ()
 {
 	liste l;
