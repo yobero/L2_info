@@ -51,7 +51,7 @@ void afficheFile1(Fap1 f){
 	 if(f == NULL)
 		printf("\n");
 	else{
-		printf("Priorite    numero \n");
+		printf("Prio num\n");
 		printf("%d    %d \n", (f->req).priorite, (f->req).numero);
 		afficheFile1(f->suiv);
 	}
@@ -62,18 +62,18 @@ void afficheFile2(Fap2 f){
 }
 
 
-Fap1 ajoutFile1(Fap1 f, Requete r){
+ Fap1 ajoutFile1(Fap1 f, Requete r){
 	
     if(f == NULL){
 		Fap1 Elt = malloc(sizeof(Fap1));
 		Elt->req = r;
 		Elt->suiv = f;
 		f = Elt;
+		return f;
 	}
-	else
-		f->suiv = ajoutFile1(f->suiv, r);
+	f->suiv = ajoutFile1(f->suiv, r);
 		
-  return f;
+	return f;
 }
 
 
@@ -84,7 +84,34 @@ Fap2 ajoutFile2(Fap2 f, Requete r){
 
 
 Fap1 traiteRequete1(Fap1 f){
+	Fap1 t,tmp; //t ==> permettre de localiser la plus grande valeur et tmp sauvegarde la plus grande trouver
+	Fap1 prec;
+	tmp=f;
+	t=f;
+	prec=t;
 	
+	if(f==NULL && f->suiv == NULL)
+		return f;
+	else
+	{
+		/*while (tmp!=NULL)//recherche de la première plus grande priorité dans la liste
+		{
+			if ((tmp->req.priorite) > (t->suiv->req.priorite))
+			{
+				prec=t;
+				t=tmp;
+			}
+			tmp=tmp->suiv;
+		}
+		if (t == f)
+			f=f->suiv;
+		else
+			prec->suiv = t->suiv;
+		
+		free(t);*/
+	}
+	
+	return f;
 }
 
 
