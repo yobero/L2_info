@@ -8,7 +8,7 @@
  ///Ici se trouve les constantes
  #define PRIO 10 //nombre de proirité
  #define VAL 100
- 
+ #define NB 50 //Ajout NB valeur dans une liste (pleine ou non)
  
 ///Ici se trouve les structures
 struct requette {
@@ -29,14 +29,16 @@ int alea(int v) // Cette fonction va servir à mettre une valeur  à la priorit�
   return rand()%v;
 }
 
-void jeMeFaisChier()
+void jeMeFaisChier() ///fonction inutile
 {
 	int i=0;
-	while (1)
+	while (i<32)
 	{
 		printf("%d",i);
 		i=alea(2);
+		i++;
 	}
+	printf("\n");
 }
 
 liste initialisationListe()
@@ -47,6 +49,8 @@ liste initialisationListe()
 liste ajout(liste l, Requette x)
 {
 	liste ele;
+	
+	ele=initialisationListe();
 	
 	ele->req.priorite = x.priorite;
 	ele->req.val = x.val;
@@ -63,9 +67,7 @@ Requette creationRequette()
 	r.val = alea(VAL);
 	
 	printf("prio val\n");
-	jeMeFaisChier();
 	printf("%d   %d\n",r.priorite, r.val);
-	jeMeFaisChier();
 	
 	return r;
 }
@@ -77,7 +79,7 @@ void simulation()
 	int i=0;
 	
 	l=initialisationListe();
-	while(50)
+	while(i<alea(NB))
 	{
 		r=creationRequette();
 		//l=ajout(l,r);
@@ -88,6 +90,7 @@ void simulation()
 
 int main()
 {
+	
 	simulation();
 	
 	return 0;
