@@ -29,6 +29,16 @@ int alea(int v) // Cette fonction va servir à mettre une valeur  à la priorit�
   return rand()%v;
 }
 
+void jeMeFaisChier()
+{
+	int i=0;
+	while (1)
+	{
+		printf("%d",i);
+		i=alea(2);
+	}
+}
+
 liste initialisationListe()
 {
 	return NULL;
@@ -53,7 +63,9 @@ Requette creationRequette()
 	r.val = alea(VAL);
 	
 	printf("prio val\n");
+	jeMeFaisChier();
 	printf("%d   %d\n",r.priorite, r.val);
+	jeMeFaisChier();
 	
 	return r;
 }
