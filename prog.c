@@ -46,14 +46,11 @@ liste initialisationListe()
 	return NULL;
 }
 
-liste ajout(liste l, Requette x)
+liste ajout(liste l, Requette x) //ajout au debut de la liste
 {
 	liste ele;
 	
-	ele=initialisationListe();
-	
-	ele->req.priorite = x.priorite;
-	ele->req.val = x.val;
+	ele->req = x;//segmentation fault
 	ele->suiv = l;
 	
 	return ele;
@@ -82,7 +79,7 @@ void simulation()
 	while(i<alea(NB))
 	{
 		r=creationRequette();
-		//l=ajout(l,r);
+		l=ajout(l,r);
 		
 		i++;
 	}
@@ -90,6 +87,7 @@ void simulation()
 
 int main()
 {
+	srand(time(NULL));
 	
 	simulation();
 	
