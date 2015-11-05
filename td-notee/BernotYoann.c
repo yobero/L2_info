@@ -26,9 +26,7 @@ struct fap1 {
 typedef struct fap1* Fap1;
 
 struct Fap2 {
-	
-	
-	
+	Fap1 T[NbPriorite];
 };
 typedef struct Fap2 Fap2;
 
@@ -44,7 +42,10 @@ Fap1 initialiseFile1(){
 
 // file initialisée vide
 Fap2 initialiseFile2(){
-  /* à compléter */
+  Fap2 T;
+  
+  
+  return T;
 }
 
 void afficheFile1(Fap1 f){
@@ -84,34 +85,31 @@ Fap2 ajoutFile2(Fap2 f, Requete r){
 
 
 Fap1 traiteRequete1(Fap1 f){
-	Fap1 t,tmp; //t ==> permettre de localiser la plus grande valeur et tmp sauvegarde la plus grande trouver
-	Fap1 prec;
+	/*Fap1 t,tmp; //t ==> permettre de localiser la plus grande valeur et tmp sauvegarde la plus grande trouver
 	tmp=f;
 	t=f;
-	prec=t;
 	
-	if(f==NULL && f->suiv == NULL)
+	if(f==NULL || f->suiv == NULL)
 		return f;
 	else
 	{
-		/*while (tmp!=NULL)//recherche de la première plus grande priorité dans la liste
+		while (tmp !=NULL || tmp->suiv != NULL)//recherche de la première plus grande priorité dans la liste
 		{
-			if ((tmp->req.priorite) > (t->suiv->req.priorite))
-			{
-				prec=t;
-				t=tmp;
-			}
+			if ((tmp->suiv->req.priorite) > (t->req.priorite)) //segmentation fault
+				t=tmp->suiv;
+				
 			tmp=tmp->suiv;
 		}
 		if (t == f)
 			f=f->suiv;
 		else
-			prec->suiv = t->suiv;
+			tmp->suiv = t->suiv;
 		
-		free(t);*/
+		printf("efface %d et %d \n",t->req.priorite, t->req.numero);
+		free(t);
 	}
 	
-	return f;
+	return f;*/
 }
 
 
@@ -206,8 +204,18 @@ int main(){
     
   //simulationFile2();
 
-
-  
+	/*Fap1 f;
+	Requete r;
+	int n=0;
+	
+	while(n<10)
+	{
+		r.priorite=alea(5);
+		r.numero=alea(10);
+		f=ajoutFile1(f,r);
+		n++;
+	}
+  afficheFile1(f);*/
   return 0;
 }
 
