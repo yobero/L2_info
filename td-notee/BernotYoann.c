@@ -43,7 +43,12 @@ Fap1 initialiseFile1(){
 // file initialisée vide
 Fap2 initialiseFile2(){
   Fap2 T;
-  
+  int i=0;
+  while (i<NbPriorite)
+  {
+	  T.T[i]=NULL;
+	  i++;
+  }
   
   return T;
 }
