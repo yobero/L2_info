@@ -19,15 +19,18 @@ typedef struct requete Requete;
 
 /* Définir ici la structure Fap1 et Fap2 */
 
-struct Fap1 {
-	
+struct fap1 {
+	Requete req;
+	struct fap1* suiv;
 };
-typedef struct Fap1 FAP1;
+typedef struct fap1* Fap1;
 
 struct Fap2 {
 	
+	
+	
 };
-typedef struct Fap2 FAP2;
+typedef struct Fap2 Fap2;
 
 /* à compléter */
 
@@ -36,7 +39,7 @@ typedef struct Fap2 FAP2;
 
 // file initialisée vide
 Fap1 initialiseFile1(){
-  /* à compléter */
+  return NULL;
 }
 
 // file initialisée vide
@@ -45,9 +48,14 @@ Fap2 initialiseFile2(){
 }
 
 void afficheFile1(Fap1 f){
-  /* à compléter */
+	 if(f == NULL)
+		printf("\n");
+	else{
+		printf("Priorite    numero \n");
+		printf("%d    %d \n", (f->req).priorite, (f->req).numero);
+		afficheFile1(f->suiv);
+	}
 }
-
 
 void afficheFile2(Fap2 f){
   /* à compléter */
@@ -55,7 +63,17 @@ void afficheFile2(Fap2 f){
 
 
 Fap1 ajoutFile1(Fap1 f, Requete r){
-    /* à compléter */
+	
+    if(f == NULL){
+		Fap1 Elt = malloc(sizeof(Fap1));
+		Elt->req = r;
+		Elt->suiv = f;
+		f = Elt;
+	}
+	else
+		f->suiv = ajoutFile1(f->suiv, r);
+		
+  return f;
 }
 
 
@@ -66,7 +84,7 @@ Fap2 ajoutFile2(Fap2 f, Requete r){
 
 
 Fap1 traiteRequete1(Fap1 f){
-  /* à compléter */
+	
 }
 
 
@@ -77,7 +95,7 @@ Fap2 traiteRequete2(Fap2 f){
 
 
 void libereMemoire1(Fap1 f){
-  /* à compléter */
+  free(f);
 }
 
 void libereMemoire2(Fap2 f){
@@ -157,7 +175,7 @@ int main(){
   srand(time(NULL));
 
   /********  à décommenter pour lancer une simulation *********/
-  //simulationFile1();
+  simulationFile1();
     
   //simulationFile2();
 
