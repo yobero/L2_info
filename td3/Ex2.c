@@ -25,7 +25,7 @@ ListeC ajoutChaine(char* t,ListeC l) ///Ajout au debut de la liste
 	return tmp;
 }
 
-///correction fonction ajoutchaine
+///correction fonction ajoutchaine(OK pour l'ajout à la fin)
 /*ListeC ajoutChaine(char* t, ListeC l)
  * {
 	 * if(t[0] == '\o')
@@ -55,7 +55,7 @@ int main( int argc, char* argv)
 	
 	l=initialisation();
 	
-	l=ajoutChaine(argv,l);
+	l=ajoutChaine("bonjour",l);
 	afficheChaine(l);
 	return 0;
 }
