@@ -25,16 +25,12 @@ int alea (int n)
 
 int valLigne (int t[N][N],int i,int j,int valeur) //Mettre une valeur unique dans une ligne
 {
-	int sauv =j;
 	j=0;
 	
 	while (j<N)
 	{
 		if (valeur==t[i][j])
-		{
-			t[i][sauv] = valeur;
 			return 0;
-		}
 		j++;
 	}
 	return 1;
@@ -42,15 +38,11 @@ int valLigne (int t[N][N],int i,int j,int valeur) //Mettre une valeur unique dan
 
 int valColonne(int t[N][N],int i,int j,int valeur) //Mettre une valeur unique dans une colonne
 {
-	int tmp=i;
 	i=0;
 	while(i<N)
 	{
 		if (valeur==t[i][j])
-		{
-			t[tmp][j] = valeur;
 			return 0;
-		}
 		i++;
 	}
 	return 1;
@@ -58,8 +50,6 @@ int valColonne(int t[N][N],int i,int j,int valeur) //Mettre une valeur unique da
 
 int valCarree (int t[N][N], int i,int j, int valeur)//mettre une valeur unique dans le carree
 {
-	int tmpi=i;
-	int tmpj=j;
 	int it,jt;
 	
 	//Etape 1 recherche de la position la plus haute et la plus à gauche dans un carree de 3X3
@@ -75,19 +65,19 @@ int valCarree (int t[N][N], int i,int j, int valeur)//mettre une valeur unique d
 	{
 		while(j<jt)
 		{
+			if (valeur == t[i][j])
+				return 0;
+			
 			j++;
 		}
 		j=jt-3;
 		i++;
 	}
+	return 1;
 }
 
 void validation (int t[N][N],int i, int j, int valeur)// Les trois conditions doivent être respecter
 {
-	/*if (valeur>0 && valeur <=9)
-				t[i][j] = valeur;
-			else
-				t[i][j]= 0;*/
 	int ligne=1;
 	int colonne=1;
 	int carree=1;
@@ -111,7 +101,28 @@ void initialisation(int t[N][N])
 		for (j=0; j<N; j++)
 		{
 			valeur =  alea((N+1)*2);
-			validation(t,i,j,valeur);
+			if (valeur >0 && valeur<=9)
+				validation(t,i,j,valeur);
+		}
+	}
+}
+
+
+void faireSuduku(int t[N][N]) //Modifier le code pour qu'elle puisse se corrigé si besoin
+{
+	int i=0;
+	int j=0;
+	int valeur;
+	
+	for (i=0; i<N;i++)
+	{
+		for (j=0; j<N; j++)
+		{
+			if (t[i][j] == 0)
+			{
+				valeur =  alea(N+1);//1 à 9
+				validation(t,i,j,valeur);
+			}
 		}
 	}
 }
@@ -160,7 +171,14 @@ int main()
 	int t[N][N];
 	
 	initTableau(t);
-	initialisation(t);
+	///Creer un suduku
+	initialisation(t); //deux nombre ds le même carree
+	affichage(t);
+	
+	printf("SEPARATION \n");
+	
+	///faire le suduku
+	faireSuduku(t);
 	affichage(t);
 	
 	return 0;	
