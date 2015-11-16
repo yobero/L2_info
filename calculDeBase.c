@@ -4,20 +4,52 @@
 #include <string.h>
 #include <ctype.h>
 
+/*AU debut du programme, on doit donner le nombre de chiffre composant
+ * le nombre à convertir (CE NOMBRE SERA LA TAILLE DU TABLEAU).
+ * L'utilisateur doit ensuite mettre chaque chiffre du nombre dans chaque
+ * case du tableau.
+ * L'utilisateur doit mettre le base du nombre puis la base de convertion.
+ * Et voile le resultat */
+
 struct element {
 	int val;
 	struct element* suiv;
-}Element;
+};
+typedef struct element Element;
 typedef Element* Liste;
 
-void B10()//B10 ?
+Liste initialisationListe()
 {
-	
+	return NULL;
 }
 
 int main ()
 {
-	char** nombre;
+	int taille; ///La taille du nombre (nb de chiffre)
+	int base; ///La base du nombre de départ
+	int nBase; ///La base de convertion;
+	Liste l; ///Liste contenant le nombre converti
+	l=initialisationListe();
+	
+	printf("Combien y a t-il de chiffre dans votre nombre ?  ");
+	scanf("%d",&taille);
+	
+	char T[taille];
+	int i=0;
+	
+	printf("Donner votre nombre (chiffre par chiffre) de gauche à droite\n");
+	
+	while(i<taille)
+	{
+		scanf("%c",&T[i]);
+		printf("Chiffre suivant\n");
+		i++;
+	}
+	
+	printf("A quelle base est votre de nombre ?  ");
+	scanf("%d",&base);
+	printf("A quele base voulez-vous le convertir ?  ");
+	scanf("%d",&nBase);
 	
 	return 0;
 }
