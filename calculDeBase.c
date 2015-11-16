@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+#include <ctype.h>
 
 struct element {
 	int val;
@@ -15,7 +17,7 @@ void B10()//B10 ?
 
 int main ()
 {
-	int* nombre;
+	char** nombre;
 	
 	return 0;
 }
