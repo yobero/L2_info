@@ -8,9 +8,14 @@ struct element {
 }Element;
 typedef Element* Liste;
 
-int main ()
+void B10()//B10 ?
 {
 	
+}
+
+int main ()
+{
+	int* nombre;
 	
 	return 0;
 }
