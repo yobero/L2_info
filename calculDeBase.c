@@ -34,17 +34,10 @@ int main ()
 	printf("Combien y a t-il de chiffre dans votre nombre ?  ");
 	scanf("%d",&taille);
 	
-	char T[taille];
-	int i=0;
+	char** T;
 	
-	printf("Donner votre nombre (chiffre par chiffre) de gauche à droite\n");
-	
-	while(i<taille)
-	{
-		scanf("%c",&T[i]);
-		printf("Chiffre suivant\n");
-		i++;
-	}
+	printf("Donner votre nombre\n");
+	scanf("%c",&T);
 	
 	printf("A quelle base est votre de nombre ?  ");
 	scanf("%d",&base);
