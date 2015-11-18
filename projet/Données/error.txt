@@ -1,0 +1,7 @@
+COMPILATION ECHOUE
+
+In file included from c:/minggw/include/sdl/sdl.h:30:0,
+				 from graphics.h:32,
+				 from quoridor.c:5:
+c:/mingw/include/sdl/SDL_main.h:57:22: error: prtototype declaration
+extern C_LINKAGE int SDL_main(int argc, char *argv[]);
