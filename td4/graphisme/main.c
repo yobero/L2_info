@@ -1,13 +1,8 @@
-#include "graphics.h"
-#include "liste.c"
 #include "simul.c"
 
 // ############################
 // 1. Les structures de données
 // ############################
-
-#define LARGEUR    800
-#define HAUTEUR    800
 
 
 // ############################

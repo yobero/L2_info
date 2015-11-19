@@ -1,6 +1,8 @@
 #include "graphics.h"
 
 #define COUL_FOND  noir
+#define LARGEUR    800
+#define HAUTEUR    800
 
 struct element{
   POINT p;
