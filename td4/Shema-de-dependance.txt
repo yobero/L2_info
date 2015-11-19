@@ -1,0 +1,13 @@
+
+plam.c
+
+double foo(int x)
+
+plim.c
+
+int bar(int x)
+
+ploum.c
+
+utilise foo(4) ==> plam.c
+utilse bar(8) ==> plim.c
