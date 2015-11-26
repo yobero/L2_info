@@ -1,0 +1,4 @@
+par defaut ==> 64491.00000
+sans buffer ==> 658990.0000
+Buffer Plein ==> 65700.000000
+Ligne par ligne ==>146947.00000
