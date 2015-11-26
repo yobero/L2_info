@@ -10,7 +10,7 @@ int main (int argc, char** argv)
 	while (fgetc(fichier) != EOF)
 		compteur++;
 		
-	printf("Il y a  %d  carractère dans ton ficher.\n",compteur);
+	printf("Il y a  %d dans tion fichier.\n",compteur);
 	
 	return 0;
 }
