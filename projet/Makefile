@@ -10,11 +10,14 @@ graphics.o: graphics.c graphics.h
 
 constante.o: constante.c
 	gcc -c constante.c -o constante.o
+	
+structure.o: constante.o
+	gcc -c structure.c -o structure.o
 
-fonction.o: fonction.c fonction.h constante.o
+fonction.o: fonction.c fonction.h structure.o
 	gcc -c fonction.c -o fonction.o
 	
-quoridor.o: quoridor.c fonction.o
+quoridor.o: quoridor.c fonction.o 
 	gcc -c quoridor.c -o quoridor.o
 
 all: fonction.o quoridor.o graphics.o
@@ -26,6 +29,7 @@ clean:
 	rm -f quoridor.o
 	rm -f constante.o
 	rm -f ./quoridor
+	rm -f structure.o
 	
 run: all
 	./quoridor
