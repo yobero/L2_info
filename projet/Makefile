@@ -24,6 +24,8 @@ clean:
 	rm -f fonction.o
 	rm -f graphics.o
 	rm -f quoridor.o
+	rm -f constante.o
+	rm -f ./quoridor
 	
 run: all
 	./quoridor
