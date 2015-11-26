@@ -26,16 +26,7 @@ int main()
 			printf("%d %d %d", r,v,b);
 			printf("	");
 			
-			if (a>=256/2)
-				if(i==0)
-				{
-					b++;
-					i=1;
-				}
-				else
-					i=0;
-			else
-				b++;
+			b++;
 			z++;
 		}
 		printf("\n");
