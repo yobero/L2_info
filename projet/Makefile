@@ -21,7 +21,7 @@ quoridor.o: quoridor.c fonction.o
 	gcc -c quoridor.c -o quoridor.o
 
 all: fonction.o quoridor.o graphics.o
-	gcc -o quoridor graphics.o constante.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
+	gcc -o quoridor graphics.o constante.o structure.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
 	
 clean: 
 	rm -f fonction.o

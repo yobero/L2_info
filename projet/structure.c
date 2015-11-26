@@ -11,6 +11,7 @@ typedef struct pion PION;
 struct mur {
 	POINT tab[NBM][2]; //tableau pour stocker deux points pour les murs
 	COULEUR coul;
+	int reste; //nb de mur a ajouté
 };
 typedef struct mur MUR;
 
