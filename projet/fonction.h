@@ -2,6 +2,8 @@
 
 void dessinePlateau(); // La fonction va déssiner le plateau du jeu
 
+int finDePartie(JOUEUR j1, JOUEUR j2);
+
 PION initialisationPion(int a);
 
 MUR initialisationMur(int a);

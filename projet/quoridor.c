@@ -13,11 +13,11 @@ int main ()
 	
 	affichageJoueur(j1,j2);
 	
-	while(1)
+	while(finDePartie(j1,j2))
 	{
-	utilisateur=wait_clic();
-	j1.p=deplacementPion(j1.p,utilisateur);
-	affichageJoueur(j1,j2);
+		utilisateur=wait_clic();
+		j1.p=deplacementPion(j1.p,utilisateur);
+		affichageJoueur(j1,j2);
 	}
 	
 	attendre(5000);

@@ -12,6 +12,9 @@
 #define R PM-1 //rayon du pion
 #define D (TAILLE+PM) //"mur" suivant
 
+#define TFIN 38
+#define FIN green
+
 //constante J1
 #define coulPJ1 blue
 #define coulMJ1 darkblue //couleur des murs de J1

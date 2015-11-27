@@ -25,6 +25,24 @@ void dessinePlateau()// La fonction va déssiner le plateau du jeu
 	
 }
 
+int finDePartie(JOUEUR j1, JOUEUR j2)
+{
+	POINT t;
+	t.x = 1; t.y = M+TAILLE;
+	
+	if (j1.p.centre.y == l-PM)
+	{
+		aff_pol("Partie terminer, Le joueur 1 a gagne", TFIN, t, FIN);
+		return 0;
+	}
+	if (j2.p.centre.y == PM)
+	{
+		return 0;
+	}
+	
+	return 1;
+}
+
 //INITIALISATION
 
 PION initialisationPion(int a)
@@ -112,7 +130,7 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 	affichageMur(j1.m,j2.m);
 }
 
-//
+//DEPLACEMENT
 
 PION deplacementPion(PION p,POINT utilisateur)
 {
@@ -131,3 +149,5 @@ PION deplacementPion(PION p,POINT utilisateur)
 	
 	return p;
 }
+
+//AJOUT MUR
