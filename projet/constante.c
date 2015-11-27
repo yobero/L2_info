@@ -12,6 +12,8 @@
 #define R PM-1 //rayon du pion
 #define D (TAILLE+PM) //"mur" suivant
 
+#define NOIR black //pour effacer le pion
+///pour le texte de fin
 #define TFIN 38
 #define FIN green
 

@@ -112,6 +112,12 @@ void affichagePion(PION p1,PION p2)
 	draw_fill_circle(p2.centre,p2.rayon,p2.coul);
 }
 
+void effacePion(PION p1, PION p2)
+{
+	draw_fill_circle(p1.centre,p1.rayon,NOIR);
+	draw_fill_circle(p2.centre,p2.rayon,NOIR);
+}
+
 void affichageMur(MUR m1, MUR m2)
 {
 	int a=0;
@@ -129,6 +135,8 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 {
 	affichagePion(j1.p,j2.p);
 	affichageMur(j1.m,j2.m);
+	affiche_all();
+	effacePion(j1.p,j2.p);
 }
 
 //DEPLACEMENT

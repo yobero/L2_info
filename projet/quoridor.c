@@ -3,6 +3,7 @@
 int main ()
 {	
 	init_graphics(l,l);
+	affiche_auto_off();
 	
 	JOUEUR j1,j2;
 	POINT utilisateur;
@@ -30,6 +31,7 @@ int main ()
 		affichageJoueur(j1,j2);
 	}
 	
+	affiche_all();
 	attendre(5000);
 	return 0;
 }
