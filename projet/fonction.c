@@ -25,6 +25,8 @@ void dessinePlateau()// La fonction va déssiner le plateau du jeu
 	
 }
 
+//INITIALISATION
+
 PION initialisationPion(int a)
 {
 	PION p;
@@ -83,6 +85,8 @@ JOUEUR initialisationJoueur(int a)
 	return j;
 }
 
+//AFFICHAGE
+
 void affichagePion(PION p1,PION p2)
 {
 	draw_fill_circle(p1.centre,p1.rayon,p1.coul);
@@ -106,4 +110,24 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 {
 	affichagePion(j1.p,j2.p);
 	affichageMur(j1.m,j2.m);
+}
+
+//
+
+PION deplacementPion(PION p,POINT utilisateur)
+{
+	if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
+		p.centre.y = p.centre.y + TAILLE;
+	else
+	{
+		if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
+			p.centre.x = p.centre.x + TAILLE;
+		else
+		{
+			if(utilisateur.x > p.centre.x - D && utilisateur.x < p.centre.x - PM)
+				p.centre.x = p.centre.x - TAILLE;
+		}
+	}
+	
+	return p;
 }
