@@ -10,7 +10,7 @@
 #define INIT -1 //valeur d'initialisation
 #define NBM 10 //nb de murs
 #define R PM-1 //rayon du pion
-#define D TAILLE+PM //"mur" suivant
+#define D (TAILLE+PM) //"mur" suivant
 
 //constante J1
 #define coulPJ1 blue

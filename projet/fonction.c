@@ -124,7 +124,7 @@ PION deplacementPion(PION p,POINT utilisateur)
 			p.centre.x = p.centre.x + TAILLE;
 		else
 		{
-			if(utilisateur.x > p.centre.x - D && utilisateur.x < p.centre.x - PM)
+			if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
 				p.centre.x = p.centre.x - TAILLE;
 		}
 	}
