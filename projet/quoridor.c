@@ -10,6 +10,8 @@ int main ()
 	j1=initialisationJoueur(1);
 	j2=initialisationJoueur(2);
 	
+	affichageJoueur(j1,j2);
+	
 	attendre(5000);
 	return 0;
 }
