@@ -37,6 +37,7 @@ int finDePartie(JOUEUR j1, JOUEUR j2)
 	}
 	if (j2.p.centre.y == PM)
 	{
+		aff_pol("Partie terminer, Le joueur 2 a gagne", TFIN, t, FIN);
 		return 0;
 	}
 	
@@ -132,21 +133,38 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 
 //DEPLACEMENT
 
-PION deplacementPion(PION p,POINT utilisateur)
+PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 {
-	if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
-		p.centre.y = p.centre.y + TAILLE;
-	else
+	if(quiJoue==1)
 	{
-		if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
-			p.centre.x = p.centre.x + TAILLE;
+		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
+			p.centre.y = p.centre.y + TAILLE;
 		else
 		{
-			if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
-				p.centre.x = p.centre.x - TAILLE;
+			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
+				p.centre.x = p.centre.x + TAILLE;
+			else
+			{
+				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
+					p.centre.x = p.centre.x - TAILLE;
+			}
 		}
 	}
-	
+	else
+	{
+		if(utilisateur.y > p.centre.y - D && utilisateur.y < p.centre.y - PM)
+			p.centre.y = p.centre.y - TAILLE;
+		else
+		{
+			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
+				p.centre.x = p.centre.x + TAILLE;
+			else
+			{
+				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
+					p.centre.x = p.centre.x - TAILLE;
+			}
+		}
+	}
 	return p;
 }
 
