@@ -9,7 +9,7 @@
 //constante commune
 #define INIT -1 //valeur d'initialisation
 #define NBM 10 //nb de murs
-#define R TAILLE-1 //rayon du pion
+#define R PM-1 //rayon du pion
 
 //constante J1
 #define coulPJ1 blue
