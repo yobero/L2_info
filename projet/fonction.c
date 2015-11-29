@@ -121,7 +121,18 @@ void effacePion(PION p1, PION p2)
 void affichageMur(MUR m1, MUR m2)
 {
 	int a=0;
-	int z=0;
+	
+	while (a<NBM)
+	{
+		draw_fill_rectangle(m1.tab[a][0],m1.tab[a][1],m1.coul);
+		draw_fill_rectangle(m2.tab[a][0],m2.tab[a][1],m2.coul);
+		a++;
+	}
+}
+
+void effaceMur(MUR m1, MUR m2)
+{
+	int a=0;
 	
 	while (a<NBM)
 	{
@@ -137,6 +148,7 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 	affichageMur(j1.m,j2.m);
 	affiche_all();
 	effacePion(j1.p,j2.p);
+	effaceMur(j1.m,j2.m);
 }
 
 //DEPLACEMENT
@@ -177,3 +189,10 @@ PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 }
 
 //AJOUT MUR
+
+MUR ajoutMur(MUR m, POINT utilisateur, int quiJoue)
+{
+	
+	
+	return m;
+}

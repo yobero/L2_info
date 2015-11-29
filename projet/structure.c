@@ -12,6 +12,7 @@ struct mur {
 	POINT tab[NBM][2]; //tableau pour stocker deux points pour les murs
 	COULEUR coul;
 	int reste; //nb de mur a ajouté
+	int i; //ième mur à placer
 };
 typedef struct mur MUR;
 

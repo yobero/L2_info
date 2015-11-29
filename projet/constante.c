@@ -9,6 +9,7 @@
 //constante commune
 #define INIT -1 //valeur d'initialisation
 #define NBM 10 //nb de murs
+#define TM 10 //epaisseur du mur
 #define R PM-1 //rayon du pion
 #define D (TAILLE+PM) //"mur" suivant
 
