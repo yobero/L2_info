@@ -30,4 +30,6 @@ PION deplacementPion(PION p,POINT utilisateur,int quiJoue);
 
 //AJOUT MUR
 
+POINT quelCote(POINT utilisateur,int a, int z);
+
 MUR ajoutMur(MUR m, POINT utilisateur, int quiJoue);

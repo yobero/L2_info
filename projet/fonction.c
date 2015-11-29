@@ -91,6 +91,8 @@ MUR initialisationMur(int a)
 		i++;
 	}
 	
+	m.i = 0;
+	
 	return m;
 }
 
@@ -189,9 +191,62 @@ PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 }
 
 //AJOUT MUR
+POINT quelCote(POINT utilisateur,int a, int z)
+{
+	POINT p;
+	
+	if(utilisateur.x > ((a-1)*TAILLE) + LIMITE)
+	{
+		p.x = (a-1)*TAILLE;
+	}
+	else
+	{
+		if(utilisateur.x < (a*TAILLE) - LIMITE)
+		{
+			p.x = a*TAILLE;
+		}
+	}
+	if(utilisateur.y > ((z-1)*TAILLE) + LIMITE)
+	{				
+			p.y = (z-1)*TAILLE;
+	}
+	else
+	{
+		if (utilisateur.y < (z*TAILLE) - LIMITE)
+		{
+			p.y = z*TAILLE;
+		}
+	}
+}
+	
+	return p;
+}
+
 
 MUR ajoutMur(MUR m, POINT utilisateur, int quiJoue)
 {
+	int a=1;
+	int z=1;
+	POINT p;
+	
+	while (a<MULTIPLE)
+	{
+		while (z<MULTIPLE)
+		{
+			if((((a-1)*TAILLE)< utilisateur.x) && (a*TAILLE > utilisateur.x))
+			{
+				if ((((z-1)*TAILLE)< utilisateur.y) && (z*TAILLE > utilisateur.y))
+				{
+					p=quelCote(utilisateur,a,z);
+				}
+			}
+			
+			z++;
+		}
+		z=1;
+		a++;
+		
+	}
 	
 	
 	return m;
