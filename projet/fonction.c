@@ -198,8 +198,66 @@ PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 
 //MUR
 
+POINT localisationClic(POINT utilisateur)
+{
+	POINT p;
+	int i,j;
+	i=j=0;
+	
+	while (i<l)
+	{
+		if (utilisateur.x > i-ED && utilisateur.x < i+ED)
+			p.x = i-ED;
+		i=i+TAILLE;
+	}
+	while (j<l)
+	{
+		if (utilisateur.y > j-ED && utilisateur.y < j+ED)
+			p.y = j-ED;
+		j=j+TAILLE;	
+	}
+	
+	
+	return p;
+}
+
+int rechercheMur(MUR m)
+{
+	int recherche=0;
+	int i=0;
+	
+	while(i<NBM)
+	{
+		if (m.tab[i][0].x == INIT)
+			i=l;
+		else
+			recherche++;
+		
+		i++;
+	}
+	return recherche;
+}
+
+MUR placementMur(POINT p, POINT utilisateur, MUR m)
+{
+	int recherche;
+	
+	recherche= rechercheMur(m);
+	m.tab[recherche][0].x = p.x;
+	m.tab[recherche][0].y = p.y;
+	m.tab[recherche][1].x = p.x + LONGM;
+	m.tab[recherche][1].y = p.y + LONGM;
+	
+	return m;
+}
+
 MUR ajoutMur (MUR m, POINT utilisateur)
 {
+	POINT p;
+	
+	p=localisationClic(utilisateur);
+	
+	
 	return m;
 }
 
@@ -266,14 +324,6 @@ JOUEUR murOuPion(JOUEUR j, POINT utilisateur, int quiJoue)
 		if (Pion(utilisateur))
 			j.p = deplacementPion(j.p,utilisateur,quiJoue);
 	}
-
-	/*if (Mur(utilisateur) && quijoue ==1)
-		j2.m=AjoutMur(j2.m,utilisateur);
-	else
-	{
-		if (Pion(utilisateur) && quijoue==1)
-			j2.p=deplacementPion(j2.p,utilisateur,quiJoue);
-	}*/
 	
 	
 	return j;

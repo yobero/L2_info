@@ -16,10 +16,11 @@
 
 #define NBM 10 //nb de murs
 #define EM 10 //epaisseur du mur
-#define TM (2*TAILLE) //longueur du mur
+#define LONGM (2*TAILLE) //longueur du mur
 #define LIMITE PM/2
 
 #define R (PM-ED-1) //rayon du pion
+
 #define D (TAILLE+PM) //"mur" suivant
 
 #define NOIR black //pour effacer le pion
