@@ -196,6 +196,13 @@ PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 
 //MUR
 
+int nbMaxMur(MUR m)
+{
+	if (m.i>=NBM)
+		return 0;
+	return 1;
+}
+
 POINT localisationClic(POINT utilisateur)
 {
 	POINT p;
@@ -247,21 +254,24 @@ MUR placementMur(POINT p, POINT utilisateur, MUR m)
 	
 	return m;
 }
-/**Le probème vient de p.x qui a une valeur chelou(156464264
- * par exemple dans la fonction ajoutMur.*/
+
 MUR ajoutMur (MUR m, POINT utilisateur)
 {
-	POINT p;
-	
-	p=localisationClic(utilisateur);
-	//m=placementMur(p,utilisateur,m);
-	printf("Apres %d et %d\n",p.x,p.y);
-	m.tab[m.i][0].x = p.x;
-	m.tab[m.i][0].y = p.y;
-	m.tab[m.i][1].x = p.x + LONGM;
-	m.tab[m.i][1].y = p.y + LARGM;
-	m.i=m.i+1;
-	
+	if (nbMaxMur(m))
+	{
+		POINT p;
+		
+		p=localisationClic(utilisateur);
+		//m=placementMur(p,utilisateur,m);
+		printf("Apres %d et %d\n",p.x,p.y);
+		m.tab[m.i][0].x = p.x;
+		m.tab[m.i][0].y = p.y;
+		m.tab[m.i][1].x = p.x + LONGM;
+		m.tab[m.i][1].y = p.y + LARGM;
+		m.i=m.i+1;
+	}
+	else
+		printf("Tu ne peux plus placer de mur.\n"); //CHANGER ET AFFICHER DANS LA FENETRE
 	
 	return m;
 }
