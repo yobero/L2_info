@@ -1,11 +1,15 @@
 #include "graphics.h"
 
-//constante pour variable
+///constante pour variable
+
+//Base
 #define l  720//taille de la fenetre (un mutliple de 9)
 #define MULTIPLE 9
 #define M l/2 //millieu du plateau
 #define TAILLE l/MULTIPLE //la taille de la case
 #define PM  TAILLE/2 //distance Pion-Mur
+#define EPAISSEUR 10 
+#define ED (EPAISSEUR/2)
 
 //constante commune
 #define INIT -1 //valeur d'initialisation

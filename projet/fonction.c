@@ -6,21 +6,25 @@ void dessinePlateau()// La fonction va déssiner le plateau du jeu
 {
 	POINT p1,p2;
 	
-	p1.x = 0; p1.y = 0;
-	p2.x = p1.x; p2.y = l;
+	p1.x = 0-ED; p1.y = 0;
+	p2.x = p1.x+EPAISSEUR; p2.y = l;
 	
 	while (p1.x < l)
 	{
-		draw_line(p1,p2,GRILLE);
-		p2.x = p1.x = p1.x + TAILLE;
+		draw_fill_rectangle(p1,p2,GRILLE);
+		p1.x = p1.x + TAILLE;
+		p2.x = p1.x + EPAISSEUR;
 	}
-	p2.y=p1.x = 0;
+	p1.x = 0;
+	p1.y =0 -ED;
+	p2.y=p1.x+EPAISSEUR;
 	p2.x = l;
 	
 	while (p1.y < l)
 	{
-		draw_line (p1,p2,GRILLE);
-		p2.y = p1.y = p1.y + TAILLE;
+		draw_fill_rectangle (p1,p2,GRILLE);
+		p1.y = p1.y + TAILLE;
+		p2.y = p1.y + EPAISSEUR;
 	}
 	
 }
@@ -191,7 +195,7 @@ PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 }
 
 //AJOUT MUR
-POINT quelCote(POINT utilisateur,int a, int z)
+/*POINT quelCote(POINT utilisateur,int a, int z)
 {
 	POINT p;
 	
@@ -250,4 +254,4 @@ MUR ajoutMur(MUR m, POINT utilisateur, int quiJoue)
 	
 	
 	return m;
-}
+}*/
