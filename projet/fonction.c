@@ -246,7 +246,7 @@ MUR placementMur(POINT p, POINT utilisateur, MUR m)
 	m.tab[recherche][0].x = p.x;
 	m.tab[recherche][0].y = p.y;
 	m.tab[recherche][1].x = p.x + LONGM;
-	m.tab[recherche][1].y = p.y + LONGM;
+	m.tab[recherche][1].y = p.y + LARGM;
 	
 	return m;
 }
@@ -256,6 +256,12 @@ MUR ajoutMur (MUR m, POINT utilisateur)
 	POINT p;
 	
 	p=localisationClic(utilisateur);
+	//m=placementMur(p,utilisateur,m);
+	m.tab[m.i][0].x = p.x;
+	m.tab[m.i][0].y = p.y;
+	m.tab[m.i][1].x = p.x + LONGM;
+	m.tab[m.i][1].y = p.y + LARGM;
+	m.i=m.i+1;
 	
 	
 	return m;

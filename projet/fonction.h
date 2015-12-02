@@ -30,6 +30,12 @@ PION deplacementPion(PION p,POINT utilisateur,int quiJoue);
 
 //AJOUT MUR
 
+POINT localisationClic(POINT utilisateur);
+
+int rechercheMur(MUR m);
+
+MUR placementMur(POINT p, POINT utilisateur, MUR m);
+
 MUR ajoutMur (MUR m, POINT utilisateur);
 
 //MUR OU PION

@@ -17,6 +17,7 @@
 #define NBM 10 //nb de murs
 #define EM 10 //epaisseur du mur
 #define LONGM (2*TAILLE) //longueur du mur
+#define LARGM EPAISSEUR //largeur du mur
 #define LIMITE PM/2
 
 #define R (PM-ED-1) //rayon du pion
