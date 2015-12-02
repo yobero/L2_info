@@ -31,10 +31,12 @@
 //constante J1
 #define coulPJ1 blue
 #define coulMJ1 darkblue //couleur des murs de J1
+#define AIDEJ1 0x3498db
 
 //constante J2
 #define coulPJ2 red
 #define coulMJ2 darkred
+#define AIDEJ2 0xf1c40f //jaune
 
 //contante pour couleur de la grille
 #define GRILLE white

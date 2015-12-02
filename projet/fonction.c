@@ -159,6 +159,82 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 	effaceMur(j1.m,j2.m);
 }
 
+//MUR OU PION
+
+int Pion (POINT utilisateur)
+{
+	int i,j;
+	
+	i=j=0+PM; //centre de la case
+	
+	while(i<l)
+	{
+		while(j<l)
+		{
+			if (utilisateur.x > i-PM+ED && utilisateur.x < i+PM-ED)
+				return 1;
+			if (utilisateur.y > j-PM+ED && utilisateur.y < j+PM-ED)
+				return 1;
+			
+			j=j+TAILLE;
+		}
+		j=0+PM;
+		i=i+TAILLE;
+	}
+	
+	return 0;
+}
+
+int Mur (POINT utilisateur)
+{
+	int i,j;
+	
+	i=j=0+PM;
+	
+	while(i<l)
+	{
+		while(j<l)
+		{
+			if (utilisateur.x > i+PM-ED && utilisateur.x < i+PM+ED) ///vers la gauche
+				return 1;
+			if (utilisateur.x > i-PM-ED && utilisateur.x < i-PM+ED) ///vers la droite
+				return 1;
+			if (utilisateur.y > i+PM-ED && utilisateur.y < i+PM+ED) ///vers le haut
+				return 1;
+			if (utilisateur.y > i-PM-ED && utilisateur.y < i-PM+ED) ///vers le bas
+				return 1;
+			
+			j=j+TAILLE;
+		}
+		j=0+PM;
+		i=i+TAILLE;
+	}
+	
+	return 0;
+}
+
+JOUEUR murOuPion(JOUEUR j, POINT utilisateur, int quiJoue)
+{
+	if (Mur(utilisateur))
+		AjoutMur(j.m,utilisateur);
+	else
+	{
+		if (Pion(utilisateur))
+			deplacementPion(j.p,utilisateur,quiJoue);
+	}
+
+	/*if (Mur(utilisateur) && quijoue ==1)
+		j2.m=AjoutMur(j2.m,utilisateur);
+	else
+	{
+		if (Pion(utilisateur) && quijoue==1)
+			j2.p=deplacementPion(j2.p,utilisateur,quiJoue);
+	}*/
+	
+	
+	return j;
+}
+
 //DEPLACEMENT
 
 PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
@@ -196,64 +272,9 @@ PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 	return p;
 }
 
-//AJOUT MUR
-/*POINT quelCote(POINT utilisateur,int a, int z)
-{
-	POINT p;
-	
-	if(utilisateur.x > ((a-1)*TAILLE) + LIMITE)
-	{
-		p.x = (a-1)*TAILLE;
-	}
-	else
-	{
-		if(utilisateur.x < (a*TAILLE) - LIMITE)
-		{
-			p.x = a*TAILLE;
-		}
-	}
-	if(utilisateur.y > ((z-1)*TAILLE) + LIMITE)
-	{				
-			p.y = (z-1)*TAILLE;
-	}
-	else
-	{
-		if (utilisateur.y < (z*TAILLE) - LIMITE)
-		{
-			p.y = z*TAILLE;
-		}
-	}
-}
-	
-	return p;
-}
+//MUR
 
-
-MUR ajoutMur(MUR m, POINT utilisateur, int quiJoue)
+MUR ajoutMur (MUR m, POINT utilisateur)
 {
-	int a=1;
-	int z=1;
-	POINT p;
-	
-	while (a<MULTIPLE)
-	{
-		while (z<MULTIPLE)
-		{
-			if((((a-1)*TAILLE)< utilisateur.x) && (a*TAILLE > utilisateur.x))
-			{
-				if ((((z-1)*TAILLE)< utilisateur.y) && (z*TAILLE > utilisateur.y))
-				{
-					p=quelCote(utilisateur,a,z);
-				}
-			}
-			
-			z++;
-		}
-		z=1;
-		a++;
-		
-	}
-	
-	
 	return m;
-}*/
+}
