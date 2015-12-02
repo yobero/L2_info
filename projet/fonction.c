@@ -159,6 +159,50 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 	effaceMur(j1.m,j2.m);
 }
 
+//DEPLACEMENT
+
+PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
+{
+	if(quiJoue==1)
+	{
+		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
+			p.centre.y = p.centre.y + TAILLE;
+		else
+		{
+			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
+				p.centre.x = p.centre.x + TAILLE;
+			else
+			{
+				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
+					p.centre.x = p.centre.x - TAILLE;
+			}
+		}
+	}
+	else
+	{
+		if(utilisateur.y > p.centre.y - D && utilisateur.y < p.centre.y - PM)
+			p.centre.y = p.centre.y - TAILLE;
+		else
+		{
+			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
+				p.centre.x = p.centre.x + TAILLE;
+			else
+			{
+				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
+					p.centre.x = p.centre.x - TAILLE;
+			}
+		}
+	}
+	return p;
+}
+
+//MUR
+
+MUR ajoutMur (MUR m, POINT utilisateur)
+{
+	return m;
+}
+
 //MUR OU PION
 
 int Pion (POINT utilisateur)
@@ -216,11 +260,11 @@ int Mur (POINT utilisateur)
 JOUEUR murOuPion(JOUEUR j, POINT utilisateur, int quiJoue)
 {
 	if (Mur(utilisateur))
-		AjoutMur(j.m,utilisateur);
+		j.m = ajoutMur(j.m,utilisateur);
 	else
 	{
 		if (Pion(utilisateur))
-			deplacementPion(j.p,utilisateur,quiJoue);
+			j.p = deplacementPion(j.p,utilisateur,quiJoue);
 	}
 
 	/*if (Mur(utilisateur) && quijoue ==1)
@@ -233,48 +277,4 @@ JOUEUR murOuPion(JOUEUR j, POINT utilisateur, int quiJoue)
 	
 	
 	return j;
-}
-
-//DEPLACEMENT
-
-PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
-{
-	if(quiJoue==1)
-	{
-		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
-			p.centre.y = p.centre.y + TAILLE;
-		else
-		{
-			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
-				p.centre.x = p.centre.x + TAILLE;
-			else
-			{
-				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
-					p.centre.x = p.centre.x - TAILLE;
-			}
-		}
-	}
-	else
-	{
-		if(utilisateur.y > p.centre.y - D && utilisateur.y < p.centre.y - PM)
-			p.centre.y = p.centre.y - TAILLE;
-		else
-		{
-			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
-				p.centre.x = p.centre.x + TAILLE;
-			else
-			{
-				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
-					p.centre.x = p.centre.x - TAILLE;
-			}
-		}
-	}
-	return p;
-}
-
-//MUR
-
-MUR ajoutMur (MUR m, POINT utilisateur)
-{
-	return m;
 }
