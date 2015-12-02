@@ -81,8 +81,6 @@ MUR initialisationMur(int a)
 	else
 		m.coul = coulMJ2;
 	
-	m.reste=NBM; //Le reste de mur à placer
-	
 	int i=0;
 	int j=0;
 	while(i<NBM)
