@@ -19,7 +19,7 @@
 #define TM (2*TAILLE) //longueur du mur
 #define LIMITE PM/2
 
-#define R (PM-(PM/2)) //rayon du pion
+#define R (PM-ED-1) //rayon du pion
 #define D (TAILLE+PM) //"mur" suivant
 
 #define NOIR black //pour effacer le pion
@@ -36,5 +36,6 @@
 #define coulPJ2 red
 #define coulMJ2 darkred
 
-//contante pour couleur
+//contante pour couleur de la grille
 #define GRILLE white
+#define FE 0x95a5a6 ///gris concrete

@@ -9,14 +9,14 @@ int main ()
 	POINT utilisateur;
 	int quiJoue=1; //1 pour le joueur 1 et 2 pour j2
 	
-	dessinePlateau();
 	j1=initialisationJoueur(1);
 	j2=initialisationJoueur(2);
 	
-	affichageJoueur(j1,j2);
-	
 	while(finDePartie(j1,j2))
 	{
+		dessinePlateau();
+		affichageJoueur(j1,j2);
+		
 		utilisateur=wait_clic();
 		if (quiJoue==1)
 		{
