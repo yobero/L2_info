@@ -202,12 +202,13 @@ POINT localisationClic(POINT utilisateur)
 {
 	POINT p;
 	int i,j;
-	i=j=0;
+	i=0;
+	j=0;
 	
 	while (i<l)
 	{
-		if (utilisateur.x > i-ED && utilisateur.x < i+ED)
-			p.x = i-ED;
+		if ((utilisateur.x > i-ED) && (utilisateur.x < i+TAILLE))
+			p.x = i;
 		i=i+TAILLE;
 	}
 	while (j<l)
@@ -216,8 +217,6 @@ POINT localisationClic(POINT utilisateur)
 			p.y = j-ED;
 		j=j+TAILLE;	
 	}
-	
-	
 	return p;
 }
 
@@ -250,13 +249,15 @@ MUR placementMur(POINT p, POINT utilisateur, MUR m)
 	
 	return m;
 }
-
+/**Le probème vient de p.x qui a une valeur chelou(156464264
+ * par exemple dans la fonction ajoutMur.*/
 MUR ajoutMur (MUR m, POINT utilisateur)
 {
 	POINT p;
 	
 	p=localisationClic(utilisateur);
 	//m=placementMur(p,utilisateur,m);
+	printf("Apres %d et %d\n",p.x,p.y);
 	m.tab[m.i][0].x = p.x;
 	m.tab[m.i][0].y = p.y;
 	m.tab[m.i][1].x = p.x + LONGM;
