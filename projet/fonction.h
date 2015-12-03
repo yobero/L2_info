@@ -26,7 +26,7 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2);
 
 //DEPLACEMENT
 
-PION deplacementPion(PION p,POINT utilisateur,int quiJoue);
+PION deplacementPion(PION p,PION a,POINT utilisateur,int quiJoue);
 
 //AJOUT MUR
 
@@ -44,4 +44,4 @@ int Pion (POINT utilisateur);
 
 int Mur (POINT utilisateur);
 
-JOUEUR murOuPion(JOUEUR j, POINT utilisateur, int quiJoue);
+JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur, int quiJoue);

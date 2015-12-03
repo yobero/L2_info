@@ -20,12 +20,12 @@ int main ()
 		utilisateur=wait_clic();
 		if (quiJoue==1)
 		{
-			j1= murOuPion(j1,utilisateur,quiJoue);
+			j1= murOuPion(j1,j2,utilisateur,quiJoue);
 			quiJoue = 2;
 		}
 		else
 		{
-			j2= murOuPion(j2,utilisateur, quiJoue);
+			j2= murOuPion(j2,j1,utilisateur, quiJoue);
 			quiJoue = 1;
 		}
 		affichageJoueur(j1,j2);

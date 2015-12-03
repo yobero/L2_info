@@ -173,35 +173,85 @@ int blocage(JOUEUR j1, JOUEUR j2)
 	return 1;
 }
 
-PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
+PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)
 {
 	if(quiJoue==1)
-	{
+	{	
 		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
-			p.centre.y = p.centre.y + TAILLE;
+		{
+			if ((p.centre.y +TAILLE == a.centre.y) && (p.centre.x == a.centre.x))
+				p.centre.y = p.centre.y + 2*TAILLE;
+			else
+				p.centre.y = p.centre.y + TAILLE;
+		}
 		else
 		{
 			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
-				p.centre.x = p.centre.x + TAILLE;
+			{
+				if ((p.centre.x + TAILLE == a.centre.x) && (p.centre.y == a.centre.x))
+					p.centre.x = p.centre.x + 2*TAILLE;
+				else
+					p.centre.x = p.centre.x + TAILLE;
+			}
 			else
 			{
 				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
-					p.centre.x = p.centre.x - TAILLE;
+				{
+					if ((p.centre.x - TAILLE == a.centre.x) && (p.centre.y == a.centre.y))
+						p.centre.x = p.centre.x -2*TAILLE;
+					else
+						p.centre.x = p.centre.x - TAILLE;
+				}
+				else
+				{
+					if (utilisateur.y > (p.centre.y -D) && utilisateur.y < (p.centre.y -PM))
+					{
+						if ((p.centre.y - TAILLE == a.centre.y) && (p.centre.x == p.centre.x))
+							p.centre.y = p.centre.y - 2*TAILLE;
+						else
+							p.centre.y = p.centre.y - TAILLE;
+					}
+				}
 			}
 		}
 	}
 	else
 	{
 		if(utilisateur.y > p.centre.y - D && utilisateur.y < p.centre.y - PM)
-			p.centre.y = p.centre.y - TAILLE;
+		{
+			if ((p.centre.y - TAILLE == a.centre.y) && (p.centre.x == a.centre.x))
+				p.centre.y = p.centre.y - 2*TAILLE;
+			else
+				p.centre.y = p.centre.y - TAILLE;
+		}
 		else
 		{
 			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
-				p.centre.x = p.centre.x + TAILLE;
+			{
+				if((p.centre.x + TAILLE == a.centre.x) && (p.centre.y == a.centre.y))
+					p.centre.x = p.centre.x + 2*TAILLE;
+				else
+					p.centre.x = p.centre.x + TAILLE;
+			}
 			else
 			{
 				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
-					p.centre.x = p.centre.x - TAILLE;
+				{
+					if ((p.centre.x - TAILLE == a.centre.x) && (p.centre.y == a.centre.y))
+						p.centre.x = p.centre.x - 2*TAILLE;
+					else
+						p.centre.x = p.centre.x - TAILLE;
+				}
+				else
+				{
+					if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
+					{
+						if ((p.centre.y +TAILLE == a.centre.y) && (p.centre.x == a.centre.x))
+							p.centre.y = p.centre.y + 2*TAILLE;
+						else
+							p.centre.y = p.centre.y + TAILLE;
+					}
+				}
 			}
 		}
 	}
@@ -365,14 +415,14 @@ int Mur (POINT utilisateur)
 	return 0;
 }
 
-JOUEUR murOuPion(JOUEUR j, POINT utilisateur, int quiJoue)
+JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur, int quiJoue)
 {
 	if (Mur(utilisateur))
 		j.m = ajoutMur(j.m,utilisateur);
 	else
 	{
 		if (Pion(utilisateur))
-			j.p = deplacementPion(j.p,utilisateur,quiJoue);
+			j.p = deplacementPion(j.p,a.p,utilisateur,quiJoue);
 	}
 	
 	
