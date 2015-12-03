@@ -43,7 +43,7 @@ void dessinePlateau()// La fonction va déssiner le plateau du jeu
 int finDePartie(JOUEUR j1, JOUEUR j2)
 {
 	POINT t;
-	t.x = 1; t.y = M+TAILLE;
+	t.x = 2*ED; t.y = M+TAILLE;
 	
 	if (j1.p.centre.y == l-PM)
 	{
@@ -173,8 +173,10 @@ int blocage(JOUEUR j1, JOUEUR j2)
 	return 1;
 }
 
-PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)
+PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE COMME FONCTION
 {
+	/**If faut rajouter une condition à tous les if secondaire :D
+	 * */
 	if(quiJoue==1)
 	{	
 		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
