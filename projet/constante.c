@@ -6,9 +6,15 @@
 #define l  720//taille de la fenetre (un mutliple de 9)
 #define MULTIPLE 9
 
+//Interface
 #define INTERFACE l/2
 #define COULI 0x2c3e50
-#define TAILINTER INTERFACE/20
+#define TAILINTER INTERFACE/25
+
+//sous-interface
+#define SLLONG 
+#define SLLARG 
+#define SLCOUL 0x
 
 #define M l/2 //millieu du plateau
 #define TAILLE l/MULTIPLE //la taille de la case
