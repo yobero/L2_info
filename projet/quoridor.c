@@ -2,7 +2,7 @@
 
 int main ()
 {	
-	init_graphics(l,l);
+	init_graphics(l+INTERFACE,l);
 	affiche_auto_off();
 	
 	JOUEUR j1,j2;

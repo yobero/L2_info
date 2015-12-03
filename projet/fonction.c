@@ -2,11 +2,20 @@
 
 //FONCTION
 
+void interface()
+{
+	POINT p;
+	p.x = l+(INTERFACE/2)-(INTERFACE/4); p.y = l/4;
+	
+	aff_pol("Nombre de murs restants",TAILINTER,p,COULI);
+}
+
 void dessinePlateau()// La fonction va déssiner le plateau du jeu
 {
 	POINT p1,p2;
 	
 	fill_screen(FE);
+	interface();
 	
 	p1.x = 0-ED; p1.y = 0;
 	p2.x = p1.x+EPAISSEUR; p2.y = l;
