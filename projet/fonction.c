@@ -4,7 +4,10 @@
 
 void fenetreInterface()
 {
-	POINT p;
+	POINT p1,p2;
+	p1.x = l+PM; p1.y = (l/4)+(l/3);
+	p2.x = (l+INTERFACE)-PM; p2.y = ((3*l)/4)-(l/3);
+	draw_fill_rectangle(p1,p2,SLCOUL);
 }
 
 void interface()
@@ -17,6 +20,8 @@ void interface()
 	//PARTIE POUR LE JOUEUR 2
 	p.y =(3*l)/4;
 	aff_pol("Nombre de murs restants pour le joueur 2 :",TAILINTER,p,COULI);
+	
+	fenetreInterface();
 }
 
 void dessinePlateau()// La fonction va déssiner le plateau du jeu

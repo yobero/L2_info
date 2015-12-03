@@ -14,7 +14,7 @@
 //sous-interface
 #define SLLONG 
 #define SLLARG 
-#define SLCOUL 0x
+#define SLCOUL 0x000000 //a modifier
 
 #define M l/2 //millieu du plateau
 #define TAILLE l/MULTIPLE //la taille de la case

@@ -1,5 +1,9 @@
 #include "structure.c"
 
+void fenetreInterface();
+
+void interface();
+
 void dessinePlateau(); // La fonction va déssiner le plateau du jeu
 
 int finDePartie(JOUEUR j1, JOUEUR j2);
