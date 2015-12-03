@@ -12,9 +12,12 @@ int main(int argc, char** argv)
 	
 	int val=0;
 	
-	printf("%d\n",fgets(str, 256, fichier));
-	printf("%d\n",fgets(str, 256, fichier));
-	printf("%d\n",fgets(str, 256, fichier));
+	fgets(str, 256, fichier);
+	printf("%s",str);
+	fgets(str, 256, fichier);
+	printf("%s",str);
+	fgets(str, 256, fichier);
+	printf("%s",str);
 	
 	for(i=0;i<256;i++)
 	{
@@ -28,7 +31,12 @@ int main(int argc, char** argv)
 		v = (v-v%8) + (argv[2][i]*32)%8;
 		b = (b-b%8) + (argv[2][i]%8);
 		
-		printf("%d \n %d \n %d",r,v,v);
+		printf("%d \n %d \n %d \n",r,v,b);
+	}
+	while (str!='\0')
+	{
+		fgets(str, 256, fichier);
+		printf("%s\n",str);
 	}
 	
 	
