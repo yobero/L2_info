@@ -157,7 +157,12 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 	effaceMur(j1.m,j2.m);
 }
 
-//DEPLACEMENT
+//PION
+
+int blocage(JOUEUR j1, JOUEUR j2)
+{	
+	return 1;
+}
 
 PION deplacementPion(PION p,POINT utilisateur, int quiJoue)
 {
