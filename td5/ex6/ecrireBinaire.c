@@ -32,6 +32,13 @@ int main ()
 	//\n
 	fwrite(&lol, size,mnomb,fichier);
 	
+	//Nombre
+	while (n<=999)
+	{
+		fwrite(&n, size,mnomb,fichier);
+		n++;
+	}
+	
 	fclose(fichier);
 	return 0;
 }
