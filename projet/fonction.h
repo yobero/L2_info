@@ -32,6 +32,8 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2);
 
 int blocageHaut(PION j1, MUR j2);
 
+int blocageDroite(PION j1, MUR j2);
+
 int blocage(PION j1, MUR j2, int f);
 
 PION deplacementPion(PION p,JOUEUR a, POINT utilisateur,int quiJoue);

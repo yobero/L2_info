@@ -182,18 +182,37 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 
 //PION
 
+///Le mur doit être horizontal et en haut
 int blocageHaut(PION j1, MUR j2)
 {
 	int n=0;
 	
-	while (n<j2.i) //j2.i correspond au prochain mur à placer
+	while (n<j2.i) //j2.i correspond au prochain mur à placer d'où '<'
 	{
 		if (j1.centre.x - PM +ED == j2.tab[n][0].x || j1.centre.x - PM == j2.tab[n][0].x +TAILLE+ED)
 		{
-			if (j1.centre.y + PM-ED == j2.tab[n][0].y || j1.centre.y + PM == j2.tab[n][0].y -TAILLE-ED)
+			if (j1.centre.y + PM-ED == j2.tab[n][0].y)
 				return 0;
 		}
 		printf("%d\n",n);
+		n++;
+	}
+	
+	return 1;
+}
+
+///Le mur doit être vertical et à droite du pion à deplacé
+int blocageDroite(PION j1, MUR j2)
+{
+	int n=0;
+	
+	while (n<j2.i) //j2.i correspond au prochain mur à placer d'où '<'
+	{
+		if (j1.centre.x + PM -ED == j2.tab[n][0].x)
+		{
+			if (j1.centre.y- PM+ED == j2.tab[n][0].y || j1.centre.y - PM+ED == j2.tab[n][0].y -TAILLE+ED)
+				return 0;
+		}
 		n++;
 	}
 	
@@ -204,6 +223,8 @@ int blocage(PION j1, MUR j2, int f) //f va defini le type de deplacement
 {	
 	if (f==1)
 		return blocageHaut(j1,j2);
+	if (f==2)
+		return blocageDroite(j1,j2);
 	
 	return 0;
 }
@@ -228,10 +249,13 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE 
 		{
 			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
 			{
-				if ((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x))
-					p.centre.x = p.centre.x + 2*TAILLE;
-				else
-					p.centre.x = p.centre.x + TAILLE;
+				if(blocage(p,a.m,2))
+				{
+					if ((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x))
+						p.centre.x = p.centre.x + 2*TAILLE;
+					else
+						p.centre.x = p.centre.x + TAILLE;
+				}
 			}
 			else
 			{
