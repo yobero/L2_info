@@ -182,20 +182,30 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 
 //PION
 
-POINT rechercheMur(PION j1, MUR j2)
+int blocageHaut(PION j1, MUR j2)
 {
-	POINT p;
 	int n=0;
 	
-	
-	
-	return ;
-}
-
-int blocage(PION j1, MUR j2)
-{	
+	while (n<j2.i) //j2.i correspond au prochain mur à placer
+	{
+		if (j1.centre.x - PM +ED == j2.tab[n][0].x || j1.centre.x - PM == j2.tab[n][0].x +TAILLE+ED)
+		{
+			if (j1.centre.y + PM-ED == j2.tab[n][0].y || j1.centre.y + PM == j2.tab[n][0].y -TAILLE-ED)
+				return 0;
+		}
+		printf("%d\n",n);
+		n++;
+	}
 	
 	return 1;
+}
+
+int blocage(PION j1, MUR j2, int f) //f va defini le type de deplacement
+{	
+	if (f==1)
+		return blocageHaut(j1,j2);
+	
+	return 0;
 }
 
 PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE COMME FONCTION
@@ -206,7 +216,7 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE 
 	{	
 		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
 		{
-			if (1)
+			if (blocage(p,a.m,1))
 			{
 				if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
 					p.centre.y = p.centre.y + 2*TAILLE;
