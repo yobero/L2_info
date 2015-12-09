@@ -1,0 +1,5 @@
+Le programme a different partie:
+	-l'initialisation
+	-l'affichage
+	-les ajouts et des deplacements
+
