@@ -13,15 +13,27 @@ constante.o: constante.c
 	
 structure.o: constante.o
 	gcc -c structure.c -o structure.o
+	
+initialisation.o: initialisation.c initialisation.h structure.o
+	gcc -c initialisation.c -o initialisation.o
 
-fonction.o: fonction.c fonction.h structure.o
+affichage.o: affichage.c affichage.h initialisation.o
+	gcc -c affichage.c -o affichage.o
+
+mur.o: mur.c mur.h affichage.o
+	gcc -c mur.c -o mur.o
+	
+pion.o: pion.c pion.h mur.o
+	gcc -c pion.c -o pion.o
+
+fonction.o: fonction.c fonction.h pion.o
 	gcc -c fonction.c -o fonction.o
 	
 quoridor.o: quoridor.c fonction.o 
 	gcc -c quoridor.c -o quoridor.o
 
-all: fonction.o quoridor.o graphics.o
-	gcc -o quoridor graphics.o constante.o structure.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
+all: initialisation.o affichage.o mur.o pion.o fonction.o quoridor.o graphics.o
+	gcc -o quoridor graphics.o constante.o structure.o initialisation.o affichage.o mur.o pion.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
 	
 clean: 
 	rm -f *.o
