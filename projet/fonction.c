@@ -183,6 +183,7 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 //PION
 
 ///Le mur doit être horizontal et en haut
+//Les fonction s haut et bas sont inverser pour le joueur 2
 int blocageHaut(PION j1, MUR j2)
 {
 	int n=0;
