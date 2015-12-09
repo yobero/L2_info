@@ -182,12 +182,23 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2)
 
 //PION
 
-int blocage(JOUEUR j1, JOUEUR j2)
+POINT rechercheMur(PION j1, MUR j2)
+{
+	POINT p;
+	int n=0;
+	
+	
+	
+	return ;
+}
+
+int blocage(PION j1, MUR j2)
 {	
+	
 	return 1;
 }
 
-PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE COMME FONCTION
+PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE COMME FONCTION
 {
 	/**If faut rajouter une condition à tous les if secondaire :D
 	 * */
@@ -195,16 +206,19 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 	{	
 		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
 		{
-			if ((p.centre.y +TAILLE == a.centre.y) && (p.centre.x == a.centre.x))
-				p.centre.y = p.centre.y + 2*TAILLE;
-			else
-				p.centre.y = p.centre.y + TAILLE;
+			if (1)
+			{
+				if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
+					p.centre.y = p.centre.y + 2*TAILLE;
+				else
+					p.centre.y = p.centre.y + TAILLE;
+			}
 		}
 		else
 		{
 			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
 			{
-				if ((p.centre.x + TAILLE == a.centre.x) && (p.centre.y == a.centre.x))
+				if ((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x))
 					p.centre.x = p.centre.x + 2*TAILLE;
 				else
 					p.centre.x = p.centre.x + TAILLE;
@@ -213,7 +227,7 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 			{
 				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
 				{
-					if ((p.centre.x - TAILLE == a.centre.x) && (p.centre.y == a.centre.y))
+					if ((p.centre.x - TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y))
 						p.centre.x = p.centre.x -2*TAILLE;
 					else
 						p.centre.x = p.centre.x - TAILLE;
@@ -222,7 +236,7 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 				{
 					if (utilisateur.y > (p.centre.y -D) && utilisateur.y < (p.centre.y -PM))
 					{
-						if ((p.centre.y - TAILLE == a.centre.y) && (p.centre.x == p.centre.x))
+						if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
 							p.centre.y = p.centre.y - 2*TAILLE;
 						else
 							p.centre.y = p.centre.y - TAILLE;
@@ -235,7 +249,7 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 	{
 		if(utilisateur.y > p.centre.y - D && utilisateur.y < p.centre.y - PM)
 		{
-			if ((p.centre.y - TAILLE == a.centre.y) && (p.centre.x == a.centre.x))
+			if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
 				p.centre.y = p.centre.y - 2*TAILLE;
 			else
 				p.centre.y = p.centre.y - TAILLE;
@@ -244,7 +258,7 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 		{
 			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
 			{
-				if((p.centre.x + TAILLE == a.centre.x) && (p.centre.y == a.centre.y))
+				if((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y))
 					p.centre.x = p.centre.x + 2*TAILLE;
 				else
 					p.centre.x = p.centre.x + TAILLE;
@@ -253,7 +267,7 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 			{
 				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
 				{
-					if ((p.centre.x - TAILLE == a.centre.x) && (p.centre.y == a.centre.y))
+					if ((p.centre.x - TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y))
 						p.centre.x = p.centre.x - 2*TAILLE;
 					else
 						p.centre.x = p.centre.x - TAILLE;
@@ -262,7 +276,7 @@ PION deplacementPion(PION p,PION a,POINT utilisateur, int quiJoue)//IMPOSANTE CO
 				{
 					if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
 					{
-						if ((p.centre.y +TAILLE == a.centre.y) && (p.centre.x == a.centre.x))
+						if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
 							p.centre.y = p.centre.y + 2*TAILLE;
 						else
 							p.centre.y = p.centre.y + TAILLE;
@@ -313,7 +327,7 @@ POINT localisationClic(POINT utilisateur, int* HV)
 	return p;
 }
 
-int rechercheMur(MUR m)
+int rechercheEmplacementMur(MUR m) //INUTILE
 {
 	int recherche=0;
 	int i=0;
@@ -334,11 +348,12 @@ MUR placementMur(POINT p, POINT utilisateur, MUR m)//INUTILE
 {
 	int recherche;
 	
-	recherche= rechercheMur(m);
-	m.tab[recherche][0].x = p.x;
-	m.tab[recherche][0].y = p.y;
-	m.tab[recherche][1].x = p.x + LONGM;
-	m.tab[recherche][1].y = p.y + LARGM;
+	recherche= rechercheEmplacementMur(m);
+	m.tab[m.i][0].x = p.x;
+	m.tab[m.i][0].y = p.y;
+	m.tab[m.i][1].x = p.x + LONGM;
+	m.tab[m.i][1].y = p.y + LARGM;
+	m.i++;
 	
 	return m;
 }
@@ -438,7 +453,7 @@ JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur, int quiJoue)
 	else
 	{
 		if (Pion(utilisateur))
-			j.p = deplacementPion(j.p,a.p,utilisateur,quiJoue);
+			j.p = deplacementPion(j.p,a,utilisateur,quiJoue);
 	}
 	
 	

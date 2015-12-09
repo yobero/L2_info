@@ -30,13 +30,13 @@ void affichageJoueur(JOUEUR j1,JOUEUR j2);
 
 //DEPLACEMENT
 
-PION deplacementPion(PION p,PION a,POINT utilisateur,int quiJoue);
+PION deplacementPion(PION p,JOUEUR a, POINT utilisateur,int quiJoue);
 
 //AJOUT MUR
 
 POINT localisationClic(POINT utilisateur);
 
-int rechercheMur(MUR m);
+int rechercheEmplacementMur(MUR m);
 
 MUR placementMur(POINT p, POINT utilisateur, MUR m);
 
