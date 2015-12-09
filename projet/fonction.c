@@ -189,7 +189,7 @@ int blocageHaut(PION j1, MUR j2)
 	
 	while (n<j2.i) //j2.i correspond au prochain mur à placer d'où '<'
 	{
-		if (j1.centre.x - PM +ED == j2.tab[n][0].x || j1.centre.x - PM == j2.tab[n][0].x +TAILLE+ED)
+		if (j1.centre.x - PM +ED == j2.tab[n][0].x || j1.centre.x - PM+ED == j2.tab[n][0].x +TAILLE)
 		{
 			if (j1.centre.y + PM-ED == j2.tab[n][0].y)
 				return 0;
@@ -210,7 +210,7 @@ int blocageDroite(PION j1, MUR j2)
 	{
 		if (j1.centre.x + PM -ED == j2.tab[n][0].x)
 		{
-			if (j1.centre.y- PM+ED == j2.tab[n][0].y || j1.centre.y - PM+ED == j2.tab[n][0].y -TAILLE+ED)
+			if (j1.centre.y- PM+ED == j2.tab[n][0].y || j1.centre.y - PM+ED == j2.tab[n][0].y +TAILLE)
 				return 0;
 		}
 		n++;
