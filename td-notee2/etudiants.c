@@ -13,14 +13,9 @@ struct abr {
 };
 typedef struct abr* ABR;
 
-struct valatr {
-	int a;
-	int b;
-};
-typedef struct valatr VAL;
-
 struct atr {
-	VAL val;
+	int g;
+	int d;
 	struct atr* fg;
 	struct atr* fm;
 	struct atr* fd;
@@ -112,6 +107,78 @@ ATR initialisationATR()
 	return NULL;
 }
 
+ATR ajoutElementATR(ATR b, int elt)
+{
+	if (b == NULL)
+	{
+		ATR tmp = malloc(sizeof(ATR));
+		
+		tmp->g = elt;
+		tmp->d = -1;
+		tmp->fg = NULL;
+		tmp->fm = NULL;
+		tmp->fd = NULL;
+		return tmp;
+	}
+	else
+	{
+		if(elt < b->g)
+		{
+			if (b->d = -1)
+				if(elt < b->d)
+				{
+					int temp=b->g;
+					b->g = elt;
+					b->d = temp;
+				}
+				else
+					b->d = elt;
+			else
+				b->fg = ajoutElementATR(b->fg,elt);
+		}
+		else
+			if(elt>=b->g && elt <= b->d)
+			{
+				if (b->d = -1)
+					if(elt < b->d)
+					{
+						int temp=b->g;
+						b->g = elt;
+						b->d = temp;
+					}
+					else
+						b->d = elt;
+				else
+					b->fm = ajoutElementATR(b->fm,elt);
+			}
+			else
+				if (elt > b->d)
+				{
+					if (b->d = -1)
+						if(elt < b->d)
+						{
+							int temp=b->g;
+							b->g = elt;
+							b->d = temp;
+						}
+						else
+							b->d = elt;
+					else	
+						b->fd =ajoutElementATR(b->fd,elt);
+				}
+	}
+	return b;
+}
+
+ATR afficheATR(ATR b)
+{
+	if (b==NULL)
+		return b;
+	afficheATR(b->fg);
+	printf("%d ",b->g);
+	afficheATR(b->fd);
+}
+
 int main(void){
   struct timeval tv1,tv2;
   double duree;
@@ -119,8 +186,12 @@ int main(void){
   srand(time(NULL));
 
 	ABR a=initialisation();
+	ATR b = initialisationATR();
 	int cpt=0;
 	double moy=0;
+	
+	
+	b = ajoutElementATR(b,5);
 
   /*déclenchement du chronomètre*/
   ///gettimeofday(&tv1, NULL);
