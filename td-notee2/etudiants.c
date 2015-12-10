@@ -12,6 +12,20 @@ struct abr {
 };
 typedef struct abr* ABR;
 
+/*struct valatr {
+	int a;
+	int b;
+};
+typedef struct valatr VAL;
+
+struct atr {
+	VAL val;
+	struct atr* fg;
+	struct atr* fm;
+	struct atr* fd;
+};
+typedef struct atr* ATR;*/
+
 
 int alea(int n){
   return (int)(1.0*n*rand()/RAND_MAX);
@@ -27,7 +41,6 @@ ABR ajoutElement(ABR a, int element)
 	if (a == NULL)
 	{
 		ABR tmp = malloc(sizeof(ABR));
-	
 		tmp->val = element;
 		tmp->fg = NULL;
 		tmp->fd = NULL;
@@ -74,6 +87,7 @@ ABR suppresionABR(ABR a)
 	{
 		a->fg=suppresionABR(a->fg);
 		a->fd=suppresionABR(a->fd);
+		a=suppresionABR(a);
 	}
 	return NULL;
 	
@@ -90,14 +104,20 @@ ABR afficheABR(ABR a)
 	return a;
 }
 
+//POUR ATR
+
+/*ATR initialisationATR()
+{
+	return NULL;
+}*/
+
 int main(void){
   struct timeval tv1,tv2;
   double duree;
 
   srand(time(NULL));
-  ABR a = initialisation();
 
-
+	ABR a=initialisation();
 
   /*déclenchement du chronomètre*/
   gettimeofday(&tv1, NULL);
@@ -105,9 +125,11 @@ int main(void){
   a = remplirABR(a);
   
   afficheABR(a);
-  suppresionABR(a);
-  afficheABR(a);
-  printf("rien ");
+  ///La fonction suppresion marche mal (grande valeur restante)
+    suppresionABR(a);
+    a=NULL;
+	afficheABR(a);
+	printf("rien ");
   /*arrêt du chronomètre*/
   gettimeofday(&tv2, NULL);  
 
