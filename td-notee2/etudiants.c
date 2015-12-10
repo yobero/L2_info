@@ -4,6 +4,7 @@
 #include <sys/time.h>
 
 #define NMAX 100000
+#define M 10
 
 struct abr {
 	int val;
@@ -12,7 +13,7 @@ struct abr {
 };
 typedef struct abr* ABR;
 
-/*struct valatr {
+struct valatr {
 	int a;
 	int b;
 };
@@ -24,7 +25,7 @@ struct atr {
 	struct atr* fm;
 	struct atr* fd;
 };
-typedef struct atr* ATR;*/
+typedef struct atr* ATR;
 
 
 int alea(int n){
@@ -106,10 +107,10 @@ ABR afficheABR(ABR a)
 
 //POUR ATR
 
-/*ATR initialisationATR()
+ATR initialisationATR()
 {
 	return NULL;
-}*/
+}
 
 int main(void){
   struct timeval tv1,tv2;
@@ -118,23 +119,39 @@ int main(void){
   srand(time(NULL));
 
 	ABR a=initialisation();
+	int cpt=0;
+	double moy=0;
 
   /*déclenchement du chronomètre*/
-  gettimeofday(&tv1, NULL);
+  ///gettimeofday(&tv1, NULL);
   
-  a = remplirABR(a);
+  /* PARTIE sur ABR
+  while(cpt < M)
+  {
+		gettimeofday(&tv1, NULL);
+		a = remplirABR(a);
+		gettimeofday(&tv2, NULL);
+		duree = (tv2.tv_sec-tv1.tv_sec) * 1000000 + (tv2.tv_usec-tv1.tv_usec);
+		moy = moy +duree;
+		cpt++;
+  }
   
-  afficheABR(a);
-  ///La fonction suppresion marche mal (grande valeur restante)
-    suppresionABR(a);
+  moy = moy/M;
+  printf("la moyenne est %f microsecondes\n",moy);
+  
+	afficheABR(a);
+	///La fonction suppresion marche mal (grande valeur restante)
+	suppresionABR(a);
     a=NULL;
 	afficheABR(a);
-	printf("rien ");
+	*/
   /*arrêt du chronomètre*/
-  gettimeofday(&tv2, NULL);  
+  
+  
+  ///gettimeofday(&tv2, NULL);  
 
   /*affichage de la durée en microsecondes*/
-  duree = (tv2.tv_sec-tv1.tv_sec) * 1000000 + (tv2.tv_usec-tv1.tv_usec);
+  ///duree = (tv2.tv_sec-tv1.tv_sec) * 1000000 + (tv2.tv_usec-tv1.tv_usec);
   printf("%f\n", duree);
 
 
