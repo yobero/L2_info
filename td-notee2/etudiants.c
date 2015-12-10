@@ -49,7 +49,7 @@ ABR remplirABR(ABR a)
 	int i=0;
 	int element;
 	
-	while (i<NMAX)
+	while (i<10)
 	{
 		element = alea(100);
 		//printf("%d ",element);
@@ -59,6 +59,24 @@ ABR remplirABR(ABR a)
 		i++;
 	}
 	return a;
+}
+
+ABR suppresionABR(ABR a)
+{
+	if (a==NULL)
+		return NULL;
+	if (a->fg == NULL && a->fd == NULL)
+	{
+		free(a);
+		return NULL;
+	}
+	else
+	{
+		a->fg=suppresionABR(a->fg);
+		a->fd=suppresionABR(a->fd);
+	}
+	return NULL;
+	
 }
 
 ABR afficheABR(ABR a)
@@ -87,7 +105,9 @@ int main(void){
   a = remplirABR(a);
   
   afficheABR(a);
-  
+  suppresionABR(a);
+  afficheABR(a);
+  printf("rien ");
   /*arrêt du chronomètre*/
   gettimeofday(&tv2, NULL);  
 
