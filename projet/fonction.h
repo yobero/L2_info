@@ -1,10 +1,10 @@
 #include "pion.h"
 
-void fenetreInterface();
+void fenetreInterface(int quiJoue);
 
-void interface();
+void interface(int quiJoue);
 
-void dessinePlateau(); // La fonction va déssiner le plateau du jeu
+void dessinePlateau(int quiJoue); // La fonction va déssiner le plateau du jeu
 
 int finDePartie(JOUEUR j1, JOUEUR j2);
 

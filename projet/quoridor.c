@@ -14,7 +14,7 @@ int main ()
 	
 	while(finDePartie(j1,j2))
 	{
-		dessinePlateau();
+		dessinePlateau(quiJoue);
 		affichageJoueur(j1,j2);
 		
 		utilisateur=wait_clic();
