@@ -94,7 +94,7 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE 
 	 * */
 	if(quiJoue==1)
 	{	
-		if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
+		if((utilisateur.y < p.centre.y + D-ED && utilisateur.y > p.centre.y + PM+ED) && (utilisateur.x > p.centre.x -PM+ED && utilisateur.x < p.centre.x +PM-ED)) //vers le haut
 		{
 			if (blocage(p,a.m,1))
 			{
@@ -106,11 +106,11 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE 
 		}
 		else
 		{
-			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
+			if((utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM) && (utilisateur.y < p.centre.y +PM-ED && utilisateur.y > p.centre.y -PM+ED))
 			{
 				if(blocage(p,a.m,2))
 				{
-					if ((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x))
+					if (((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x)))
 						p.centre.x = p.centre.x + 2*TAILLE;
 					else
 						p.centre.x = p.centre.x + TAILLE;
