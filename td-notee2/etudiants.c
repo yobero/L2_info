@@ -44,18 +44,30 @@ ABR ajoutElement(ABR a, int element)
 	return a;
 }
 
-ABR remplirABR(ABR a);
+ABR remplirABR(ABR a)
 {
 	int i=0;
 	int element;
 	
 	while (i<NMAX)
 	{
-		element = alea();
+		element = alea(100);
+		//printf("%d ",element);
 		a=ajoutElement(a,element);
+		//printf("%d ",a->val);
 		
 		i++;
 	}
+	return a;
+}
+
+ABR afficheABR(ABR a)
+{
+	if (a==NULL)
+		return a;
+	afficheABR(a->fg);
+	printf("%d ",a->val);
+	afficheABR(a->fd);
 	
 	return a;
 }
@@ -65,11 +77,16 @@ int main(void){
   double duree;
 
   srand(time(NULL));
+  ABR a = initialisation();
 
 
 
   /*déclenchement du chronomètre*/
   gettimeofday(&tv1, NULL);
+  
+  a = remplirABR(a);
+  
+  afficheABR(a);
   
   /*arrêt du chronomètre*/
   gettimeofday(&tv2, NULL);  
