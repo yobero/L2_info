@@ -6,6 +6,8 @@
 #define NMAX 100000
 #define M 10
 
+//Pour utiliser la première partie, il faut decommenté à partir de la partie A à B 
+
 struct abr {
 	int val;
 	struct abr* fg;
@@ -124,7 +126,7 @@ ATR ajoutElementATR(ATR b, int elt)
 	{
 		if(elt < b->g)
 		{
-			if (b->d = -1)
+			if (b->d == -1)
 				if(elt < b->d)
 				{
 					int temp=b->g;
@@ -139,7 +141,7 @@ ATR ajoutElementATR(ATR b, int elt)
 		else
 			if(elt>=b->g && elt <= b->d)
 			{
-				if (b->d = -1)
+				if (b->d == -1)
 					if(elt < b->d)
 					{
 						int temp=b->g;
@@ -154,7 +156,7 @@ ATR ajoutElementATR(ATR b, int elt)
 			else
 				if (elt > b->d)
 				{
-					if (b->d = -1)
+					if (b->d == -1)
 						if(elt < b->d)
 						{
 							int temp=b->g;
@@ -175,7 +177,11 @@ ATR afficheATR(ATR b)
 	if (b==NULL)
 		return b;
 	afficheATR(b->fg);
-	printf("%d ",b->g);
+	printf("%d et ",b->g);
+	printf("%d ",b->d);
+	afficheATR(b->fm);
+	printf("%d et ", b->g);
+	printf("%d ",b->d);
 	afficheATR(b->fd);
 }
 
@@ -186,12 +192,8 @@ int main(void){
   srand(time(NULL));
 
 	ABR a=initialisation();
-	ATR b = initialisationATR();
 	int cpt=0;
 	double moy=0;
-	
-	
-	b = ajoutElementATR(b,5);
 
   /*déclenchement du chronomètre*/
   ///gettimeofday(&tv1, NULL);
@@ -218,12 +220,30 @@ int main(void){
 	*/
   /*arrêt du chronomètre*/
   
+  //PARTIE ATR
+  
+  /**La fonction ajoutATR marche qu'a moitier, les deux premières valeurs se place bien pas plus après
+   * Je ne sais pas si la fonction affichage fontionne puisseque je ne peux pas ajouter donc elle est en commentaire
+   */
+  
+  ATR b = initialisationATR();
+  
+  b = ajoutElementATR(b,5);
+  printf("%d ",b->g);
+  b = ajoutElementATR(b,6);
+  printf("%d ",b->d);
+  /*b = ajoutElementATR(b,3);
+  printf("%d ",b->fg->g);
+  b = ajoutElementATR(b,8);
+  printf("%d ",b->fd->g);*/
+  
+  //afficheATR(b);
   
   ///gettimeofday(&tv2, NULL);  
 
   /*affichage de la durée en microsecondes*/
   ///duree = (tv2.tv_sec-tv1.tv_sec) * 1000000 + (tv2.tv_usec-tv1.tv_usec);
-  printf("%f\n", duree);
+ // printf("%f\n", duree);
 
 
   
