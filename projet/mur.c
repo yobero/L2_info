@@ -1,4 +1,4 @@
-#include "affichage.h"
+#include "interface.h"
 
 int nbMaxMur(MUR m)
 {

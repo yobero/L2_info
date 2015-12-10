@@ -20,7 +20,10 @@ initialisation.o: initialisation.c initialisation.h structure.o
 affichage.o: affichage.c affichage.h initialisation.o
 	gcc -c affichage.c -o affichage.o
 
-mur.o: mur.c mur.h affichage.o
+interface.o: interface.c interface.h affichage.o
+	gcc -c interface.c -o interface.o
+
+mur.o: mur.c mur.h interface.o
 	gcc -c mur.c -o mur.o
 	
 pion.o: pion.c pion.h mur.o
@@ -32,8 +35,8 @@ fonction.o: fonction.c fonction.h pion.o
 quoridor.o: quoridor.c fonction.o 
 	gcc -c quoridor.c -o quoridor.o
 
-all: initialisation.o affichage.o mur.o pion.o fonction.o quoridor.o graphics.o
-	gcc -o quoridor graphics.o constante.o structure.o initialisation.o affichage.o mur.o pion.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
+all:quoridor.o graphics.o
+	gcc -o quoridor graphics.o constante.o structure.o initialisation.o affichage.o interface.o mur.o pion.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
 	
 clean: 
 	rm -f *.o

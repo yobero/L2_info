@@ -1,4 +1,4 @@
-#include "affichage.h"
+#include "interface.h"
 
 POINT localisationClic(POINT utilisateur);
 
