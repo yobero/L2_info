@@ -23,25 +23,26 @@
 	
 	void sauvegarde(JOUEUR j1,JOUEUR j2)
 	{
-		FILE* fichier = fopen("sauvegarde.txt","w");
+		FILE* fichier = fopen("sauvegarde.txt","w+");
 		int n=0;
 		
 		///Pour le joueur 1
-		fprintf(fichier,"%d %d ",j1.p.centre.x,j1.p.centre.y);
+		fprintf(fichier,"%d\n%d\n",j1.p.centre.x,j1.p.centre.y);
 		while (n<NBM)
 		{
-			fprintf(fichier,"%d %d %d %d ",j1.m.tab[n][0].x,j1.m.tab[n][0].y,j1.m.tab[n][1].x,j1.m.tab[n][1].y);
+			fprintf(fichier,"%d\n%d\n%d\n%d\n",j1.m.tab[n][0].x,j1.m.tab[n][0].y,j1.m.tab[n][1].x,j1.m.tab[n][1].y);
 			n++;
 		}
-		fprintf(fichier,"\n");
+		fprintf(fichier,"%d\n",j1.m.i);
 		
 		n=0;
-		fprintf(fichier,"%d %d ",j2.p.centre.x,j2.p.centre.y);
+		fprintf(fichier,"%d\n%d\n",j2.p.centre.x,j2.p.centre.y);
 		while (n<NBM)
 		{
-			fprintf(fichier,"%d %d %d %d ",j2.m.tab[n][0].x,j2.m.tab[n][0].y,j2.m.tab[n][1].x,j2.m.tab[n][1].y);
+			fprintf(fichier,"%d\n%d\n%d\n%d\n",j2.m.tab[n][0].x,j2.m.tab[n][0].y,j2.m.tab[n][1].x,j2.m.tab[n][1].y);
 			n++;
 		}
+		fprintf(fichier,"%d\n",j2.m.i);
 		
 		fclose(fichier);
 	}
@@ -56,37 +57,55 @@
 	
 	void chargement(JOUEUR* j1, JOUEUR* j2)
 	{
-		FILE* fichier = fopen("sauvegarde.txt","r");
+		FILE* fichier = fopen("sauvegarde.txt","r+");
+		char tmp[4];
 		int n=0;
 		
-		j1->p.centre.x = fgetc(fichier);
-		j1->p.centre.y = fgetc(fichier);
+		fgets(tmp,5,fichier);
+		j1->p.centre.x = atoi(tmp);
+		fgets(tmp,5,fichier);
+		j1->p.centre.y = atoi(tmp);
 		
 		while (n<NBM)
 		{
-			j1->m.tab[n][0].x = fgetc(fichier);
-			j1->m.tab[n][0].y = fgetc(fichier);
-			j1->m.tab[n][1].x = fgetc(fichier);
-			j1->m.tab[n][1].y = fgetc(fichier);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][0].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][0].y = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][1].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][1].y = atoi(tmp);
 			n++;
 		}
-		j1->m.i =fgetc(fichier);
+		fgets(tmp,5,fichier);
+		j1->m.i =atoi(tmp);
 		n=0;
 		
-		j2->p.centre.x = fgetc(fichier);
-		j2->p.centre.y = fgetc(fichier);
+		fgets(tmp,5,fichier);
+		j2->p.centre.x = atoi(tmp);
+		fgets(tmp,5,fichier);
+		j2->p.centre.y = atoi(tmp);
 		
 		while (n<NBM)
 		{
-			j2->m.tab[n][0].x = fgetc(fichier);
-			j2->m.tab[n][0].y = fgetc(fichier);
-			j2->m.tab[n][1].x = fgetc(fichier);
-			j2->m.tab[n][1].y = fgetc(fichier);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][0].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][0].y = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][1].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][1].y = atoi(tmp);
 			n++;
 		}
-		j2->m.i =fgetc(fichier);
+		fgets(tmp,5,fichier);
+		j2->m.i =atoi(tmp);
 		
 		fclose(fichier);
+		
+		printf("chargement effectué \n");
+		printf("%d  %d\n",j1->p.centre.x,j1->p.centre.y);
 	}
 	
 	int recuperationSauvegarde (POINT utilisateur)

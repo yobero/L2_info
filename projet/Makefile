@@ -41,6 +41,7 @@ all:quoridor.o graphics.o
 clean: 
 	rm -f *.o
 	rm -f ./quoridor
+	rm -f sauvegarde.txt
 	
 run: all
 	./quoridor

@@ -11,6 +11,7 @@ int main ()
 	
 	j1=initialisationJoueur(1);
 	j2=initialisationJoueur(2);
+	sauvegarde(j1,j2);
 	
 	affiche_auto_off();
 	while(finDePartie(j1,j2))
