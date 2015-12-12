@@ -21,6 +21,16 @@
 		return 1;
 	}
 	
+	void recuperationSauvegarde(JOUEUR* j1, JOUEUR* j2)
+	{
+		
+	}
+	
+	int sauvegarde ()
+	{
+		
+	}
+	
 	//MUR OU PION
 	
 	int Pion (POINT utilisateur)
