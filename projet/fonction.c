@@ -24,10 +24,31 @@
 	void sauvegarde(JOUEUR j1,JOUEUR j2)
 	{
 		FILE* fichier = fopen("sauvegarde.txt","w");
+		int n=0;
 		
+		///Pour le joueur 1
+		fprintf(fichier,"%d %d ",j1.p.centre.x,j1.p.centre.y);
+		while (n<NBM)
+		{
+			fprintf(fichier,"%d %d %d %d",j1.m.tab[n][0].x,j1.m.tab[n][0].y,j1.m.tab[n][1].x,j1.m.tab[n][1].y);
+			n++;
+		}
 		
+		fprintf(fichier,"%d %d ",j2.p.centre.x,j2.p.centre.y);
+		while (n<NBM)
+		{
+			fprintf(fichier,"%d %d %d %d",j2.m.tab[n][0].x,j2.m.tab[n][0].y,j2.m.tab[n][1].x,j2.m.tab[n][1].y);
+			n++;
+		}
 		
 		fclose(fichier);
+	}
+	
+	int faireSauvegarde(POINT utilisateur)
+	{
+		
+		
+		return 0;
 	}
 	
 	void chargement(JOUEUR* j1, JOUEUR* j2)

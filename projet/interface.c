@@ -4,12 +4,17 @@ void bouton ()
 {
 	POINT p1,p2;
 	
+	//bouton sauvegarde
+	p1.x = SHX; p1.y = SHY;
+	p2.x = SBX; p2.y = SBY;
+	draw_fill_rectangle(p1,p2,SCOUL);
+	aff_pol("sauvegarder",TAILINTER,p1,SCOULB);
+	
 	//bouton recup sauvegarde
 	p1.x = CHX; p1.y =  CHY;
 	p2.x = CBX; p2.y = CBY;
 	draw_fill_rectangle(p1,p2,CCOUL);
 	aff_pol("Charger La sauvegarde",TAILINTER,p1,CCOULB);
-	
 	
 }
 

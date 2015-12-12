@@ -20,6 +20,9 @@ int main ()
 		utilisateur=wait_clic();
 		if(recuperationSauvegarde(utilisateur))
 			chargement(&j1,&j2);
+			
+		if(faireSauvegarde(utilisateur))
+			sauvegarde(j1,j2);
 		
 		if (quiJoue==1)
 		{

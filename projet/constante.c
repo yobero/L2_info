@@ -7,6 +7,15 @@
 #define MULTIPLE 9
 
 //BOUTON
+	///bouton sauvegarde
+	#define SHX 0
+	#define SHY 0
+	#define SBX 0
+	#define SBY 0
+	
+	#define SCOUL black
+	#define SCOULB white
+
 	///Bouton chargement
 	#define CHX l+4*PM 
 	#define CHY l-l/3

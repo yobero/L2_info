@@ -4,6 +4,8 @@ int finDePartie(JOUEUR j1, JOUEUR j2);
 
 void sauvegarde(JOUEUR j1,JOUEUR j2);
 
+int faireSauvegarde(POINT utilisateur);
+
 void chargement(JOUEUR* j1, JOUEUR* j2);
 
 int recuperationSauvegarde(POINT utilisateur);
