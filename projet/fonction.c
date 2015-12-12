@@ -23,7 +23,11 @@
 	
 	void sauvegarde(JOUEUR j1,JOUEUR j2)
 	{
+		FILE* fichier = fopen("sauvegarde.txt","w");
 		
+		
+		
+		fclose(fichier);
 	}
 	
 	void chargement(JOUEUR* j1, JOUEUR* j2)
@@ -31,6 +35,8 @@
 		FILE* fichier = fopen("sauvegarde.txt","a");
 		
 		
+		
+		fclose(fichier);
 	}
 	
 	int recuperationSauvegarde (POINT utilisateur)
