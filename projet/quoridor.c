@@ -18,6 +18,9 @@ int main ()
 		affichageJoueur(j1,j2);
 		
 		utilisateur=wait_clic();
+		if(recuperationSauvegarde(utilisateur))
+			chargement(&j1,&j2);
+		
 		if (quiJoue==1)
 		{
 			j1= murOuPion(j1,j2,utilisateur,quiJoue);

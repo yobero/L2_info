@@ -21,14 +21,25 @@
 		return 1;
 	}
 	
-	void recuperationSauvegarde(JOUEUR* j1, JOUEUR* j2)
+	void sauvegarde(JOUEUR j1,JOUEUR j2)
 	{
 		
 	}
 	
-	int sauvegarde ()
+	void chargement(JOUEUR* j1, JOUEUR* j2)
 	{
+		FILE* fichier = fopen("sauvegarde.txt","a");
 		
+		
+	}
+	
+	int recuperationSauvegarde (POINT utilisateur)
+	{
+		//Le bouton "charger sauvegarde" si situe dans le fichier interface
+		if(utilisateur.x > CHX && utilisateur.y > CBY && utilisateur.y < CHY)
+			return 1;
+		
+		return 0;
 	}
 	
 	//MUR OU PION

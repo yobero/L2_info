@@ -6,6 +6,16 @@
 #define l  720//taille de la fenetre (un mutliple de 9)
 #define MULTIPLE 9
 
+//BOUTON
+	///Bouton chargement
+	#define CHX l+4*PM 
+	#define CHY l-l/3
+	#define CBX CHX + 5*PM
+	#define CBY CHY-PM
+	
+	#define CCOUL black
+	#define CCOULB white
+
 //Interface
 #define INTERFACE l/2
 #define COULI 0x2c3e50

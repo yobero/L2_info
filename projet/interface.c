@@ -1,10 +1,23 @@
 #include "affichage.h"
 
+void bouton ()
+{
+	POINT p1,p2;
+	
+	//bouton recup sauvegarde
+	p1.x = CHX; p1.y =  CHY;
+	p2.x = CBX; p2.y = CBY;
+	draw_fill_rectangle(p1,p2,CCOUL);
+	aff_pol("Charger La sauvegarde",TAILINTER,p1,CCOULB);
+	
+	
+}
+
 void fenetreInterface(int quiJoue)
 	{
 		POINT p1,p2;
-		p1.x = l+PM; p1.y = (l/4)+(l/3);
-		p2.x = (l+INTERFACE)-PM; p2.y = ((3*l)/4)-(l/3);
+		p1.x = l+PM; p1.y = l-1;
+		p2.x = (l+INTERFACE)-PM; p2.y = p1.x - l/4;
 		draw_fill_rectangle(p1,p2,SLCOUL);
 		
 		if (quiJoue==1)
@@ -21,10 +34,11 @@ void fenetreInterface(int quiJoue)
 		aff_pol("Nombre de murs restants pour le joueur 1 :",TAILINTER,p,COULI);
 		
 		//PARTIE POUR LE JOUEUR 2
-		p.y =(3*l)/4;
+		///p.y =(3*l)/4;
 		aff_pol("Nombre de murs restants pour le joueur 2 :",TAILINTER,p,COULI);
 		
 		fenetreInterface(quiJoue);
+		bouton();
 	}
 	
 	void dessinePlateau(int quiJoue)// La fonction va déssiner le plateau du jeu

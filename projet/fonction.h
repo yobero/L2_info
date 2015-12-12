@@ -2,6 +2,12 @@
 
 int finDePartie(JOUEUR j1, JOUEUR j2);
 
+void sauvegarde(JOUEUR j1,JOUEUR j2);
+
+void chargement(JOUEUR* j1, JOUEUR* j2);
+
+int recuperationSauvegarde(POINT utilisateur);
+
 //MUR OU PION
 
 int Pion (POINT utilisateur);

@@ -1,5 +1,7 @@
 #include "affichage.h"
 
+void bouton ();
+
 void fenetreInterface(int quiJoue);
 
 void interface(int quiJoue);
