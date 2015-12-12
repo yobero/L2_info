@@ -104,9 +104,6 @@
 		j2->m.i =atoi(tmp);
 		
 		fclose(fichier);
-		
-		printf("chargement effectué \n");
-		printf("%d  %d\n",j1->p.centre.x,j1->p.centre.y);
 	}
 	
 	int recuperationSauvegarde (POINT utilisateur)
@@ -121,17 +118,84 @@
 	//RETOUR EN ARRIERE
 	void retourArriereSauv(JOUEUR j1,JOUEUR j2)
 	{
+		FILE* fichier = fopen("retoutEnArriere.txt","w+");
+		int n=0;
 		
+		///Pour le joueur 1
+		fprintf(fichier,"%d\n%d\n",j1.p.centre.x,j1.p.centre.y);
+		while (n<NBM)
+		{
+			fprintf(fichier,"%d\n%d\n%d\n%d\n",j1.m.tab[n][0].x,j1.m.tab[n][0].y,j1.m.tab[n][1].x,j1.m.tab[n][1].y);
+			n++;
+		}
+		fprintf(fichier,"%d\n",j1.m.i);
+		
+		n=0;
+		fprintf(fichier,"%d\n%d\n",j2.p.centre.x,j2.p.centre.y);
+		while (n<NBM)
+		{
+			fprintf(fichier,"%d\n%d\n%d\n%d\n",j2.m.tab[n][0].x,j2.m.tab[n][0].y,j2.m.tab[n][1].x,j2.m.tab[n][1].y);
+			n++;
+		}
+		fprintf(fichier,"%d\n",j2.m.i);
+		
+		fclose(fichier);
 	}
 	
 	void retourArriereCharge(JOUEUR* j1, JOUEUR* j2)
 	{
+		FILE* fichier = fopen("retoutEnArriere.txt","r+");
+		char tmp[4];
+		int n=0;
 		
+		fgets(tmp,5,fichier);
+		j1->p.centre.x = atoi(tmp);
+		fgets(tmp,5,fichier);
+		j1->p.centre.y = atoi(tmp);
+		
+		while (n<NBM)
+		{
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][0].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][0].y = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][1].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j1->m.tab[n][1].y = atoi(tmp);
+			n++;
+		}
+		fgets(tmp,5,fichier);
+		j1->m.i =atoi(tmp);
+		n=0;
+		
+		fgets(tmp,5,fichier);
+		j2->p.centre.x = atoi(tmp);
+		fgets(tmp,5,fichier);
+		j2->p.centre.y = atoi(tmp);
+		
+		while (n<NBM)
+		{
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][0].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][0].y = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][1].x = atoi(tmp);
+			fgets(tmp,5,fichier);
+			j2->m.tab[n][1].y = atoi(tmp);
+			n++;
+		}
+		fgets(tmp,5,fichier);
+		j2->m.i =atoi(tmp);
+		
+		fclose(fichier);
 	}
 	
 	int recuperationRetourArriere(POINT utilisateur)
 	{
-		
+		if  (utilisateur.x > RAHX && utilisateur.x < RABX && utilisateur.y < RAHY && utilisateur.y > RABY)
+			return 1;
 		
 		return 0;
 	}

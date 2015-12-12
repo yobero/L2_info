@@ -42,6 +42,7 @@ clean:
 	rm -f *.o
 	rm -f ./quoridor
 	rm -f sauvegarde.txt
+	rm -f retoutEnArriere.txt
 	
 run: all
 	./quoridor

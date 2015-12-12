@@ -24,6 +24,15 @@
 	
 	#define CCOUL black
 	#define CCOULB white
+	
+	///retour en arrière
+	#define RAHX (SHX+((SBX-SHX)/2)) 
+	#define RAHY SBY
+	#define RABX (RAHX + (4*PM-1))
+	#define RABY RAHY-PM
+	
+	#define ARCOUL black
+	#define ARCOULB white
 
 //Interface
 #define INTERFACE l/2

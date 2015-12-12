@@ -17,6 +17,12 @@ void bouton ()
 	draw_fill_rectangle(p1,p2,CCOUL);
 	aff_pol("Charger La sauvegarde",TAILINTER,p1,CCOULB);
 	
+	//bouton retour en Arriere
+	p1.x = RAHX; p1.y = RAHY;
+	p2.x = RABX; p2.y = RABY;
+	draw_fill_rectangle(p1,p2,ARCOUL);
+	aff_pol("retour en arriere",TAILINTER,p1,ARCOULB);
+	
 }
 
 void fenetreInterface(int quiJoue)

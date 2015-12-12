@@ -11,7 +11,10 @@ int main ()
 	
 	j1=initialisationJoueur(1);
 	j2=initialisationJoueur(2);
-	sauvegarde(j1,j2);
+	
+	//Pour eviter des bugs
+	sauvegarde(j1,j2); //initialisation du fichier
+	retourArriereSauv(j1,j2); //initialisation du fichier
 	
 	affiche_auto_off();
 	while(finDePartie(j1,j2))
@@ -21,12 +24,27 @@ int main ()
 		
 		utilisateur=wait_clic();
 		if(recuperationSauvegarde(utilisateur))
+		{
 			chargement(&j1,&j2);
-			
-		printf("%d %d ",j1.p.centre.x ,j1.p.centre.y);
+			dessinePlateau(quiJoue);
+			affichageJoueur(j1,j2);
+			utilisateur=wait_clic();
+		}
 			
 		if(faireSauvegarde(utilisateur))
+		{
 			sauvegarde(j1,j2);
+			utilisateur=wait_clic();
+		}
+		
+		if(recuperationRetourArriere(utilisateur))
+		{
+			retourArriereCharge(&j1,&j2);
+			dessinePlateau(quiJoue);
+			affichageJoueur(j1,j2);
+			utilisateur=wait_clic();
+		}
+		retourArriereSauv(j1,j2);
 		
 		if (quiJoue==1)
 		{
