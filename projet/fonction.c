@@ -21,6 +21,7 @@
 		return 1;
 	}
 	
+	//SAUVEGARDE
 	void sauvegarde(JOUEUR j1,JOUEUR j2)
 	{
 		FILE* fichier = fopen("sauvegarde.txt","w+");
@@ -113,6 +114,24 @@
 		//Le bouton "charger sauvegarde" si situe dans le fichier interface
 		if(utilisateur.x > CHX && utilisateur.y > CBY && utilisateur.y < CHY)
 			return 1;
+		
+		return 0;
+	}
+	
+	//RETOUR EN ARRIERE
+	void retourArriereSauv(JOUEUR j1,JOUEUR j2)
+	{
+		
+	}
+	
+	void retourArriereCharge(JOUEUR* j1, JOUEUR* j2)
+	{
+		
+	}
+	
+	int recuperationRetourArriere(POINT utilisateur)
+	{
+		
 		
 		return 0;
 	}

@@ -2,6 +2,8 @@
 
 int finDePartie(JOUEUR j1, JOUEUR j2);
 
+//SAUVEGARDE
+
 void sauvegarde(JOUEUR j1,JOUEUR j2);
 
 int faireSauvegarde(POINT utilisateur);
@@ -9,6 +11,13 @@ int faireSauvegarde(POINT utilisateur);
 void chargement(JOUEUR* j1, JOUEUR* j2);
 
 int recuperationSauvegarde(POINT utilisateur);
+
+//RETOUR EN ARRIERE
+void retourArriereSauv(JOUEUR j1,JOUEUR j2);
+
+void retourArriereCharge(JOUEUR* j1, JOUEUR* j2);
+
+int recuperationRetourArriere(POINT utilisateur);
 
 //MUR OU PION
 
