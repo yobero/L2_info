@@ -12,6 +12,7 @@ int main ()
 	j1=initialisationJoueur(1);
 	j2=initialisationJoueur(2);
 	
+	affiche_auto_off();
 	while(finDePartie(j1,j2))
 	{
 		dessinePlateau(quiJoue);
@@ -20,6 +21,8 @@ int main ()
 		utilisateur=wait_clic();
 		if(recuperationSauvegarde(utilisateur))
 			chargement(&j1,&j2);
+			
+		printf("%d %d ",j1.p.centre.x ,j1.p.centre.y);
 			
 		if(faireSauvegarde(utilisateur))
 			sauvegarde(j1,j2);

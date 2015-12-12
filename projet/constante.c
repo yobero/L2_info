@@ -42,7 +42,7 @@
 #define ED (EPAISSEUR/2)
 
 //constante commune
-#define INIT -1 //valeur d'initialisation
+#define INIT 0 //valeur d'initialisation
 
 #define NBM 10 //nb de murs
 #define EM 10 //epaisseur du mur

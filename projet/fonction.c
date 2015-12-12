@@ -56,9 +56,35 @@
 	
 	void chargement(JOUEUR* j1, JOUEUR* j2)
 	{
-		FILE* fichier = fopen("sauvegarde.txt","a");
+		FILE* fichier = fopen("sauvegarde.txt","r");
+		int n=0;
 		
+		j1->p.centre.x = fgetc(fichier);
+		j1->p.centre.y = fgetc(fichier);
 		
+		while (n<NBM)
+		{
+			j1->m.tab[n][0].x = fgetc(fichier);
+			j1->m.tab[n][0].y = fgetc(fichier);
+			j1->m.tab[n][1].x = fgetc(fichier);
+			j1->m.tab[n][1].y = fgetc(fichier);
+			n++;
+		}
+		j1->m.i =fgetc(fichier);
+		n=0;
+		
+		j2->p.centre.x = fgetc(fichier);
+		j2->p.centre.y = fgetc(fichier);
+		
+		while (n<NBM)
+		{
+			j2->m.tab[n][0].x = fgetc(fichier);
+			j2->m.tab[n][0].y = fgetc(fichier);
+			j2->m.tab[n][1].x = fgetc(fichier);
+			j2->m.tab[n][1].y = fgetc(fichier);
+			n++;
+		}
+		j2->m.i =fgetc(fichier);
 		
 		fclose(fichier);
 	}
