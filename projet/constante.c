@@ -8,19 +8,19 @@
 
 //BOUTON
 	///bouton sauvegarde
-	#define SHX 0
-	#define SHY 0
-	#define SBX 0
-	#define SBY 0
+	#define SHX l+ED
+	#define SHY l-l/3
+	#define SBX (SHX + (4*PM-1))
+	#define SBY SHY-PM
 	
 	#define SCOUL black
 	#define SCOULB white
 
 	///Bouton chargement
 	#define CHX l+4*PM 
-	#define CHY l-l/3
+	#define CHY SHY
 	#define CBX CHX + 5*PM
-	#define CBY CHY-PM
+	#define CBY SBY
 	
 	#define CCOUL black
 	#define CCOULB white

@@ -8,6 +8,7 @@ void bouton ()
 	p1.x = SHX; p1.y = SHY;
 	p2.x = SBX; p2.y = SBY;
 	draw_fill_rectangle(p1,p2,SCOUL);
+	p1.x = p1.x+1;
 	aff_pol("sauvegarder",TAILINTER,p1,SCOULB);
 	
 	//bouton recup sauvegarde
