@@ -30,14 +30,16 @@
 		fprintf(fichier,"%d %d ",j1.p.centre.x,j1.p.centre.y);
 		while (n<NBM)
 		{
-			fprintf(fichier,"%d %d %d %d",j1.m.tab[n][0].x,j1.m.tab[n][0].y,j1.m.tab[n][1].x,j1.m.tab[n][1].y);
+			fprintf(fichier,"%d %d %d %d ",j1.m.tab[n][0].x,j1.m.tab[n][0].y,j1.m.tab[n][1].x,j1.m.tab[n][1].y);
 			n++;
 		}
+		fprintf(fichier,"\n");
 		
+		n=0;
 		fprintf(fichier,"%d %d ",j2.p.centre.x,j2.p.centre.y);
 		while (n<NBM)
 		{
-			fprintf(fichier,"%d %d %d %d",j2.m.tab[n][0].x,j2.m.tab[n][0].y,j2.m.tab[n][1].x,j2.m.tab[n][1].y);
+			fprintf(fichier,"%d %d %d %d ",j2.m.tab[n][0].x,j2.m.tab[n][0].y,j2.m.tab[n][1].x,j2.m.tab[n][1].y);
 			n++;
 		}
 		
@@ -46,7 +48,8 @@
 	
 	int faireSauvegarde(POINT utilisateur)
 	{
-		
+		if(utilisateur.x > SHX && utilisateur.x < CHX && utilisateur.y > SBY && utilisateur.y < SHY)
+			return 1;
 		
 		return 0;
 	}
