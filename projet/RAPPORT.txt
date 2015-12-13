@@ -1,5 +1,8 @@
 Le programme a different partie:
 	-l'initialisation
 	-l'affichage
-	-les ajouts et des deplacements
+	-les murs
+	-les pions
+	-interface
+	-les constantes
 
