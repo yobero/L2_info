@@ -92,103 +92,48 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE 
 {
 	/**If faut rajouter une condition à tous les if secondaire :D
 	 * */
-	if(quiJoue==1)
-	{	
-		if((utilisateur.y < p.centre.y + D-ED && utilisateur.y > p.centre.y + PM+ED) && (utilisateur.x > p.centre.x -PM+ED && utilisateur.x < p.centre.x +PM-ED)) //vers le haut
+	if((utilisateur.y < p.centre.y + D-ED && utilisateur.y > p.centre.y + PM+ED) && (utilisateur.x > p.centre.x -PM+ED && utilisateur.x < p.centre.x +PM-ED)) //vers le haut
+	{
+		if (blocage(p,a.m,1))
 		{
-			if (blocage(p,a.m,1))
-			{
-				if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
-					p.centre.y = p.centre.y + 2*TAILLE;
-				else
-					p.centre.y = p.centre.y + TAILLE;
-			}
-		}
-		else
-		{
-			if((utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM) && (utilisateur.y < p.centre.y +PM-ED && utilisateur.y > p.centre.y -PM+ED))
-			{
-				if(blocage(p,a.m,2))
-				{
-					if (((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x)))
-						p.centre.x = p.centre.x + 2*TAILLE;
-					else
-						p.centre.x = p.centre.x + TAILLE;
-				}
-			}
+			if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
+				p.centre.y = p.centre.y + 2*TAILLE;
 			else
-			{
-					if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
-					{
-						if(blocage(p,a.m,3))
-						{
-							if ((p.centre.x - TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y))
-								p.centre.x = p.centre.x -2*TAILLE;
-							else
-								p.centre.x = p.centre.x - TAILLE;
-						}
-					}
-				else
-				{
-					if (utilisateur.y > (p.centre.y -D) && utilisateur.y < (p.centre.y -PM))
-					{
-						if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
-							p.centre.y = p.centre.y - 2*TAILLE;
-						else
-							p.centre.y = p.centre.y - TAILLE;
-					}
-				}
-			}
+				p.centre.y = p.centre.y + TAILLE;
 		}
 	}
 	else
 	{
-		if(utilisateur.y > p.centre.y - D && utilisateur.y < p.centre.y - PM)
+		if((utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM) && (utilisateur.y < p.centre.y +PM-ED && utilisateur.y > p.centre.y -PM+ED))
 		{
-			if(blocage(p,a.m,4))
+			if(blocage(p,a.m,2))
 			{
-				if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
-					p.centre.y = p.centre.y - 2*TAILLE;
+				if (((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x)))
+					p.centre.x = p.centre.x + 2*TAILLE;
 				else
-					p.centre.y = p.centre.y - TAILLE;
+					p.centre.x = p.centre.x + TAILLE;
 			}
 		}
 		else
 		{
-			if(utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM)
-			{
-				if(blocage(p,a.m,2))
-				{
-					if((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y))
-						p.centre.x = p.centre.x + 2*TAILLE;
-					else
-						p.centre.x = p.centre.x + TAILLE;
-				}
-			}
-			else
-			{
 				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
 				{
 					if(blocage(p,a.m,3))
 					{
 						if ((p.centre.x - TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y))
-							p.centre.x = p.centre.x - 2*TAILLE;
+							p.centre.x = p.centre.x -2*TAILLE;
 						else
 							p.centre.x = p.centre.x - TAILLE;
 					}
 				}
-				else
+			else
+			{
+				if (utilisateur.y > (p.centre.y -D) && utilisateur.y < (p.centre.y -PM))
 				{
-					if(utilisateur.y < p.centre.y + D && utilisateur.y > p.centre.y + PM)
-					{
-						if (blocage(p,a.m,1))
-						{
-							if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
-								p.centre.y = p.centre.y + 2*TAILLE;
-							else
-								p.centre.y = p.centre.y + TAILLE;
-						}
-					}
+					if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x))
+						p.centre.y = p.centre.y - 2*TAILLE;
+					else
+						p.centre.y = p.centre.y - TAILLE;
 				}
 			}
 		}
