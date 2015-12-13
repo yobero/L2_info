@@ -2,6 +2,8 @@
 
 void bouton ();
 
+void message();
+
 void fenetreInterface(int quiJoue);
 
 void interface(int quiJoue);

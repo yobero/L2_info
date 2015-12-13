@@ -25,17 +25,26 @@ void bouton ()
 	
 }
 
+void message()
+{
+	POINT p;
+	p.x = POINTX; p.y = POINTY;
+	aff_pol("Du texte pour voir",POINTT,p,POINTC);
+}
+
 void fenetreInterface(int quiJoue)
 	{
 		POINT p1,p2;
 		p1.x = l+PM; p1.y = l-1;
 		p2.x = (l+INTERFACE)-PM; p2.y = p1.x - l/4;
-		draw_fill_rectangle(p1,p2,SLCOUL);
+		draw_fill_rectangle(p1,p2,COULI);
 		
 		if (quiJoue==1)
-			aff_pol("Au joueur 1 de jouer",TAILINTER,p1,white);
+			aff_pol("Au joueur 1 de jouer",TAILINTER,p1,COULIT);
 		if (quiJoue == 2)
-			aff_pol("Au joueur 2 de jouer",TAILINTER,p1,white);
+			aff_pol("Au joueur 2 de jouer",TAILINTER,p1,COULIT);
+			
+			message(); //La fonction ne doir pas être appellé ici
 	}
 	
 	void interface(int quiJoue)

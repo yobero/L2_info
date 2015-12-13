@@ -33,16 +33,18 @@
 	
 	#define ARCOUL black
 	#define ARCOULB white
+	
+//MESSAGE
+#define POINTX (l+PM+1)
+#define POINTY (l-(l/12))
+#define POINTT TAILINTER+10 //La taille du texte
+#define POINTC white
 
 //Interface
-#define INTERFACE l/2
+#define INTERFACE l/2 // constante utiliser pour le deuxieme point de la fonction interface
 #define COULI 0x2c3e50
+#define COULIT white
 #define TAILINTER INTERFACE/25
-
-//sous-interface
-#define SLLONG 
-#define SLLARG 
-#define SLCOUL 0x000000 //a modifier
 
 #define M l/2 //millieu du plateau
 #define TAILLE l/MULTIPLE //la taille de la case
