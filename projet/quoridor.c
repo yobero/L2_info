@@ -29,6 +29,7 @@ int main ()
 			dessinePlateau(quiJoue);
 			affichageJoueur(j1,j2);
 			message(1); //affiche le message "chargement terminé"
+			affiche_all();
 			utilisateur=wait_clic();
 		}
 			
@@ -36,6 +37,7 @@ int main ()
 		{
 			sauvegarde(j1,j2);
 			message(2);
+			affiche_all();
 			utilisateur=wait_clic();
 		}
 		
@@ -44,6 +46,8 @@ int main ()
 			retourArriereCharge(&j1,&j2);
 			dessinePlateau(quiJoue);
 			affichageJoueur(j1,j2);
+			message(3);
+			affiche_all();
 			utilisateur=wait_clic();
 		}
 		retourArriereSauv(j1,j2);

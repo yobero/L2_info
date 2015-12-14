@@ -65,7 +65,7 @@
 
 #define D (TAILLE+PM) //"mur" suivant
 
-#define NOIR black //pour effacer le pion
+//#define NOIR black //pour effacer le pion
 
 ///pour le texte de fin
 #define TFIN 38
@@ -82,5 +82,5 @@
 #define AIDEJ2 0xf1c40f //jaune
 
 //contante pour couleur de la grille
-#define GRILLE white
-#define FE 0x95a5a6 ///gris concrete
+#define GRILLE 0x2F1B0C
+#define FE 0x703516

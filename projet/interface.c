@@ -33,6 +33,8 @@ void message(int n)
 		aff_pol("Chargement termine",POINTT,p,POINTC);
 		if(n==2)
 			aff_pol("Partie sauvegarde",POINTT,p,POINTC);
+		if(n==3)
+			aff_pol("Retour en arriere",POINTT,p,POINTC);
 }
 
 void fenetreInterface(int quiJoue)
