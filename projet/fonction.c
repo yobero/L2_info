@@ -22,7 +22,7 @@
 	}
 	
 	//SAUVEGARDE
-	void sauvegarde(JOUEUR j1,JOUEUR j2)
+	void sauvegarde(JOUEUR j1,JOUEUR j2,int quiJoue)
 	{
 		FILE* fichier = fopen("sauvegarde.txt","w+");
 		int n=0;
@@ -45,6 +45,8 @@
 		}
 		fprintf(fichier,"%d\n",j2.m.i);
 		
+		fprintf(fichier,"%d\n",quiJoue);
+		
 		fclose(fichier);
 	}
 	
@@ -56,7 +58,7 @@
 		return 0;
 	}
 	
-	void chargement(JOUEUR* j1, JOUEUR* j2)
+	void chargement(JOUEUR* j1, JOUEUR* j2, int* quiJoue)
 	{
 		FILE* fichier = fopen("sauvegarde.txt","r+");
 		char tmp[4];
@@ -102,6 +104,9 @@
 		}
 		fgets(tmp,5,fichier);
 		j2->m.i =atoi(tmp);
+		
+		fgets(tmp,5,fichier);
+		*quiJoue = atoi(tmp);
 		
 		fclose(fichier);
 	}

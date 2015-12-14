@@ -26,7 +26,7 @@ int main ()
 		utilisateur=wait_clic();
 		if(recuperationSauvegarde(utilisateur))
 		{
-			chargement(&j1,&j2);
+			chargement(&j1,&j2,&quiJoue);
 			dessinePlateau(quiJoue);
 			affichageJoueur(j1,j2);
 			message(1); //affiche le message "chargement terminé"

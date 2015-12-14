@@ -8,7 +8,7 @@ void sauvegarde(JOUEUR j1,JOUEUR j2);
 
 int faireSauvegarde(POINT utilisateur);
 
-void chargement(JOUEUR* j1, JOUEUR* j2);
+void chargement(JOUEUR* j1, JOUEUR* j2,int* quiJoue);
 
 int recuperationSauvegarde(POINT utilisateur);
 
