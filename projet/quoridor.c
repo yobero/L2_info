@@ -13,7 +13,8 @@ int main ()
 	j2=initialisationJoueur(2);
 	
 	//Pour eviter des bugs
-	sauvegarde(j1,j2); //initialisation du fichier
+		///Le fichier de sauvegarde ne s'effacera plus avec "make clean"
+	//sauvegarde(j1,j2); //initialisation du fichier
 	retourArriereSauv(j1,j2); //initialisation du fichier
 	
 	affiche_auto_off();
