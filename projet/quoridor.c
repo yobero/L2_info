@@ -28,12 +28,14 @@ int main ()
 			chargement(&j1,&j2);
 			dessinePlateau(quiJoue);
 			affichageJoueur(j1,j2);
+			message(1); //affiche le message "chargement terminé"
 			utilisateur=wait_clic();
 		}
 			
 		if(faireSauvegarde(utilisateur))
 		{
 			sauvegarde(j1,j2);
+			message(2);
 			utilisateur=wait_clic();
 		}
 		

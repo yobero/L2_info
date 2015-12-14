@@ -25,11 +25,14 @@ void bouton ()
 	
 }
 
-void message()
+void message(int n)
 {
 	POINT p;
 	p.x = POINTX; p.y = POINTY;
-	aff_pol("Du texte pour voir",POINTT,p,POINTC);
+	if(n==1) //chargement
+		aff_pol("Chargement termine",POINTT,p,POINTC);
+		if(n==2)
+			aff_pol("Partie sauvegarde",POINTT,p,POINTC);
 }
 
 void fenetreInterface(int quiJoue)
@@ -43,8 +46,6 @@ void fenetreInterface(int quiJoue)
 			aff_pol("Au joueur 1 de jouer",TAILINTER,p1,COULIT);
 		if (quiJoue == 2)
 			aff_pol("Au joueur 2 de jouer",TAILINTER,p1,COULIT);
-			
-			message(); //La fonction ne doir pas être appellé ici
 	}
 	
 	void interface(int quiJoue)

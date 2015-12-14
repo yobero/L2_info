@@ -2,7 +2,7 @@
 
 void bouton ();
 
-void message();
+void message(int n);
 
 void fenetreInterface(int quiJoue);
 
