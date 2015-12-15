@@ -81,16 +81,33 @@ MUR ajoutMur (MUR m, POINT utilisateur)
 			//m=placementMur(p,utilisateur,m);
 			m.tab[m.i][0].x = p.x+ED;
 			m.tab[m.i][0].y = p.y;
-			m.tab[m.i][1].x = p.x + LONGM-ED;
-			m.tab[m.i][1].y = p.y + LARGM;
+			if (utilisateur.x <l-ED && utilisateur.x >l-TAILLE+ED)
+			{
+				m.tab[m.i][1].x = p.x + (LONGM/2)-ED;
+				m.tab[m.i][1].y = p.y + LARGM;
+			}
+			else
+			{
+				m.tab[m.i][1].x = p.x + LONGM-ED;
+				m.tab[m.i][1].y = p.y + LARGM;
+			}
+			
 			m.i=m.i+1;
 		}
 		else
 		{
 			m.tab[m.i][0].x = p.x-ED;
 			m.tab[m.i][0].y = p.y+EPAISSEUR;
-			m.tab[m.i][1].x = m.tab[m.i][0].x+ LARGM;
-			m.tab[m.i][1].y = m.tab[m.i][0].y + LONGM-EPAISSEUR;
+			if (utilisateur.y < l-ED && utilisateur.y > l-TAILLE+ED)
+			{
+				m.tab[m.i][1].x = m.tab[m.i][0].x+ LARGM;
+				m.tab[m.i][1].y = m.tab[m.i][0].y +(LONGM/2)-EPAISSEUR;
+			}
+			else
+			{
+				m.tab[m.i][1].x = m.tab[m.i][0].x+ LARGM;
+				m.tab[m.i][1].y = m.tab[m.i][0].y +LONGM-EPAISSEUR;
+			}
 			m.i=m.i+1;
 		}
 	}
