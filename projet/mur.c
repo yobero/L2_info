@@ -68,6 +68,21 @@ MUR placementMur(POINT p, POINT utilisateur, MUR m)//INUTILE
 	return m;
 }
 
+int chevauchement (POINT p, MUR m)//interdiction de chevaucher ses propres murs
+{
+	int n=0;
+	while (n<m.i)
+	{
+		if (p.x+TAILLE+ED == m.tab[n][0].x && p.y == m.tab[n][0].y) //si le mur est horizontal
+			return 1; //un chevauchement
+		if (p.x-ED == m.tab[n][0].x && (p.y+TAILLE+EPAISSEUR)== m.tab[n][0].y) //si le mur est vertical
+			return 1; //un chevauchement
+		n++;
+	}
+	
+	return 0; //tout va bien
+}
+
 MUR ajoutMur (MUR m, POINT utilisateur)
 {
 	int HV=1;
@@ -81,7 +96,7 @@ MUR ajoutMur (MUR m, POINT utilisateur)
 			//m=placementMur(p,utilisateur,m);
 			m.tab[m.i][0].x = p.x+ED;
 			m.tab[m.i][0].y = p.y;
-			if (utilisateur.x <l-ED && utilisateur.x >l-TAILLE+ED)
+			if ((utilisateur.x <l-ED && utilisateur.x >l-TAILLE+ED) || (chevauchement(p,m)))
 			{
 				m.tab[m.i][1].x = p.x + (LONGM/2)-ED;
 				m.tab[m.i][1].y = p.y + LARGM;
@@ -98,7 +113,7 @@ MUR ajoutMur (MUR m, POINT utilisateur)
 		{
 			m.tab[m.i][0].x = p.x-ED;
 			m.tab[m.i][0].y = p.y+EPAISSEUR;
-			if (utilisateur.y < l-ED && utilisateur.y > l-TAILLE+ED)
+			if ((utilisateur.y < l-ED && utilisateur.y > l-TAILLE+ED) || (chevauchement(p,m)))
 			{
 				m.tab[m.i][1].x = m.tab[m.i][0].x+ LARGM;
 				m.tab[m.i][1].y = m.tab[m.i][0].y +(LONGM/2)-EPAISSEUR;
