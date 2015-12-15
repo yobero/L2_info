@@ -3,7 +3,7 @@
 ///constante pour variable
 
 //Base
-#define l  720//taille de la fenetre (un mutliple de 9)
+#define l  270//taille de la fenetre (un mutliple de 9)
 #define MULTIPLE 9
 
 //BOUTON
@@ -27,6 +27,8 @@
 	
 	#define ARCOUL black
 	#define ARCOULB white
+
+#define ECART PM/2 //pour le texte des boutons
 	
 #define COUL1 0xe67e30
 #define COUL2 0x3f2204

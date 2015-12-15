@@ -9,7 +9,7 @@ void bouton ()
 	p2.x = SBX; p2.y = SBY;
 	draw_fill_rectangle(p1,p2,COUL2);
 	draw_rectangle(p1,p2,COUL1);
-	p1.x = ((SHX+SBX)/2)-50;
+	p1.x =SHX+2*ECART;
 	aff_pol("sauvegarder",TAILINTER,p1,COULB);
 	
 	//bouton recup sauvegarde
@@ -17,7 +17,7 @@ void bouton ()
 	p2.x = CBX; p2.y = CBY;
 	draw_fill_rectangle(p1,p2,COUL2);
 	draw_rectangle(p1,p2,COUL1);
-	p1.x = CHX +20;
+	p1.x = CHX +ECART;
 	aff_pol("Charger La sauvegarde",TAILINTER,p1,COULB);
 	
 	//bouton retour en Arriere
@@ -25,7 +25,7 @@ void bouton ()
 	p2.x = RABX; p2.y = RABY;
 	draw_fill_rectangle(p1,p2,COUL2);
 	draw_rectangle(p1,p2,COUL1);
-	p1.x = RAHX + 20;
+	p1.x = RAHX + ECART;
 	aff_pol("retour en arriere",TAILINTER,p1,COULB);
 	
 }
