@@ -6,3 +6,22 @@ Le programme a different partie:
 	-interface
 	-les constantes
 
+
+REGLES : 
+	-Pour deplacer le pion, cliquez sur une des quatres cases adjacentes, si le clique n'est pas dans l'une de ses cases, cela revient à passer son tour
+	-Pour placer un mur, cliquez sur les lignes épaisses (entre deux cases).
+	-Le premier arrivée au côté opposé par rapport à sa position de depart à gagner.
+	-Pour sauvegarder, il faut cliquer sur le bouton"sauvegarder" (ne pas effacer le fichier)
+	-Pour charger une partie, il faut cliquer, sur le bouton "chargement"(ne pas effacer le fichier de sauvegarde)
+	-Pour faire 1 retour en arrière, il faut cliquer sur le bouton "retour en arrière"(le fichier retourEnArriere.txt" est réinitialiser à chaque début de partie)
+
+LES STUCTURES
+	-structure -> MUR: permet de stocker les murs d'un joueur(nombre de mur placer,couleur,un tableau 2D pour stocker deux points par mur)
+	-structure->PION:permet de stocker le pion d'un joueur (position,taille et couleur).
+	-structure->JOUEUR: permet de regrouper les structures PION et MUR pour former un joueur.
+
+Utilisation de nombreuses contantes (voir constante.h) pour facilité la programmation du jeu.
+
+CRITIQUE
+A l'heure actuel, je changerai juste le deplacement des pions qui est compliquer à comprendre et il y a trop de condition dans cette fonction.
+
