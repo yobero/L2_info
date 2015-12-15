@@ -3,7 +3,9 @@
 void affichagePion(PION p1,PION p2)
 {
 	draw_fill_circle(p1.centre,p1.rayon,p1.coul);
+	draw_circle(p1.centre,p1.rayon,black);
 	draw_fill_circle(p2.centre,p2.rayon,p2.coul);
+	draw_circle(p2.centre,p2.rayon,black);
 }
 
 /*void effacePion(PION p1, PION p2)

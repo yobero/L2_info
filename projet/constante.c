@@ -28,8 +28,8 @@
 	#define ARCOUL black
 	#define ARCOULB white
 	
-#define COUL1 green
-#define COUL2 black
+#define COUL1 0xe67e30
+#define COUL2 0x3f2204
 #define COULB white
 	
 //MESSAGE
@@ -40,7 +40,9 @@
 
 //Interface
 #define INTERFACE l/2 // constante utiliser pour le deuxieme point de la fonction interface
-#define COULI 0x2c3e50
+#define COULI1 0x4e3d28
+#define COULI2 0xad4f09
+#define COULRESTE black
 #define COULIT white
 #define TAILINTER INTERFACE/25
 

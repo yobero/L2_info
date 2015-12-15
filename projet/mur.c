@@ -71,13 +71,11 @@ MUR placementMur(POINT p, POINT utilisateur, MUR m)//INUTILE
 MUR ajoutMur (MUR m, POINT utilisateur)
 {
 	int HV=1;
-	printf("Avant %d\n",HV);
 	if (nbMaxMur(m))
 	{
 		POINT p;
 		
 		p=localisationClic(utilisateur,&HV);
-		printf("Apres %d\n",HV);
 		if (HV)
 		{
 			//m=placementMur(p,utilisateur,m);
@@ -97,7 +95,7 @@ MUR ajoutMur (MUR m, POINT utilisateur)
 		}
 	}
 	else
-		printf("Tu ne peux plus placer de mur.\n"); //CHANGER ET AFFICHER DANS LA FENETRE
+		message(4);
 	
 	return m;
 }

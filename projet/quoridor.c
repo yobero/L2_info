@@ -22,6 +22,7 @@ int main ()
 	{
 		dessinePlateau(quiJoue);
 		affichageJoueur(j1,j2);
+		affiche_all();
 		
 		utilisateur=wait_clic();
 		if(recuperationSauvegarde(utilisateur))
@@ -66,7 +67,6 @@ int main ()
 		affichageJoueur(j1,j2);
 	}
 	
-	affiche_all();
 	attendre(5000);
 	return 0;
 }

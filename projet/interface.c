@@ -23,7 +23,7 @@ void bouton ()
 	//bouton retour en Arriere
 	p1.x = RAHX; p1.y = RAHY;
 	p2.x = RABX; p2.y = RABY;
-	draw_fill_rectangle(p1,p2,ARCOUL);
+	draw_fill_rectangle(p1,p2,COUL2);
 	draw_rectangle(p1,p2,COUL1);
 	p1.x = RAHX + 20;
 	aff_pol("retour en arriere",TAILINTER,p1,COULB);
@@ -36,10 +36,12 @@ void message(int n)
 	p.x = POINTX; p.y = POINTY;
 	if(n==1) //chargement
 		aff_pol("Chargement termine",POINTT,p,POINTC);
-		if(n==2)
-			aff_pol("Partie sauvegarde",POINTT,p,POINTC);
-		if(n==3)
-			aff_pol("Retour en arriere",POINTT,p,POINTC);
+	if(n==2)
+		aff_pol("Partie sauvegarde",POINTT,p,POINTC);
+	if(n==3)
+		aff_pol("Retour en arriere",POINTT,p,POINTC);
+	if (n==4)
+		aff_pol("Plus de mur disponible",POINTT,p,POINTC);
 }
 
 void fenetreInterface(int quiJoue)
@@ -47,8 +49,9 @@ void fenetreInterface(int quiJoue)
 		POINT p1,p2;
 		p1.x = l+PM; p1.y = l-1;
 		p2.x = (l+INTERFACE)-PM; p2.y = p1.x - l/4;
-		draw_fill_rectangle(p1,p2,COULI);
-		
+		draw_fill_rectangle(p1,p2,COULI2);
+		draw_rectangle(p1,p2,COULI1);
+		p1.x = p1.x +10;
 		if (quiJoue==1)
 			aff_pol("Au joueur 1 de jouer",TAILINTER,p1,COULIT);
 		if (quiJoue == 2)
@@ -60,11 +63,11 @@ void fenetreInterface(int quiJoue)
 		POINT p;
 		//PARTIE POUR LE JOUEUR 1
 		p.x = l+ED; p.y = l/4;
-		aff_pol("Nombre de murs restants pour le joueur 1 :",TAILINTER,p,COULI);
+		aff_pol("Nombre de murs restants pour le joueur 1 :",TAILINTER,p,COULRESTE);
 		
 		//PARTIE POUR LE JOUEUR 2
 		///p.y =(3*l)/4;
-		aff_pol("Nombre de murs restants pour le joueur 2 :",TAILINTER,p,COULI);
+		aff_pol("Nombre de murs restants pour le joueur 2 :",TAILINTER,p,COULRESTE);
 		
 		fenetreInterface(quiJoue);
 		bouton();
