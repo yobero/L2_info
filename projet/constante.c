@@ -12,18 +12,12 @@
 	#define SHY l-l/3
 	#define SBX (SHX + (4*PM-1))
 	#define SBY SHY-PM
-	
-	#define SCOUL black
-	#define SCOULB white
 
 	///Bouton chargement
 	#define CHX l+4*PM 
 	#define CHY SHY
 	#define CBX CHX + 5*PM
 	#define CBY SBY
-	
-	#define CCOUL black
-	#define CCOULB white
 	
 	///retour en arrière
 	#define RAHX (SHX+((SBX-SHX)/2)) 
@@ -33,6 +27,10 @@
 	
 	#define ARCOUL black
 	#define ARCOULB white
+	
+#define COUL1 green
+#define COUL2 black
+#define COULB white
 	
 //MESSAGE
 #define POINTX (l+PM+1)
@@ -69,7 +67,7 @@
 
 ///pour le texte de fin
 #define TFIN 38
-#define FIN green
+#define FIN yellow
 
 //constante J1
 #define coulPJ1 blue
