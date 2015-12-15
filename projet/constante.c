@@ -3,7 +3,7 @@
 ///constante pour variable
 
 //Base
-#define l  270//taille de la fenetre (un mutliple de 9)
+#define l  720//taille de la fenetre (un mutliple de 9)
 #define MULTIPLE 9
 
 //BOUTON
