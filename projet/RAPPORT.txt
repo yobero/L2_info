@@ -24,4 +24,5 @@ Utilisation de nombreuses contantes (voir constante.h) pour facilité la program
 
 CRITIQUE
 A l'heure actuel, je changerai juste le deplacement des pions qui est compliquer à comprendre et il y a trop de condition dans cette fonction.
+De plus, je changerai aussi la méthode de deplacement (clavier pour le pion et souris por les murs pour facilite le gameplay).
 
