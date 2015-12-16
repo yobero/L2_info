@@ -1,4 +1,4 @@
-#include "fonction.h"
+#include "IA.h"
 
 int main ()
 {	

@@ -32,11 +32,14 @@ pion.o: pion.c pion.h mur.o
 fonction.o: fonction.c fonction.h pion.o
 	gcc -c fonction.c -o fonction.o
 	
-quoridor.o: quoridor.c fonction.o 
+IA.o: IA.c IA.h fonction.o
+	gcc -c IA.c -o IA.o
+	
+quoridor.o: quoridor.c IA.o 
 	gcc -c quoridor.c -o quoridor.o
 
 all:quoridor.o graphics.o
-	gcc -o quoridor graphics.o constante.o structure.o initialisation.o affichage.o interface.o mur.o pion.o fonction.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
+	gcc -o quoridor graphics.o constante.o structure.o initialisation.o affichage.o interface.o mur.o pion.o fonction.o IA.o quoridor.o  `sdl-config --libs` -lm -lSDL_ttf
 	
 clean: 
 	rm -f *.o
