@@ -28,6 +28,9 @@ void bouton ()
 	p1.x = RAHX + ECART;
 	aff_pol("retour en arriere",TAILINTER,p1,COULB);
 	
+	///Bouton qui s"affiche au début du programme
+		//jouer avec une IA ou un Joueur
+	
 }
 
 void message(int n)

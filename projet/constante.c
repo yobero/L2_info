@@ -25,8 +25,6 @@
 	#define RABX (RAHX + (4*PM-1))
 	#define RABY RAHY-PM
 	
-	#define ARCOUL black
-	#define ARCOULB white
 
 #define ECART PM/2 //pour le texte des boutons
 	
