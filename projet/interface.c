@@ -1,5 +1,17 @@
 #include "affichage.h"
 
+void boutonTemporaire()
+{
+	///Bouton qui s"affiche au début du programme
+		//jouer avec une IA ou un Joueur
+		p1.x = IAHX; p1.y = IAHY;
+		p2.x = IABX; p2.y = IABY;
+		draw_fill_rectangle(p1,p2,COUL2);
+		draw_rectangle(p1,p2,COUL1);
+		p1.x = RAHX + ECART;
+		aff_pol("Humain",TAILINTER,p1,COULB);
+}
+
 void bouton ()
 {
 	POINT p1,p2;
@@ -27,9 +39,6 @@ void bouton ()
 	draw_rectangle(p1,p2,COUL1);
 	p1.x = RAHX + ECART;
 	aff_pol("retour en arriere",TAILINTER,p1,COULB);
-	
-	///Bouton qui s"affiche au début du programme
-		//jouer avec une IA ou un Joueur
 	
 }
 

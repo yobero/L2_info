@@ -25,6 +25,11 @@
 	#define RABX (RAHX + (4*PM-1))
 	#define RABY RAHY-PM
 	
+	///choix du type d'adversaire
+	#define IAHX (l/2)-PM
+	#define IAHY (l/2)+PM
+	#define IABX IAHX +3*PM
+	#define IABY IAHY + 2*PM
 
 #define ECART PM/2 //pour le texte des boutons
 	

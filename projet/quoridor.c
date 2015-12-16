@@ -8,6 +8,7 @@ int main ()
 	JOUEUR j1,j2;
 	POINT utilisateur;
 	int quiJoue=1; //1 pour le joueur 1 et 2 pour j2
+	int IaOuJoueur; // pour IA et  pour joueur
 	
 	j1=initialisationJoueur(1);
 	j2=initialisationJoueur(2);
@@ -16,6 +17,10 @@ int main ()
 		///Le fichier de sauvegarde ne s'effacera plus avec "make clean"
 	//sauvegarde(j1,j2); //initialisation du fichier
 	retourArriereSauv(j1,j2); //initialisation du fichier
+	
+	boutonTemporaire();
+	utilisateur = wait_clic();
+	
 	
 	affiche_auto_off();
 	while(finDePartie(j1,j2))

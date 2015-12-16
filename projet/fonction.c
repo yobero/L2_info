@@ -273,3 +273,8 @@
 		return j;
 	}
 	
+	int IAouJoueur(POINT utilisateur, int IaOuJoueur)
+	{
+		
+	}
+	
