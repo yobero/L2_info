@@ -5,6 +5,7 @@ Le programme a different partie:
 	-les pions
 	-interface
 	-les constantes
+	-IA ==> fonction inutile pour le moment
 
 
 REGLES : 
@@ -23,6 +24,8 @@ LES STUCTURES
 Utilisation de nombreuses contantes (voir constante.h) pour facilité la programmation du jeu.
 
 CRITIQUE
-A l'heure actuel, je changerai juste le deplacement des pions qui est compliquer à comprendre et il y a trop de condition dans cette fonction.
-De plus, je changerai aussi la méthode de deplacement (clavier pour le pion et souris por les murs pour facilite le gameplay).
+A l'heure actuel, je changerai juste le deplacement des pions et les murs qui sont compliquer à comprendre et il y a trop de condition et pas facile et les remplir notamment pour les mur, où l'on peut mettre deux mur superposer sachant qu'on ne peut être bloqué par son propre mur.
+De plus, je changerai aussi la méthode de deplacement (clavier pour le pion et souris pour les murs pour facilite le gameplay).
+Avec plus de temps, j'aurai peut-être pu terminer l'IA qui ne peut que se deplacer mais pas de façon optimal, c'est-à-dire qu'on peut facilement le bloqué.
 
+Pour résumer, tous ce que je modifirais si je pouvais, se serait toutes les interractions entre l'humain et l'interface(deplacement du pion et l'ajout de murs.

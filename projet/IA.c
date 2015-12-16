@@ -39,7 +39,10 @@ JOUEUR deplaceIA(JOUEUR IA,JOUEUR j)
 
 JOUEUR placementIA(JOUEUR IA,JOUEUR j)
 {
+	int i=0;
+	POINT utilisateur;
 	
+	//fonction non fini
 	
 	return IA;
 }

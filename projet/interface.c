@@ -1,6 +1,6 @@
 #include "affichage.h"
 
-void boutonTemporaire()
+void boutonTemporaire() //Permt de choisir de jouer contre un humain ou une IA
 {
 	POINT p1,p2;
 	
