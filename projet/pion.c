@@ -91,7 +91,7 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur)//IMPOSANTE COMME FONCTIO
 	 * */
 	if((utilisateur.y < p.centre.y + D-ED && utilisateur.y > p.centre.y + PM+ED) && (utilisateur.x > p.centre.x -PM+ED && utilisateur.x < p.centre.x +PM-ED)) //vers le haut
 	{
-		if (blocage(p,a.m,1))
+		if (blocage(p,a.m,1) && p.centre.y+TAILLE<l)
 		{
 			if ((p.centre.y +TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x) && p.centre.y + 2*TAILLE < l)
 				p.centre.y = p.centre.y + 2*TAILLE;
@@ -104,7 +104,7 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur)//IMPOSANTE COMME FONCTIO
 	{
 		if((utilisateur.x < p.centre.x + D && utilisateur.x > p.centre.x + PM) && (utilisateur.y < p.centre.y +PM-ED && utilisateur.y > p.centre.y -PM+ED))
 		{
-			if(blocage(p,a.m,2))
+			if(blocage(p,a.m,2) && p.centre.x+TAILLE<l)
 			{
 				if (((p.centre.x + TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.x)) && p.centre.x + 2*TAILLE < l)
 					p.centre.x = p.centre.x + 2*TAILLE;
@@ -117,7 +117,7 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur)//IMPOSANTE COMME FONCTIO
 		{
 				if(utilisateur.x > (p.centre.x - D) && utilisateur.x < p.centre.x - PM)
 				{
-					if(blocage(p,a.m,3))
+					if(blocage(p,a.m,3) && p.centre.x-TAILLE>0)
 					{
 						if ((p.centre.x - TAILLE == a.p.centre.x) && (p.centre.y == a.p.centre.y) && p.centre.x -2*TAILLE >0)
 							p.centre.x = p.centre.x -2*TAILLE;
@@ -128,13 +128,16 @@ PION deplacementPion(PION p,JOUEUR a,POINT utilisateur)//IMPOSANTE COMME FONCTIO
 				}
 			else
 			{
-				if (utilisateur.y > (p.centre.y -D) && utilisateur.y < (p.centre.y -PM))
+				if(blocage(p,a.m,4) && p.centre.y-TAILLE>0)
 				{
-					if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x) && p.centre.y -2*TAILLE>0)
-						p.centre.y = p.centre.y - 2*TAILLE;
-					else
-						if ((p.centre.y - TAILLE != a.p.centre.y) || (p.centre.x != a.p.centre.x))
-							p.centre.y = p.centre.y - TAILLE;
+					if (utilisateur.y > (p.centre.y -D) && utilisateur.y < (p.centre.y -PM))
+					{
+						if ((p.centre.y - TAILLE == a.p.centre.y) && (p.centre.x == a.p.centre.x) && p.centre.y -2*TAILLE>0)
+							p.centre.y = p.centre.y - 2*TAILLE;
+						else
+							if ((p.centre.y - TAILLE != a.p.centre.y) || (p.centre.x != a.p.centre.x))
+								p.centre.y = p.centre.y - TAILLE;
+					}
 				}
 			}
 		}
