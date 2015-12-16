@@ -3,7 +3,6 @@
 int main ()
 {	
 	init_graphics(l+INTERFACE,l);
-	affiche_auto_off();
 	
 	JOUEUR j1,j2;
 	POINT utilisateur;
@@ -20,16 +19,18 @@ int main ()
 	
 	boutonTemporaire();
 	utilisateur = wait_clic();
+	IaOuJoueur = IAouJoueur(utilisateur);
+	FILE* f=fopen("bug.txt","w");
+	fprintf(f,"%d",IaOuJoueur);
 	
-	
-	affiche_auto_off();
+	affiche_all();
+	//affiche_auto_off();
 	while(finDePartie(j1,j2))
 	{
 		dessinePlateau(quiJoue);
 		affichageJoueur(j1,j2);
 		affiche_all();
 		
-		utilisateur=wait_clic();
 		if(recuperationSauvegarde(utilisateur))
 		{
 			chargement(&j1,&j2,&quiJoue);
@@ -43,7 +44,7 @@ int main ()
 		if(faireSauvegarde(utilisateur))
 		{
 			sauvegarde(j1,j2);
-			message(2);
+			message(2); //affiche le message "sauvegarde terminé"
 			affiche_all();
 			utilisateur=wait_clic();
 		}
@@ -55,18 +56,26 @@ int main ()
 			affichageJoueur(j1,j2);
 			message(3);
 			affiche_all();
-			utilisateur=wait_clic();
 		}
 		retourArriereSauv(j1,j2);
 		
 		if (quiJoue==1)
 		{
-			j1= murOuPion(j1,j2,utilisateur,quiJoue);
+			utilisateur=wait_clic();
+			j1= murOuPion(j1,j2,utilisateur);
 			quiJoue = 2;
 		}
 		else
 		{
-			j2= murOuPion(j2,j1,utilisateur, quiJoue);
+			if (IaOuJoueur)
+			{
+				utilisateur=wait_clic();
+				j2= murOuPion(j2,j1,utilisateur);
+			}
+			else
+			{
+				
+			}
 			quiJoue = 1;
 		}
 		affichageJoueur(j1,j2);

@@ -259,22 +259,17 @@
 		return 0;
 	}
 	
-	JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur, int quiJoue)
+	JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur)
 	{
 		if (Mur(utilisateur))
 			j.m = ajoutMur(j.m,utilisateur);
 		else
 		{
 			if (Pion(utilisateur))
-				j.p = deplacementPion(j.p,a,utilisateur,quiJoue);
+				j.p = deplacementPion(j.p,a,utilisateur);
 		}
 		
 		
 		return j;
-	}
-	
-	int IAouJoueur(POINT utilisateur, int IaOuJoueur)
-	{
-		
 	}
 	

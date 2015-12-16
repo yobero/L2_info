@@ -25,4 +25,4 @@ int Pion (POINT utilisateur);
 
 int Mur (POINT utilisateur);
 
-JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur, int quiJoue);
+JOUEUR murOuPion(JOUEUR j,JOUEUR a, POINT utilisateur);

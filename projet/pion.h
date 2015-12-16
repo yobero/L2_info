@@ -10,4 +10,4 @@ int blocageBas(PION j1, MUR j2);
 
 int blocage(PION j1, MUR j2, int f);
 
-PION deplacementPion(PION p,JOUEUR a, POINT utilisateur,int quiJoue);
+PION deplacementPion(PION p,JOUEUR a, POINT utilisateur);

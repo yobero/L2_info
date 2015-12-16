@@ -1,5 +1,7 @@
 #include "affichage.h"
 
+void boutonTemporaire();
+
 void bouton ();
 
 void message(int n);

@@ -26,10 +26,16 @@
 	#define RABY RAHY-PM
 	
 	///choix du type d'adversaire
-	#define IAHX (l/2)-PM
-	#define IAHY (l/2)+PM
-	#define IABX IAHX +3*PM
-	#define IABY IAHY + 2*PM
+		//joueur
+		#define IAHX1 (l/2)
+		#define IAHY1 (l/2)+PM
+		#define IABX1 IAHX1 +3*PM
+		#define IABY1 IAHY1 -PM
+		//IA
+		#define IAHX0 IABX1+1
+		#define IAHY0 IABY1+PM
+		#define IABX0 IAHX0 +3*PM
+		#define IABY0 IAHY0 -PM
 
 #define ECART PM/2 //pour le texte des boutons
 	

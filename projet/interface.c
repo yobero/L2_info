@@ -2,13 +2,25 @@
 
 void boutonTemporaire()
 {
+	POINT p1,p2;
+	
 	///Bouton qui s"affiche au début du programme
 		//jouer avec une IA ou un Joueur
-		p1.x = IAHX; p1.y = IAHY;
-		p2.x = IABX; p2.y = IABY;
+		p1.x = IAHX0; p1.y = IAHY0;
+		p2.x = IABX0; p2.y = IABY0;
 		draw_fill_rectangle(p1,p2,COUL2);
 		draw_rectangle(p1,p2,COUL1);
-		p1.x = RAHX + ECART;
+		p1.x = p1.x+2*ECART;
+		p1.y = p1.y - (ECART/2);
+		aff_pol("IA",TAILINTER,p1,COULB);
+		
+		
+		p1.x = IAHX1; p1.y = IAHY1;
+		p2.x = IABX1; p2.y = IABY1;
+		draw_fill_rectangle(p1,p2,COUL2);
+		draw_rectangle(p1,p2,COUL1);
+		p1.x = p1.x+2*ECART;
+		p1.y = p1.y - (ECART/2);
 		aff_pol("Humain",TAILINTER,p1,COULB);
 }
 

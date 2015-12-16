@@ -88,7 +88,7 @@ int blocage(PION j1, MUR j2, int f) //f va defini le type de deplacement
 	return 0;
 }
 
-PION deplacementPion(PION p,JOUEUR a,POINT utilisateur, int quiJoue)//IMPOSANTE COMME FONCTION
+PION deplacementPion(PION p,JOUEUR a,POINT utilisateur)//IMPOSANTE COMME FONCTION
 {
 	/**If faut rajouter une condition à tous les if secondaire :D
 	 * */
