@@ -73,6 +73,7 @@ int main ()
 			else
 			{
 				j2 = deplaceIA(j2,j1);
+				attendre(500);
 			}
 			quiJoue = 1;
 		}

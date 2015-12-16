@@ -13,22 +13,22 @@ JOUEUR deplaceIA(JOUEUR IA,JOUEUR j)
 {
 	POINT utilisateur;
 	
-	if(!blocageBas(IA.p,j.m))
+	if(blocageBas(IA.p,j.m))
 	{
 		utilisateur.x = IA.p.centre.x; utilisateur.y = IA.p.centre.y-TAILLE;
 		IA.p=deplacementPion(IA.p,j,utilisateur);
 	}
-	else if(!blocageGauche(IA.p,j.m))
+	else if(blocageGauche(IA.p,j.m))
 		{
 			utilisateur.x = IA.p.centre.x-TAILLE; utilisateur.y = IA.p.centre.y;
 			IA.p=deplacementPion(IA.p,j,utilisateur);
 		}
-		else if (!blocageDroite(IA.p,j.m))
+		else if (blocageDroite(IA.p,j.m))
 			{
 				utilisateur.x = IA.p.centre.x+TAILLE; utilisateur.y = IA.p.centre.y;
 				IA.p=deplacementPion(IA.p,j,utilisateur);	
 			}
-			else if (!blocageHaut(IA.p,j.m))
+			else if (blocageHaut(IA.p,j.m))
 				{
 					utilisateur.x = IA.p.centre.x; utilisateur.y = IA.p.centre.y+TAILLE;
 					IA.p=deplacementPion(IA.p,j,utilisateur);

@@ -13,7 +13,6 @@ int blocageHaut(PION j1, MUR j2)
 			if (j1.centre.y + PM-ED == j2.tab[n][0].y)
 				return 0;
 		}
-		printf("%d\n",n);
 		n++;
 	}
 	
@@ -46,7 +45,6 @@ int blocageGauche(PION j1, MUR j2)
 	{
 		if (j1.centre.x - PM-ED == j2.tab[n][0].x)
 		{
-			printf("yo");
 			if (j1.centre.y- PM+ED == j2.tab[n][0].y || j1.centre.y - PM+ED == j2.tab[n][0].y +TAILLE)
 				return 0;
 		}
@@ -67,7 +65,6 @@ int blocageBas(PION j1, MUR j2)
 			if (j1.centre.y - PM-ED == j2.tab[n][0].y)
 				return 0;
 		}
-		printf("%d\n",n);
 		n++;
 	}
 	
