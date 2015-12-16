@@ -10,18 +10,18 @@ void boutonTemporaire()
 		p2.x = IABX0; p2.y = IABY0;
 		draw_fill_rectangle(p1,p2,COUL2);
 		draw_rectangle(p1,p2,COUL1);
-		p1.x = p1.x+2*ECART;
-		p1.y = p1.y - (ECART/2);
-		aff_pol("IA",TAILINTER,p1,COULB);
+		p1.x = l/4;
+		p1.y =  l/2;
+		aff_pol("IA",TAILLE,p1,COULB);
 		
 		
 		p1.x = IAHX1; p1.y = IAHY1;
 		p2.x = IABX1; p2.y = IABY1;
 		draw_fill_rectangle(p1,p2,COUL2);
 		draw_rectangle(p1,p2,COUL1);
-		p1.x = p1.x+2*ECART;
-		p1.y = p1.y - (ECART/2);
-		aff_pol("Humain",TAILINTER,p1,COULB);
+		p1.x = l/2;
+		p1.y = l/2;
+		aff_pol("Humain",TAILLE,p1,COULB);
 }
 
 void bouton ()

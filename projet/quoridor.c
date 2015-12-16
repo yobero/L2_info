@@ -19,12 +19,10 @@ int main ()
 	
 	boutonTemporaire();
 	utilisateur = wait_clic();
-	IaOuJoueur = IAouJoueur(utilisateur);
-	FILE* f=fopen("bug.txt","w");
-	fprintf(f,"%d",IaOuJoueur);
+	IaOuJoueur = IAJoueur(utilisateur);
 	
 	affiche_all();
-	//affiche_auto_off();
+	affiche_auto_off();
 	while(finDePartie(j1,j2))
 	{
 		dessinePlateau(quiJoue);
@@ -74,13 +72,14 @@ int main ()
 			}
 			else
 			{
-				
+				j2 = deplaceIA(j2,j1);
 			}
 			quiJoue = 1;
 		}
+		dessinePlateau(quiJoue);
 		affichageJoueur(j1,j2);
 	}
-	
+	affiche_all();
 	attendre(5000);
 	return 0;
 }

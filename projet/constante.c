@@ -27,15 +27,15 @@
 	
 	///choix du type d'adversaire
 		//joueur
-		#define IAHX1 (l/2)
-		#define IAHY1 (l/2)+PM
-		#define IABX1 IAHX1 +3*PM
-		#define IABY1 IAHY1 -PM
+		#define IAHX1 l/2
+		#define IAHY1 0
+		#define IABX1 l
+		#define IABY1 l
 		//IA
-		#define IAHX0 IABX1+1
-		#define IAHY0 IABY1+PM
-		#define IABX0 IAHX0 +3*PM
-		#define IABY0 IAHY0 -PM
+		#define IAHX0 0
+		#define IAHY0 0
+		#define IABX0 l/2
+		#define IABY0 l
 
 #define ECART PM/2 //pour le texte des boutons
 	

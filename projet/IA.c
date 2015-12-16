@@ -1,11 +1,11 @@
 #include "fonction.h"
 
-int IAouJoueur(POINT utilisateur)
+int IAJoueur(POINT utilisateur)
 {
-	if((utilisateur.x > IAHX0 && utilisateur.x < IABX0) && (utilisateur.y > IAHY0 && utilisateur.y < IABY0)) //0 pour IA
+	if(utilisateur.x < l/2) //0 pour IA
 		return 0;
-	if(utilisateur.x > IAHX1 && utilisateur.x < IABX1 && utilisateur.y > IAHY1 && utilisateur.y < IABY1) //1 pour Joueur
-		return 1;
+		
+	return 1;
 		
 }
 
