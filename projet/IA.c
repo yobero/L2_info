@@ -36,3 +36,10 @@ JOUEUR deplaceIA(JOUEUR IA,JOUEUR j)
 	
 	return IA;
 }
+
+JOUEUR placementIA(JOUEUR IA,JOUEUR j)
+{
+	
+	
+	return IA;
+}
