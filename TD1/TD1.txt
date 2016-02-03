@@ -1,0 +1,28 @@
+Exercice 1:
+
+1) Primitive système: -open
+					  -close
+					  -write
+					  -read
+					  -execve
+					
+  "fopen" est une fonction de bibliothèque qui regroupe la fonction "open"
+  qui est une primitive système.
+  
+2) ressemblance: -fonction
+
+   différence:
+   
+		les fonctions de bibliothèque peuvent utiliser des primitives systèmes
+		"                          "  plus haut niveau.
+		
+Exercice 2:
+
+Dans la fonction open(), les arguments ne sont pas bon
+open()  ==> close()
+fopen() ==> fcloce()
+
+Exercice 3:
+
+
+		
