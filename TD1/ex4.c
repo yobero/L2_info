@@ -7,7 +7,8 @@ int gc()
 {
 	int n;
 	unsigned char buf;
-	
+	//0 ==> entrée standart
+	printf("Ecrivez\n");
 	if(read(0,&buf,1)>0)
 	{
 		n = buf;
