@@ -24,5 +24,9 @@ fopen() ==> fcloce()
 
 Exercice 3:
 
+Voir TD1_ex3.c
+
+Exercice 4:
+
 
 		
