@@ -8,6 +8,7 @@
 int getchar2()
 {
 	// static ... ==> initialiser qu'1 seule fois (premiere appel)
+	//possible d'utiliser buf dans le main :D
 	static unsigned char buf[MAX];
 	static int m=0;
 	static char *p;
