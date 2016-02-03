@@ -23,5 +23,5 @@ int getchar2()
 
 int main ()
 {
-	getchar2();
+	printf("%d\n",getchar2());
 }
