@@ -1,0 +1,15 @@
+1)
+	a) il y a 5 classes.
+	b) héritage
+
+2)
+	a) JDK et JRE
+6)
+	b) On peut inspecter les données de la personne
+	c) oui
+7)
+	b) bleu ==> classe
+	      blanc cassé ==> bloc privé
+	      jaune ==> les fonctions
+	d) la documentation explique le code
+	e) le fichier .c est le code source et le .h  la documentation.
