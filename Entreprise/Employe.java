@@ -10,26 +10,31 @@ public class Employe {
     
     /** Le prenom de l'employé */
     private String prenom;
+    
+    /** L'âge de l'employé */
+    private int age;
 
     /**
      * Initialise un employé avec un prénom et un nom.
      * 
      * @param prenom le prénom de l'employé
      * @param nom    le nom de l'employé
+     * @param age    l'âge de l'employé
      */
-    public Employe(final String prenom, final String nom) {
+    public Employe(final String prenom, final String nom, final int age) {
         this.prenom = prenom;
         this.nom = nom;
+        this.age = age;
     }
     
     /**
      * Retourne une chaîne de caractères représentant l'employé.
-     * Le format utilisé est "nom prénom".
+     * Le format utilisé est "nom prénom age".
      * 
      * @return une chaîne contenant le prénom suivi du nom de l'employé
      */
     @Override
     public String toString() {
-        return prenom + " " + nom;
+        return prenom + " " + nom + " " + age;
     }
 }
