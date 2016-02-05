@@ -3,6 +3,6 @@
 	b) héritage
 
 2)
-	a) JDK et JE
-3)
-	a) 
+	a) JDK et JRE
+4)
+	a)
