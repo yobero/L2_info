@@ -5,4 +5,6 @@ comment0.text=\n\ Initialise\ l'entreprise\ avec\ son\ nom.\n\ \n\ @param\ nom\ 
 comment1.params=emp
 comment1.target=void\ embauche(Employe)
 comment1.text=\n\ L'entreprise\ embauche\ un\ nouvel\ employ\u00E9.\n\ \n\ @param\ \ emp\ l'employ\u00E9\ \u00E0\ embaucher\n
-numComments=2
+comment2.params=
+comment2.target=void\ toStringE()
+numComments=3

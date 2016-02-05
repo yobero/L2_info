@@ -33,4 +33,8 @@ public class Entreprise {
     public void embauche(Employe emp) {
         equipe.add(emp);
     }
+    
+    public void toStringE() {
+        System.out.println(equipe);
+    }
 }
