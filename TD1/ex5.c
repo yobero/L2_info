@@ -23,5 +23,11 @@ int getchar2()
 
 int main ()
 {
-	printf("%d\n",getchar2());
+	int x=0;
+	
+	while (x<MAX)
+	{
+		printf("%c",getchar2());
+		x++;
+	}
 }
