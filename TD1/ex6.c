@@ -1,14 +1,25 @@
-#include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main (int argc,const char** argv)
 {
-	struct stat* buf;
+	struct stat buf;
 	
-	stat(argv[1],buf);
+	stat(argv[1],&buf);
+	
+	 switch (buf.st_mode & S_IFMT) {
+    case S_IFBLK:  printf("périphérique de bloc\n");      break;
+    case S_IFCHR:  printf("périphérique de caractère\n"); break;
+    case S_IFDIR:  printf("répertoire\n");                break;
+    case S_IFIFO:  printf("FIFO/tube\n");                 break;
+    case S_IFLNK:  printf("lien symbolique\n");           break;
+    case S_IFREG:  printf("fichier ordinaire\n");         break;
+    case S_IFSOCK: printf("socket\n");                    break;
+    default:       printf("inconnu ?\n");                 break;
+    }
 	
 	return 1;
 }
