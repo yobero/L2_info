@@ -25,8 +25,9 @@ int main (int argc,const char** argv)
     }
     
     ///Correction(partie 2)
+    unsigned long mask;
     char prot[9],*p;
-    p=prot;
+    p=prot+8;
     sprintf(prot,"rwxrwxrwx ");
     mask=1;
     int i;
@@ -34,7 +35,7 @@ int main (int argc,const char** argv)
     {
 		if (buf.st_mode & mask == 0)
 			*p='-';
-		p++;
+		p--;
 		mask <<=1;
 	}
 	printf("protection %s\n",prot);
