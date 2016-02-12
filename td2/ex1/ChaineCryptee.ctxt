@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.params=chaine\ decale
+comment0.params=chaine1\ decale
 comment0.target=ChaineCryptee(java.lang.String,\ int)
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ ChaineCryptee\n
 comment1.params=c\ decalage
@@ -8,6 +8,4 @@ comment2.params=c\ decalage
 comment2.target=char\ decaleCaractere2(char,\ int)
 comment3.params=
 comment3.target=void\ cryptage()
-comment4.params=
-comment4.target=void\ deCryptage()
-numComments=5
+numComments=4
