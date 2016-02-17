@@ -61,7 +61,23 @@ int my_getc(FICHIER f)
 	}
 }
 
-int my_putc()
+int my_putc(FICHIER f,int c)
+{
+	if (f->reste >= MAX)
+	{
+		if (write(f->fd,f->buf,MAX) != MAX) return EOF;
+		f->p = f->buf;
+		f->reste = 0;
+	}
+	*(f->p++)=c;
+	f->reste++;
+	return c;
+}
+
+int my_close(FICHIER f)
+{
+	
+}
 
 int main (int argc,const char** argv)
 {
