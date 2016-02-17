@@ -61,22 +61,29 @@ int my_getc(FICHIER f)
 	}
 }
 
-int my_putc(FICHIER f,int c)
+FICHIER my_putc(FICHIER f,int c)
 {
 	if (f->reste >= MAX)
 	{
-		if (write(f->fd,f->buf,MAX) != MAX) return EOF;
+		if (write(f->fd,f->buf,MAX) != MAX) return f;
 		f->p = f->buf;
 		f->reste = 0;
 	}
 	*(f->p++)=c;
 	f->reste++;
-	return c;
+	return f;
 }
 
 int my_close(FICHIER f)
 {
-	
+	if(f->mode & (LE || ECRITURE) !=0 && f->reste !=0)
+	{
+		if (write(f-> fd, f->buf, f->reste) != f->reste)
+			return EOF;
+	}
+	close(f->fd);
+	free(f);
+	return 1;
 }
 
 int main (int argc,const char** argv)
@@ -84,5 +91,6 @@ int main (int argc,const char** argv)
 	FICHIER f;
 	f=my_open(argv[1],choixMode()); 
 	printf("%c\n",my_getc(f));
+	f=my_putc(f,'c');
 	return 1;
 }
