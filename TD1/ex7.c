@@ -25,7 +25,6 @@ int choixMode()
 	unsigned char buf;
 	printf("Quel mode d'ouverture : 1 ==> lecture 2 ==> ecriture 3 ==> lecture/ecriture\n");
 	a = read(0,&buf,1);
-	printf("%d",a);
 	switch (a) {
 		case 1: return LECTURE;
 		case 2: return ECRITURE;
@@ -36,7 +35,7 @@ int choixMode()
 
 FICHIER my_open(const char* argv,int mode)
 {
-	FICHIER f;
+	FICHIER f = malloc(sizeof(struct fichier));
 	f->mode = mode;
 	f->fd = open(argv,mode,0666);
 	f->reste =0;
@@ -46,16 +45,28 @@ FICHIER my_open(const char* argv,int mode)
 
 int my_getc(FICHIER f)
 {
-	int z;
-	char buf;
-	z = read(f->fd,&buf,1);
-	return z;
+	//if ((f->mode & F_R) ==0)
+		//return EOF;
+	if (f->reste <= 0)
+	{
+		f->reste = read(f->fd, f->buf,MAX);
+		f->p = f->buf;
+	}
+	if (f->reste <=0)
+		return EOF;
+	else
+	{
+		f->reste --;
+		return (*(f->p++));
+	}
 }
+
+int my_putc()
 
 int main (int argc,const char** argv)
 {
 	FICHIER f;
-	f=my_open(argv[1],choixMode());
-	//printf("%d",my_getc(f->fd));
+	f=my_open(argv[1],choixMode()); 
+	printf("%c\n",my_getc(f));
 	return 1;
 }
