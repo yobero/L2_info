@@ -25,9 +25,11 @@ public class serveur
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    /**Test si le client est connecter*/
+    
+    /**relit envoyer et recevoir du client*/
+    public boolean connecter(client Client)
     {
-        // put your code here
-        return x + y;
+        serveur.connecter(Client);
     }
 }

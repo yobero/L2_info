@@ -9,11 +9,13 @@ public class client
 {
     // instance variables - replace the example below with your own
     private String nom;
+    private String messEnv;
+    private String messRec;
 
     /**
      * Constructor for objects of class client
      */
-    public client()
+    public client(String nom)
     {
         // initialise instance variables
         this.nom = nom;
@@ -25,7 +27,8 @@ public class client
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public client seConnecter(serveur Serveur)
+    /**les client veut se connecter*/
+    public boolean seConnecter(serveur Serveur)
     {
         
     }
