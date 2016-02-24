@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=nom
+comment0.target=collection(java.lang.String)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ collection\n
+comment1.params=nom
+comment1.target=void\ ajoutCD(cd)
+comment1.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
+comment2.params=nom
+comment2.target=void\ ajoutDVD(dvd)
+numComments=3

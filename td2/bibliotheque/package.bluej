@@ -1,11 +1,14 @@
 #BlueJ package file
+dependency1.from=Bibliotheque
+dependency1.to=Document
+dependency1.type=UsesDependency
 objectbench.height=100
 objectbench.width=851
 package.editor.height=565
 package.editor.width=725
 package.editor.x=50
 package.editor.y=50
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 package.showExtends=true
 package.showUses=true
@@ -34,5 +37,5 @@ target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
 target2.width=100
-target2.x=70
-target2.y=70
+target2.x=320
+target2.y=100

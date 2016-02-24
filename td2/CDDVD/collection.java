@@ -29,13 +29,13 @@ public class collection
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public void ajoutCD()
+    public void ajoutCD(cd nom)
     {
-        
+        this.collectionCD.add(nom);
     }
     
-    public void ajoutDVD()
+    public void ajoutDVD(dvd nom)
     {
-        
+        this.collectionDVD.add(nom);
     }
 }
