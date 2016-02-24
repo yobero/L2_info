@@ -11,17 +11,17 @@ public class Document
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String titre;
     private String auteur;
-    private int anneePub;
+    private int annee;
     private List<Document> reference;
 
     /**
      * Constructeur d'objets de classe Document
      */
-    public Document(String titre , String auteur, int anneePub)
+    public Document(String titre , String auteur, int annee)
     {
         this.titre=titre;
         this.auteur=auteur;
-        this.anneePub=anneePub;
+        this.annee=annee;
         this.reference = new ArrayList<Document>();
     }
 
@@ -45,9 +45,9 @@ public class Document
         String ref="";
         for(Document doc:this.reference)
         {
-            ref+=doc.GetTitre()+" ";
+            ref=ref + doc.GetTitre()+" ";
         }
         return "titre : "+this.titre+" auteur : "+this.auteur+" année de publication : "
-            +this.anneePub+" référence : "+ref;
+            +this.annee+" référence : "+ref;
     }
 }
