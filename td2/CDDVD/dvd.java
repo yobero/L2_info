@@ -29,17 +29,17 @@ public class dvd
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public String TitreDVD()
+    public String GetTitreDVD()
     {
         return this.titre;
     }
     
-    public String Realisateur()
+    public String GetRealisateur()
     {
         return this.realisateur;
     }
     
-    public int Date()
+    public int GetDate()
     {
         return this.date;
     }

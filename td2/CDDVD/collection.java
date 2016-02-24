@@ -31,6 +31,6 @@ public class collection
      */
     public void consulterDVD(dvd titre)
     {
-        String titre = collectionDVD.TitreDVD();
+        String Dvd = collectionDVD.GetTitreDVD();
     }
 }

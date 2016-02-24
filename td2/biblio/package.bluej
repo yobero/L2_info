@@ -1,3 +1,32 @@
 #BlueJ package file
-#Fri Feb 19 15:49:43 CET 2016
+objectbench.height=76
+objectbench.width=686
+package.editor.height=400
+package.editor.width=560
+package.editor.x=337
+package.editor.y=65
+package.numDependencies=0
+package.numTargets=2
+package.showExtends=true
+package.showUses=true
 project.charset=UTF-8
+target1.height=50
+target1.name=bibliotheque
+target1.showInterface=false
+target1.type=ClassTarget
+target1.typeParameters=
+target1.width=110
+target1.x=100
+target1.y=10
+target2.editor.height=700
+target2.editor.width=900
+target2.editor.x=377
+target2.editor.y=85
+target2.height=50
+target2.name=document
+target2.showInterface=false
+target2.type=ClassTarget
+target2.typeParameters=
+target2.width=90
+target2.x=70
+target2.y=70
