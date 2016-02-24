@@ -12,6 +12,7 @@ int main(int N, int M)
 	pid_t pid;
 	int i=0; //processus
 	int j=0; // niveaux
+	int compteur=0;
 	
 	if (N>=1000) exit(EXIT_FAILURE);
 	if (M>=100) exit(EXIT_FAILURE);
@@ -24,9 +25,17 @@ int main(int N, int M)
 			i=0;
 			j++;
 		}
+		compteur++;
 		i++;
 	}
-	
+	i=0;
+	while(i<N)
+	{
+		wait(&pid);
+		i++;
+	}
+	if (pid !=0)
+		printf("Il y a eu %d processus",compteur);
 	
 	return 1;
 }
