@@ -29,8 +29,13 @@ public class collection
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public void consulterDVD(dvd titre)
+    public void ajoutCD()
     {
-        String Dvd = collectionDVD.GetTitreDVD();
+        
+    }
+    
+    public void ajoutDVD()
+    {
+        
     }
 }
