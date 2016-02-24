@@ -26,12 +26,7 @@ int main(int N, int M)
 		}
 		i++;
 	}
-	i=0;
-	while (i<N)
-	{
-		
-		i++;;
-	}
+	
 	
 	return 1;
 }

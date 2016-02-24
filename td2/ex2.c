@@ -12,20 +12,25 @@
 int main()
 {
 	pid_t pid;
+	*int status;
 	int i=0;
 	
 	if (N>=1000) exit(EXIT_FAILURE);
 	
 	while(i<N)
 	{
-		
+		pid = fork():
+		if (pid==0)
+			exit(getpid()%10);
 		i++;
 	}
 	i=0;
 	while (i<N)
 	{
-		
-		i++;;
+		pid = wait(&status);
+		printf("pid  %d\n",pid);
+		/*void ex1 avec WIFEXITED*/
+		i++;
 	}
 	
 	return 1;
