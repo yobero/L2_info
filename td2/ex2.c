@@ -14,6 +14,8 @@ int main()
 	pid_t pid;
 	int i=0;
 	
+	if (N>=1000) exit(EXIT_FAILURE);
+	
 	while(i<N)
 	{
 		
