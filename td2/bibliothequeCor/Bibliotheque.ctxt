@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=nom
+comment0.target=Bibliotheque(java.lang.String)
+comment0.text=\n\ Constructeur\ d'objets\ de\ classe\ Bibliotheque\n
+comment1.params=doc
+comment1.target=void\ ajoutDocument(Document)
+comment1.text=\n\n
+comment2.params=titre
+comment2.target=Document\ rechercheTitre(java.lang.String)
+comment3.params=titre
+comment3.target=java.util.List\ rechercheReference(java.lang.String)
+numComments=4

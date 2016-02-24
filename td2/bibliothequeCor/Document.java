@@ -11,7 +11,7 @@ public class Document
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String titre;
     private String auteur;
-    private int annee;
+    private int anneePub;
     private List<Document> reference;
 
     /**
@@ -21,7 +21,7 @@ public class Document
     {
         this.titre=titre;
         this.auteur=auteur;
-        this.annee=annee;
+        this.anneePub=anneePub;
         this.reference = new ArrayList<Document>();
     }
 
@@ -47,7 +47,7 @@ public class Document
         {
             ref=ref + doc.GetTitre()+" ";
         }
-        return "titre "+this.titre+" auteur "+this.auteur+" année "
-            +this.annee+" référence : "+ref;
+        return "titre : "+this.titre+" auteur : "+this.auteur+" année de publication : "
+            +this.anneePub+" référence : "+ref;
     }
 }

@@ -38,4 +38,17 @@ public class collection
     {
         this.collectionDVD.add(nom);
     }
+    
+    /**
+     * Voir pour faire deux fonctions distinctes
+     */
+    public void recherche(String mot)
+    {
+        //dans la liste CD
+        
+        
+        //dans la liste DVD
+        
+        
+            }
 }
