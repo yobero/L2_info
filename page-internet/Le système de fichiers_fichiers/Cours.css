@@ -1,0 +1,350 @@
+body {
+  background-color:#FFFFFF;
+  margin-left:0;
+  margin-top:0;
+  margin-right:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12px;
+  max-width:840px;
+  height:100%; 
+}
+
+table {
+  margin-left:0;
+  margin-right:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12px;
+}
+
+strong, em, .couleur { color: #005177; }
+a:link, a:visited { color:#333399;  text-decoration: none; }
+a:hover {color: #CC0033; text-decoration: underline; } 
+
+a.quizz 
+{  background-color:#90B0E0;
+   color:#003;
+   padding: 3px 8px 3px 8px;
+   border-top: 2px solid #A0C0F0;
+   border-left: 2px solid #A0C0F0;
+   border-bottom:2px solid #406090;
+   border-right: 2px solid #406090;
+}
+.quizz:hover 
+{  background-color: #F0E090;
+   color:#320;
+   padding: 3px 8px 3px 8px;
+   text-decoration:none;
+   border-top: 2px solid #FFF0C0;
+   border-left: 2px solid #FFF0C0;
+   border-bottom:2px solid #E0C060;
+   border-right: 2px solid #E0C060;
+}
+
+a.externe {
+   background: url('Img/externe.png') no-repeat center right;
+   padding-right: 14px;
+   margin-right: 2px;
+} 
+a.site { color: #000000; }
+a:hover.site {color: #CC0033; text-decoration: underline; } 
+
+a.wikipedia {
+   background: url('Img/wikipedia.png') no-repeat center right;
+   padding-right: 14px;
+   margin-right: 2px
+} 
+.old { color: #663300; }
+.old a:link { color:#6633FF;  text-decoration: none; }
+.old a:visited { color:#663300;  text-decoration: none; }
+.old a:hover {color: #CC0033; text-decoration: underline; } 
+
+.entete {
+  position:relative;
+  margin-left:0px;
+  height: 70px;
+  background-color:#F0F4FF;
+}
+.corps {
+  padding-top: 10px;
+	padding-right:10px;
+	margin-left: 30px;
+  height:100%;
+  max-width:800px;
+}
+.marge_gauche {
+  float: left;
+  padding-left:0px;
+  padding-top: 0px;
+  width: 20%;
+  height: 100%;
+  color: #404040;
+}
+.marge_gauche_quiz {
+  float: left;
+  padding-left:0px;
+  padding-top: 0px;
+  width: 43%;
+  height: 100%;
+  color: #404040;
+}
+
+.pdf {
+	position: absolute;
+	top: 70px;
+	bottom: 100px;
+	margin-top: 0px;
+	padding-right:0px;
+	margin-bottom:0px;
+	margin-left: 4px;
+	height: 90%;
+	width:836px;
+}			
+		
+p.marge_gauche {
+  margin: 0px 0px 8px 24px;
+  text-align: left;
+}
+
+.contenu {
+  margin-left: 25%;
+}
+.contenu_quiz {
+  margin-left: 45%;
+}
+#pied {
+  border-top:4px;
+  padding-top:25px; 
+  height: 40px;
+}
+.pied {
+  border-top:4px;
+  padding-top:25px; 
+  height: 40px;
+}
+
+
+#MenuFixe {
+   position: fixed;
+   top: 100px;
+   left: 10px;
+
+   max-width:170px;
+   background: transparent;
+}
+#MenuFixe a {
+   text-decoration: none;
+}
+#MenuFixe a:hover {
+	 text-decoration: underline;
+}
+
+#MenuFixe p {
+  margin: 8px 0px 8px 0px;  
+  text-align: left;
+}
+
+
+h1 {
+  color: #003344;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow:2px 2px 1px #CCCCCC;
+}
+.b1  {
+  color: #003344;
+  font-family : Arial, Helvetica, sans-serif;
+  font-weight : bold;
+  font-size : x-large;
+}
+.bb1  {
+  font-family : Arial, Helvetica, sans-serif;
+  font-weight : bold;
+  font-size : x-large;
+}
+h2 {
+  color: #003D55;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.b2  {
+  color: #003D55;
+  font-family : Arial, Helvetica, sans-serif;
+  font-weight : bold;
+  font-size : large;
+}
+.bb2  {
+  font-family : Arial, Helvetica, sans-serif;
+  font-weight : bold;
+  font-size : large;
+}
+h3 {
+  color: #004766;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.b3  {
+  color: #004766;
+  font-family : Arial, Helvetica, sans-serif;
+  font-weight : bold;
+  font-size : medium;
+}
+.bb3  {
+  font-family : Arial, Helvetica, sans-serif;
+  font-weight : bold;
+  font-size : medium;
+}
+h4 {
+  color: #005177;
+  font-family: Arial, Helvetica, sans-serif
+}
+.b4 {
+  font-weight: bolder;
+  color: #005177;
+  font-family: Arial, Helvetica, sans-serif
+}
+.bb4 {
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif
+}
+h5 {
+  color: #005B88;
+  font-family: Arial, Helvetica, sans-serif
+}
+.b5 {
+  font-weight: bolder;
+  color: #005B88;
+  font-family: Arial, Helvetica, sans-serif
+}
+.c5 {
+  font-weight: normal;
+  color: #005177;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.case {
+}
+
+.obj {
+  position: absolute;
+  cursor: pointer;
+}
+
+.old .c5 {
+  font-weight: normal;
+  color: #336600;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.old strong { color: #336600; }
+.old em { color: #336600; }
+.old .couleur { color: #336600; }
+
+
+
+p {
+  margin:8px 0px 8px 24px;
+  text-align: justify;
+}
+.p {
+  margin:8px 0px 8px 24px;
+  text-align: justify;
+}
+pre{
+  color: #333333;
+}
+
+
+.chap {
+  margin: 12px 0px 0px 0px;
+  font-size: medium;
+} 
+.sujet{ margin: 8px 0px 0px 0px; font-size: small;} 
+.para { margin: 4px 0px 0px 40px; font-size: small;} 
+
+
+
+.affichage {
+  color: #000033;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+.attrib { color: #009900;}
+.balise { color: #0000FF;}
+.comment {
+  color: #000099;
+  font-style: italic;
+}
+.commentaire {
+  color: #333333;
+  font-style: italic;
+}
+.DOS {
+  font-size: small;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #000000
+}
+.exercice{
+  font-style : italic;
+  color : Green;
+  font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+.exo{
+  color : #003311;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+.jenrage {
+  color: #800000;
+  font-style : normal;
+  font-weight : bold;
+}
+.label {
+  color: #000000;
+  font-family: "MS Sans Serif", Geneva, sans-serif;
+  font-size: small;
+  font-weight: bolder;
+}
+li {
+	margin-top:3px;
+}
+.num { 
+  color: #333333; 
+}
+.prg {
+  background-color: #cccccc;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+.prog {
+  color: #006600;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+.prog_exemple {
+  color: #333333;
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+}
+.prog_str {
+  color: #006600;
+  font-family : "Arial Narrow", sans-serif;
+  font-size : small;
+}
+.sel {  color: #003300;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+.select {
+  color: #336633;
+  font-weight: lighter;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+.xls {
+  color: #111111;
+  font-weight: lighter;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
+.string { color: #000099; }
+.petitsCaracteres {
+	font-size: x-small;
+}

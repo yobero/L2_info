@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta http-equiv="Identifier-url" content="http://www.courstechinfo.be">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="content-language" content="fr-BE">
+
+  <title>Le système de fichiers</title>
+
+  <meta name="Author" content="Luc DE MEY">
+  <meta name="Category" content="Informatique">
+  <meta name="Description" content="Cours d'informatique - Systeme de fichiers" lang="fr">
+  <meta name="Keywords" content="FAT" lang="fr">
+  <meta name="Robots" content="all">
+  
+
+	<link rel="start" href="http://www.courstechinfo.be/index.html">
+  <link rel="up" href="http://www.courstechinfo.be/OS/index.html">
+
+  <link rel="stylesheet" type="text/css" href="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Cours.css">  
+ 
+  <script src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/ga.js" async="" type="text/javascript"></script><script type="text/javascript" language="JavaScript" src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/octet.js"> </script>
+  <script type="text/javascript" language="JavaScript" src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/overlib.js">
+    <!-- overLIB: http://www.bosrup.com/web/overlib/ -->
+  </script> 
+
+  <script type="text/javascript" language="JavaScript">
+  <!-- 
+    jVeuxMaFenetre(); 
+	var Cours = NomDuCours( document.URL);
+	var Chapitre = NumChap( document.URL);
+	  favico();
+  //-->
+  </script><link rel="SHORTCUT ICON" type="images/x-icon" href="http://www.courstechinfo.be/Img/octet6.ico">
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24073046-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+
+<body>
+<a name="haut"> </a>
+
+<!-- overLib Section begin -->
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<!-- overLib Section end -->
+
+<div class="entete">
+	<a href="http://www.courstechinfo.be/">
+		<img id="Octet" src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/CoursTI0.gif" alt="" onmouseover="document.images.Octet.src='../Img/CoursTI1.gif';" onmouseout="document.images.Octet.src='../Img/CoursTI0.gif';" title="Retour à la page d'accueil du site" border="no" align="left" height="50" hspace="3" vspace="2" width="100"> 
+	</a>
+	<script type="text/javascript" language="JavaScript">  barreMenuDuSite('..'); </script><div style="position:relative; top:20px; left:0px; width:780px; text-align:center;">&nbsp;<a href="http://www.courstechinfo.be/InitInfo/sommaire.html" title="Initiation à l'informatique pour grands débutants" target="_top"><u>Init Info</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/Techno/sommaire.html" title="Introduction à la technologie des ordinateurs" target="_top"><u>Techno</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/Hard/sommaire.html" title="Hardware &amp; Maintenance matérielle" target="_top"><u>Hardware</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/OS/sommaire.html" title="Système d'exploitation" target="_top"><u>OS</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/Reseaux/sommaire.html" title="Initiation aux réseaux" target="_top"><u>Réseaux</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/Internet/sommaire.html" title="Internet / Intranet" target="_top"><u>Internet</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/Programmation/sommaire.html" title="Notions de programmation" target="_top"><u>Programmation</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/MathInfo/sommaire.html" title="Mathématiques appliquées à l'informatique" target="_top"><u>Math Info</u></a>&nbsp; &nbsp;&nbsp;<a href="http://www.courstechinfo.be/Excel/sommaire.html" title="Initiation tableur" target="_top"><u>Tableur</u></a></div>
+
+	<div style="position:absolute; left:0px; top:55px; width:100%; max-width:840px;">
+		<script type="text/javascript" language="JavaScript"> NavigCours( Cours, Chapitre); </script><table style="font-family:'Comic Sans MS'; color:#333; " border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="#E0E8F8" height="14" width="100%"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Blanc.gif" title="" alt="" border="no" align="right" height="16" width="16"><a href="http://www.courstechinfo.be/OS/CmdDos.html"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Drt.gif" title="Le mode invite de commande" border="no" align="right" height="16" width="16"></a><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Blanc.gif" title="" border="no" align="right" height="16" width="16"><a href="http://www.courstechinfo.be/OS/GestMem.html"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Gch.gif" title="La gestion de la mémoire" border="no" align="right" height="16" width="16"></a>&nbsp; &nbsp; <a href="http://www.courstechinfo.be/index.html" title="Page d'accueil du site" style="font-family:'Comic Sans MS';">CoursTechInfo</a> &gt; <a href="http://www.courstechinfo.be/OS/sommaire.html" title="OS = Operating system"> Système d'exploitation </a> &gt;  <span style="cursor:default">La système de fichiers</span></td></tr></tbody></table>   
+	</div>         
+</div> <!-- Fin de l'en-tête --> 
+
+
+<div class="corps">
+  <script type="text/javascript" language="JavaScript"> BoutonHaut(); BoutonBas(); </script><div style=" position:fixed; top:20px; left:844px;  z-index: 10;  ">	<a href="#haut"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/TopOff.png" title="Haut de la page" alt="" style="width: 16px; height:14px; border:0px;" onmouseover="this.src='../Img/TopOn.png';" onmouseout="this.src='../Img/TopOff.png';"> </a> </div><div style=" position:fixed; bottom:10px; left:844px; z-index: 10;  ">	<a href="#bas"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/BottomOff.png" title="Bas de la page" alt="" style="width: 16px; height:14px; border:0px; " onmouseover="this.src='../Img/BottomOn.png';" onmouseout="this.src='../Img/BottomOff.png';"> </a> </div>
+
+  <div class="marge_gauche">
+	  <h1><script type="text/javascript" language="JavaScript"> Numero(Chapitre); </script><div style="text-align: right;  ">6</div></h1>
+		<br>
+		<br>
+		<br>
+  </div>
+  
+  <div class="contenu">
+  
+  <a href="http://www.courstechinfo.be/OS/FileSys.pdf"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/IcoDoc.png" witdh="25" alt="Cette page en format PDF" border="0" align="right" height="30"></a> 
+
+      <h1>Le système de fichiers</h1>
+      <!-- -->
+      
+      <p style="margin:6px 0px 6px 6ex"> Les données enregistrées 
+        sur les disquettes ou les partitions de disques sont organisées 
+        en fichiers. Les fichiers sont regroupés dans des répertoires 
+        organisés selon une structure arborescente gérée 
+        par un sous-ensemble du système d'exploitation : le&nbsp;<span class="b5">Système 
+        de fichiers</span> ou <span class="b5">File system</span> </p>
+      <p>Le système de fichier par lequel nous commençons cette 
+        étude est basé sur deux tables : <br>
+        &nbsp; &nbsp; &nbsp; - le répertoire racine <br>
+        &nbsp; &nbsp; &nbsp; - la FAT</p>
+        
+      <h2 id="root">Le répertoire racine </h2>
+      
+      <p>Le répertoire racine (<i>root</i>) 
+        est une table qui occupe un emplacement fixe. Il contient des noms de 
+        fichiers et de sous-répertoires, leurs attributs, les dates et 
+        les heures des dernières modifications, leur tailles et enfin les 
+        numéros des clusters où commencent chacun de ces fichiers 
+        ou sous-répertoires.</p>
+    <div align="center">&nbsp;<img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/FileRoot.png" alt="" height="84" width="494"></div>
+      
+      <p>Le répertoire racine autorise un 
+        nombre maximum d'entrées : 224 pour une disquette 1.44 Mo ou 512 
+        pour les disques durs.</p>
+        
+      <h2>La FAT<a name="FAT"></a></h2>
+      
+      <p>Le système de fichier répertorie 
+        les emplacements occupés par les fichiers au moyen d'une table 
+        d'allocation des fichiers, la FAT ( <i><span class="c5"><b>F</b></span></i><span class="c5"><i>ile 
+        <b>A</b>llocation <b>T</b>able</i></span>)<br>
+        Les emplacements sont appelés <i class="b5">clusters</i> ou <span class="b5">unités 
+        d'allocation</span>. <br>
+        Un cluster contient un nombre fixe de secteurs. Ce nombre de secteurs 
+        par cluster est défini une fois pour toutes lors de la préparation 
+        du disque ou de la disquette en fonction du système de fichier 
+        choisi FAT12, FAT16, FAT 32.<br>
+        ( Laissons de côté pour l'instant les autres systèmes 
+        de fichier : HPFS, NTFS, ext2 etc.)<br>
+        La FAT est donc une table destinée à contenir des numéros 
+        de cluster. Ces numéros sont encodés avec des nombres de 
+        12, 16 ou 32 bits selon qu'il s'agit d'une FAT12, FAT16 ou FAT32.</p>
+      <p>Combien peut-on inscrire de numéros d'unités d'allocation 
+        dans une FAT12 ? <br>
+        C'est simple puisqu'il y a 12 bits on peut former 2<sup>12</sup> numéros. 
+        C'est le cas pour les disquettes. Le nombre d'unités d'allocation 
+        y est réduit, une FAT12 est bien suffisante.</p>
+      <p>Voici le message que nous obtenons après avoir formaté 
+        une disquette de 1,44 Mo sous DOS :<br>
+      </p>
+      
+    <table style="margin:6px 0px 6px 6ex" cellpadding="9">
+        <tbody><tr> 
+          <td bordercolor="#666666" bgcolor="#666666"> <font color="#FFFFFF"> 
+            <pre><font color="#FFFFFF">        1.457.664 octets d'espace disque au total
+        1.457.664 octets disponibles sur le disque<br>
+              512 octets dans chaque unité d'allocation
+            2.847 unités d'allocation disponibles sur le disque.
+         
+               12 bits dans chaque entrée</font></pre>
+            </font> </td>
+        </tr>
+      </tbody></table>
+      
+      <p>Ici un cluster comprend 512 octets. L'unité 
+        d'allocation ne comporte donc qu'un seul secteur.<br>
+        La taille de la disquette est de 1.457.664 octets. <br>
+        Le nombre de cluster vaut donc 1.457.664 octets divisé par 512 
+        = 2.847 clusters. <br>
+        Une table d'allocation où les numéros de clusters sont enregistrés 
+        sur 12 bits est donc bien suffisante puisque avec 12 bits nous aurions 
+        pu encoder jusqu'à 2<sup>12</sup> = 4096 numéros de cluster. ( 4096 
+        &gt; 2.847) </p>
+        
+      <h3>Organisation de la FAT</h3>
+      
+      <p>Nous savons que la FAT contient assez 
+        d'emplacements pour contenir les numéros de chaque unité 
+        d'allocation du disque. Son but est d'aider à déterminer&nbsp;:</p>
+        <ol style="margin:0px 0px 6px 10ex">
+        <li>quelles sont les unités d'allocation occupées 
+        par des fichiers<br>
+        </li><li>dans quel ordre il faut les consulter pour retrouver 
+        les fichiers dont les fragments sont dispersés parmi différents 
+        clusters.</li></ol>
+      <p>Voici par exemple ce que pourrait contenir le répertoire racine 
+        et la FAT d'une disquette:</p>
+       
+      <div align="center"> <br> 
+      <img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/FAT12a.gif" alt="FAT12" height="350" width="400"> </div>
+      
+      <p>L'entrée 70 du répertoire racine contient le nom d'un fichier 
+        "Toto.txt" <br>
+        Le début de ce fichier est enregistré dans le cluster 051.<br>
+        Ce fichier occupe vraisemblablement plus qu'un cluster puisque la FAT 
+        nous apprend qu'après avoir lu le cluster 051 il faudra passer 
+        au cluster 052.<br>
+        La suite se trouve dans le cluster suivant est le n° 210, Toto.txt 
+        est donc fragmenté.<br>
+        La case n° 210 de la FAT contient le code FFF. Ce code spécial 
+        signifie que nous sommes arrivés à la fin de notre ficher 
+        Toto.txt</p>
+      <p>Voici la signification des codes qui se retrouvent dans la FAT : </p>
+      
+      <div style="margin:8px 0px 8px 24px;">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td>&nbsp; &nbsp; &nbsp; </td>
+          <td>000</td>
+          <td>Cluster libre</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>nnn</td>
+          <td>Numéro du cluster suivant</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>FF0 à FF6</td>
+          <td>Codes réservés </td>
+        </tr>
+        <tr>
+          <td>&nbsp; </td>
+          <td>FF7 </td>
+          <td>Cluster défectueux (mis hors service)</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>FF8 à FFF</td>
+          <td>Fin de fichier</td>
+        </tr>
+      </tbody></table>
+      </div>
+      
+      <p> <br> A suivre ...</p>
+     
+ </div> <!-- Fin du contenu -->
+ 
+ 		
+
+</div> <!-- Fin du corps -->
+
+<div class="pied" id="bas">
+  <hr> <script type="text/javascript" language="JavaScript"> NavigCours( Cours, Chapitre);  </script><table style="font-family:'Comic Sans MS'; color:#333; " border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td bgcolor="#E0E8F8" height="14" width="100%"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Blanc.gif" title="" alt="" border="no" align="right" height="16" width="16"><a href="http://www.courstechinfo.be/OS/CmdDos.html"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Drt.gif" title="Le mode invite de commande" border="no" align="right" height="16" width="16"></a><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Blanc.gif" title="" border="no" align="right" height="16" width="16"><a href="http://www.courstechinfo.be/OS/GestMem.html"><img src="Le%20syst%C3%A8me%20de%20fichiers_fichiers/Gch.gif" title="La gestion de la mémoire" border="no" align="right" height="16" width="16"></a>&nbsp; &nbsp; <a href="http://www.courstechinfo.be/index.html" title="Page d'accueil du site" style="font-family:'Comic Sans MS';">CoursTechInfo</a> &gt; <a href="http://www.courstechinfo.be/OS/sommaire.html" title="OS = Operating system"> Système d'exploitation </a> &gt;  <span style="cursor:default">La système de fichiers</span></td></tr></tbody></table> 
+</div>
+
+
+
+
+</body></html>
