@@ -7,19 +7,23 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-int main(int N, int M)
+int compteur=0;
+
+/* Il y a une boucle infini*/
+int main(int N, char** M)
 {
 	pid_t pid;
+	int m = M[0];
 	int i=0; //processus
 	int j=0; // niveaux
-	int compteur=0;
 	
 	if (N>=1000) exit(EXIT_FAILURE);
-	if (M>=100) exit(EXIT_FAILURE);
+	if (m>=100) exit(EXIT_FAILURE);
 	
 	while(i<N)
 	{
 		pid = fork();
+		///PAR ICI
 		if (pid==0)
 		{
 			i=0;
@@ -35,7 +39,7 @@ int main(int N, int M)
 		i++;
 	}
 	if (pid !=0)
-		printf("Il y a eu %d processus",compteur);
+		printf("Il y a eu %d processus\n",compteur);
 	
 	return 1;
 }
