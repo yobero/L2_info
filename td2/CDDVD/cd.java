@@ -8,9 +8,9 @@
 public class cd extends document
 {
     // instance variables - replace the example below with your own
+    private String type;
     private String artiste;
     private int nbPiste;
-    private String type;
 
     /**
      * Constructor for objects of class cd

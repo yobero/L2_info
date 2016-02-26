@@ -5,4 +5,6 @@ comment0.text=\n\ Constructor\ for\ objects\ of\ class\ collection\n
 comment1.params=CD
 comment1.target=void\ ajoutDoc(cd)
 comment1.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
-numComments=2
+comment2.params=DVD
+comment2.target=void\ ajoutDoc(dvd)
+numComments=3
