@@ -10,8 +10,7 @@ public class collection
 {
     // instance variables - replace the example below with your own
     private String nom;
-    private List<cd> collectionCD;
-    private List<dvd> collectionDVD;
+    private List<document> collection;
 
     /**
      * Constructor for objects of class collection
@@ -19,8 +18,7 @@ public class collection
     public collection(String nom)
     {
         this.nom = nom;
-        this.collectionCD =new ArrayList<cd>();
-        this.collectionDVD = new ArrayList<dvd>();
+        this.collection = new ArrayList<document>();
     }
 
     /**
@@ -29,26 +27,14 @@ public class collection
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public void ajoutCD(cd nom)
+   
+    public void ajoutDoc(cd CD)
     {
-        this.collectionCD.add(nom);
+        this.collection.add(CD);
     }
     
-    public void ajoutDVD(dvd nom)
+    public void ajoutDoc(dvd DVD)
     {
-        this.collectionDVD.add(nom);
+        this.collection.add(DVD);
     }
-    
-    /**
-     * Voir pour faire deux fonctions distinctes
-     */
-    public void recherche(String mot)
-    {
-        //dans la liste CD
-        
-        
-        //dans la liste DVD
-        
-        
-            }
 }

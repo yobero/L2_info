@@ -1,15 +1,14 @@
-import java.util.List;
-import java.util.ArrayList;
+
 /**
  * Write a description of class dvd here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class dvd
+public class dvd extends document
 {
     // instance variables - replace the example below with your own
-    private String titre;
+    private String type;
     private String realisateur;
     private int date;
 
@@ -18,9 +17,10 @@ public class dvd
      */
     public dvd(String titre, String realisateur, int date)
     {
-       this.titre = titre;
-       this.realisateur = realisateur;
-       this.date = date;
+        this.type = "DVD";
+        this.titre = titre;
+        this.realisateur = realisateur;
+        this.date = date;
     }
 
     /**
@@ -29,19 +29,4 @@ public class dvd
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public String GetTitreDVD()
-    {
-        return this.titre;
-    }
-    
-    public String GetRealisateur()
-    {
-        return this.realisateur;
-    }
-    
-    public int GetDate()
-    {
-        return this.date;
-    }
-    
 }

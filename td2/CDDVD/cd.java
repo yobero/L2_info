@@ -1,26 +1,26 @@
-import java.util.List;
-import java.util.ArrayList;
+
 /**
  * Write a description of class cd here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class cd
+public class cd extends document
 {
     // instance variables - replace the example below with your own
-    private String titre;
     private String artiste;
-    private int nbTitre;
+    private int nbPiste;
+    private String type;
 
     /**
      * Constructor for objects of class cd
      */
-    public cd(String titre, String artiste,int nbTitre)
+    public cd(String titre, String artiste, int nbPiste)
     {
+        this.type = "CD";
         this.titre = titre;
         this.artiste = artiste;
-        this.nbTitre = nbTitre;
+        this.nbPiste = nbPiste;
     }
 
     /**
@@ -29,18 +29,5 @@ public class cd
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public String TitreCD()
-    {
-        return this.titre;
-    }
     
-    public String Artiste()
-    {
-        return this.artiste;
-    }
-    
-    public int NbTitre()
-    {
-        return this.nbTitre;
-    }
 }
