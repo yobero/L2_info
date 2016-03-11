@@ -29,4 +29,18 @@ public class dvd extends document
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
+    
+    public boolean contient(String m)
+    {
+        if (super.contient(m))
+        {
+            return true;
+        }
+        
+        if (this.realisateur == m)
+        {
+            return true;
+        }
+        return false;
+    }
 }

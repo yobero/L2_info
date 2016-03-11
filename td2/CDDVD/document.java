@@ -22,9 +22,13 @@ public abstract class document
      * @return     the sum of x and y 
      */
     
-    public void affichageDoc(cd CD)
+    public boolean contient(String m)
     {
-        System.out.println("Le CD est :"+ this.titre +"L'artiste ou le groupe est : "+ this.artiste +"Il y a : "+ this.nbPiste);
+        if(this.titre == m)
+        {
+           return true;
+        }
+        return false;
     }
     
 }

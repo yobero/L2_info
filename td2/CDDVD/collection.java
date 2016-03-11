@@ -28,13 +28,13 @@ public class collection
      * @return     the sum of x and y 
      */
    
-    public void ajoutDoc(cd CD)
+    public void ajoutDoc(document doc)
     {
-        this.collection.add(CD);
+        this.collection.add(doc);
     }
     
-    public void ajoutDoc(dvd DVD)
+    public void affCol(collection col)
     {
-        this.collection.add(DVD);
+        
     }
 }
