@@ -33,6 +33,11 @@ public class collection
         this.collection.add(doc);
     }
     
+    public void afficheListe()
+    {
+        
+    }
+    
     public boolean recherche(String m)
     {
         int nb = collection.size();
