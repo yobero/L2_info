@@ -33,8 +33,23 @@ public class collection
         this.collection.add(doc);
     }
     
-    public void affCol(collection col)
+    public boolean recherche(String m)
     {
+        int nb = collection.size();
+        int i=0;
+        boolean a = false;
+        
+        while(i<nb)
+        {
+            document doc =collection.get(i);
+            if(a==true)
+            {
+                return true;
+            }
+            a=doc.contient(m);
+            i++;
+        }
+        return false;
         
     }
 }
