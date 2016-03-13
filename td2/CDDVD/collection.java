@@ -35,6 +35,15 @@ public class collection
     
     public void afficheListe()
     {
+        int nb = collection.size();
+        int i =0;
+        
+        while (i<nb)
+        {
+            document doc =collection.get(i);
+            
+            i++;
+        }
         
     }
     
