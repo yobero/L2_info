@@ -9,6 +9,8 @@
 
 #include <pthread.h>
 
+//ligne de compilation : gcc -Wall ex1.c -lpthread ==> dans le terminal :D
+
 #define N 10
 
 int numero[N];
