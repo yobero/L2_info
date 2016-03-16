@@ -123,10 +123,11 @@ int main()
 void* recherche(void* l)
 {
 	LIMITE* a = (LIMITE*)l;
-	
+	printf("a %d\n",a->min);
 	int i=a->min;
 	int* tmp=malloc(sizeof(int));
 	*tmp = tab[a->min];
+	printf("ici %d\n",*tmp);
 	while(i<a->max)
 	{
 		if (*tmp<tab[i])
