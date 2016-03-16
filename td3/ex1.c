@@ -13,10 +13,8 @@
 
 int numero[N];
 
-void* f(void* arg)
-{
-	int val;
-}
+void* affichage(void* arg);
+void* f(void*arg);
 
 int main()
 {
@@ -27,10 +25,35 @@ int main()
 	while(i<N)
 	{
 		numero[i] = i+1;
+		pthread_create(&thread[i],NULL,affichage,&numero[i]);
+		i++;
+	}
+
+	i=0;
+	void* join;
+	while(i<N)
+	{
+		pthread_join(thread[i],&join);
+		printf("%d\n",*(int*)(&join));
+		free(join);
+		
 		i++;
 	}
 	
-	pthread_create(&thread,NULL,&f,(void*)&arg);
-	
 	return 1;
+}
+
+void* f(void* arg)
+{
+	int* val = (int*) arg;
+	*val;
+}
+
+void* affichage(void* arg)
+{
+	int* ret = malloc(sizeof(int));
+	int val = *((int*)arg);
+	printf("thread %d\n",val);
+	*ret = val*2;
+	return ret;
 }
