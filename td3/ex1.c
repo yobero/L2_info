@@ -34,7 +34,7 @@ int main()
 	while(i<N)
 	{
 		pthread_join(thread[i],&join);
-		printf("%d\n",*(int*)(&join));
+		printf("%d\n",*(int*)(join));
 		free(join);
 		
 		i++;
