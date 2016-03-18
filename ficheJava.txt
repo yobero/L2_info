@@ -1,0 +1,52 @@
+							FICHE JAVA
+
+ArrayListe
+	
+	import java.util.List;
+	import java.util.ArrayList;
+	
+	Création d'une ArrayListe
+		private List<type> nomVariable;
+		
+	Initialisation de la liste
+		this.nomVariable = new ArrayList<type>();
+	
+	Ajout dans une Liste
+		 this.nomVariable.add(nom);
+		 
+	Nombre d'éléments d'une liste
+		nomVariable.size();
+		
+	Récuperer l'élément i de la liste
+		nomVariable.get(i);
+		
+Creation d'une classe abstraite
+	public abstract nom{
+		protected/public
+	}
+	
+Héritage sur classe abstraite
+	public nom* extends nom{
+	...}
+	On doit initialiser les variables de la classe abstract dans chaque classe H
+	
+	utilisation d'une fonction mère ayant le même nom que la fonction actuel
+		super.nomFonction() =/= nomFonction()
+				1					2
+		1) utilise nomFonction de la classe mère.
+		2) utiliser nomFonction de la classe actuel(fille).
+		
+Récuperer une variable d'une structure
+	public String GetTitre()
+    {
+        return this.titre;
+    }
+    
+Afficher des variables
+	public String toString() {
+        return prenom + " " + nom + " " + age;
+    }
+    nomStructure.toString(); ==> appel de la fonction.
+    
+
+	
