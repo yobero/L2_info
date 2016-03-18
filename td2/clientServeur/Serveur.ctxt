@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Serveur()
+comment0.text=\r\n\ Constructeur\ d'objets\ de\ classe\ Serveur\r\n
+comment1.params=client
+comment1.target=boolean\ connecter(Client)
+comment1.text=\r\n\ le\ m\u00EAme\ client\ peut-il\ \u00EAtre\ connecter\ deux\ fois\ comment\ on\ diff\u00E9riencie\ 2\ clients\r\n
+comment2.params=message
+comment2.target=void\ diffuser(java.lang.String)
+numComments=3
