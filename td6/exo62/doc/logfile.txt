@@ -1,0 +1,44 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.7.0_45\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.7
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Users\kenza\Desktop\enseignement\CPOO\partie1\bilio math\commons-math3-3.6\commons-math3-3.6.jar;C:\Users\kenza\Desktop\enseignement\CPOO\partie1\bilio math\commons-math3-3.6\commons-math3-3.6-javadoc.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62
+-d
+C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\Main.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\Main.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_45
+Building tree for all the packages and classes...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\Main.html...
+C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\Main.java:23: warning - @param argument "y" is not a parameter name.
+C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\Main.java:23: warning - @return tag cannot be used in method with void return type.
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\package-frame.html...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\package-summary.html...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\allclasses-frame.html...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\allclasses-noframe.html...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\index.html...
+Generating C:\Users\kenza\Desktop\enseignement\CPOO\partie1\exo62\doc\stylesheet.css...
+2 warnings
