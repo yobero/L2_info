@@ -98,8 +98,6 @@ int main()
 	while(i<N)
 	{
 		pthread_create(&thread[i],NULL,recherche,&l);
-		l.min = l.max;
-		l.max = l.max + l.ecart;
 		i++;
 	}
 	i=0;
@@ -132,6 +130,7 @@ void* recherche(void* l)
 			*tmp = tab[i];
 		i++;
 	}
-	
+	a->min = a->max;
+	a->max = a->max + a->ecart;
 	return tmp;
 }
