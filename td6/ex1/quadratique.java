@@ -11,17 +11,6 @@ public class quadratique
         if(d<0)
             throw new Exception("d est negatif");
         else return (-b + Math.sqrt(d))/(2*a);
-        
-        /**try {
-            double d = (b*b) - (4*a*c);
-            double x1;
-            x1 = (-b + Math.sqrt(d))/(2*a);
-            System.out.println("la racine max est :"+x1);
-        }
-        catch (ArithmeticException arithmeticException) {
-            System.out.println("Exception: " + arithmeticException);
-            System.out.println("a doit être =/= de 0 merci ce réessayer merci");
-        }*/
     }
     
     public static void main(String[] args)
@@ -35,6 +24,10 @@ public class quadratique
         catch(Exception exception)
         {
             System.out.println(exception);
+        }
+        catch(ArrayIndexOutOfBoundsException exception)
+        {
+            System.out.println("Il manque des arguments pour la fonction");
         }
     }
 }
