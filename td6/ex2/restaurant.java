@@ -42,8 +42,18 @@ public class restaurant
            
            if(quelMenu==2)
            {
-               this.prix2 = this.prix2 + nombre;
-               System.out.println("Le prix de votre repas est :"+ nombre*this.prix2);
+               this.nb2 = this.nb2 + nombre;
+               System.out.println("Le prix de votre repas est :"+ nombre*this.prix2 +" €");
+           }
+           if(quelMenu==3)
+           {
+               this.nb3 = this.nb3 + nombre;
+               System.out.println("Le prix de votre repas est: "+ nombre*(this.prix2*1.2)+" €");
+           }
+           if(quelMenu==5)
+           {
+               this.nb5 = this.nb5 + nombre;
+               System.out.println("Le prix de votre repas est : "+nombre*(this.prix2*1.5)+" €");
            }
        }
        else
@@ -52,32 +62,34 @@ public class restaurant
    
    public void remisAZero()
    {
-       
+       this.nb2=0;
+       this.nb3=0;
+       this.nb5=0;
    }
    
    public double chiffreAffaire()
    {
-       
+       return this.nb2*this.prix2 + this.nb3*(this.prix2*1.2) + this.nb5*(this.prix2*1.5);
    }
    
    public double tauxRemplissage()
    {
-       
+       return (this.nb2 + this.nb3 + this.nb5)/this.place;
    }
    
    public int getNombrePLaces()
    {
-       
+       return this.place;
    }
    
    public int getNombreClients()
    {
-       
+       return 0;
    }
    
    public String toString()
    {
-       
+       return "";
    }
    
    public void affichage()
