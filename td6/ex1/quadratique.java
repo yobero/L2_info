@@ -5,11 +5,11 @@ public class quadratique
         double d;
         
         if (a==0)
-            throw new IllegalArgumentException("a doit être =/= de 0");
+            throw new IllegalArgumentException("a doit être different de 0");
         else  d = (b*b) - (4*a*c);
         
         if(d<0)
-            throw new Exception("d<0");
+            throw new Exception("d est negatif");
         else return (-b + Math.sqrt(d))/(2*a);
         
         /**try {
