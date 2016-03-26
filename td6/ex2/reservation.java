@@ -2,7 +2,6 @@
 public class reservation
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
 
     public reservation()
     {
@@ -10,9 +9,8 @@ public class reservation
         x = 0;
     }
 
-    public int sampleMethod(int y)
+    public static void main()
     {
-        // Insérez votre code ici
-        return x + y;
+        
     }
 }
