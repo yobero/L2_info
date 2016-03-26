@@ -37,8 +37,8 @@ public class restaurant
    {
        if(quelMenu==2 || quelMenu==3 || quelMenu==5)
        {
-           if (nombre>this.place)
-            throw new IllegalArgumentException("Le nombre de menu est plus élevé que le nombre de place disponible");
+           if (nombre + this.nb2 + this.nb3 + this.nb5>this.place)
+               throw new IllegalArgumentException("Le nombre de menu est plus élevé que le nombre de place disponible");
            
            if(quelMenu==2)
            {
@@ -60,7 +60,7 @@ public class restaurant
             throw new IllegalArgumentException("La variable quelMenu doit être 2, 3 ou 5");
    }
    
-   public void remisAZero()
+   public void remiseAZero()
    {
        this.nb2=0;
        this.nb3=0;
@@ -74,26 +74,26 @@ public class restaurant
    
    public double tauxRemplissage()
    {
-       return (this.nb2 + this.nb3 + this.nb5)/this.place;
+       return ((this.nb2 + this.nb3 + this.nb5)/this.place)*100;
    }
    
-   public int getNombrePLaces()
+   public int getNombrePlaces()
    {
        return this.place;
    }
    
    public int getNombreClients()
    {
-       return 0;
+       return this.nb2 + this.nb3 + this.nb5;
    }
    
    public String toString()
    {
-       return "";
+       return "Restaurant : "+ this.localisation+",\nNombre de places : "+ this.place+ ",\nPrix du menu a 2 plat : "+ this.prix2+ ",\n"+ this.nb2+ " menus a 2 plats vendus,\n"+ this.nb3+ " menus a 3 plats vendus\n"+ this.nb5+ " menu a 5 plats vendus.";
    }
    
    public void affichage()
    {
-       
+       System.out.println(toString());
    }
 }

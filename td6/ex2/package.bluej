@@ -1,3 +1,25 @@
 #BlueJ package file
-#Fri Mar 25 17:32:13 CET 2016
+objectbench.height=237
+objectbench.width=497
+package.editor.height=263
+package.editor.width=831
+package.editor.x=630
+package.editor.y=24
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
 project.charset=UTF-8
+target1.editor.height=876
+target1.editor.width=1535
+target1.editor.x=65
+target1.editor.y=24
+target1.height=50
+target1.name=restaurant
+target1.naviview.expanded=true
+target1.showInterface=false
+target1.type=ClassTarget
+target1.typeParameters=
+target1.width=100
+target1.x=200
+target1.y=70
