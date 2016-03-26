@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=nom
+comment0.target=chaineRestaurant(java.lang.String)
+comment0.text=\n\ Constructeur\ d'objets\ de\ classe\ chaineRestaurant\n
+comment1.params=r
+comment1.target=void\ ajoutRestarant(restaurant)
+comment2.params=
+comment2.target=int\ taille()
+comment3.params=i
+comment3.target=restaurant\ getRestaurant(int)
+numComments=4
