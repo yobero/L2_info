@@ -1,0 +1,12 @@
+Marie 17.5 12 13.5 14 0
+Damien 9 14 11 10.5 0
+Lisa 7 9.5 13 17.5 13.5
+Thomas 5.5 8.5 11 0 0
+Quentin 17 18.5 15 13.5 16
+Aurelie 11 10.5 14 15.5 9
+Alice 19 14.5 16 12 10
+Yannick 7 6 4.5 10 0 0
+Christophe 11.5 12 11.5 16 0
+Athena 7 14 15 9 14
+
+
