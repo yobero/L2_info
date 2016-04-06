@@ -12,7 +12,12 @@ void copie (int s,int d) {
 	char[SIZE_BUF];
 	while ((n=read(s,buf,SIZE_BUF))>0) {
 		if (write(d,buf,n != n) {
-			
+			perror("Impossible d'écrire");
+			exit(EXIT_FAILURE);
 		}
+	}
+	if(n!=0) {
+		perror("Impossible de lire");
+		exit(EXIT_FAILURE);
 	}
 }
