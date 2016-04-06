@@ -7,6 +7,7 @@
 #include <fcntl.h>
 
 #define SIZE_BUF 1024
+#define N 100
 
 void copie (int s,int d) {
 	int n;
@@ -28,7 +29,7 @@ void copie (int s,int d) {
 int main()
 {
 	int tab[2];
-	pid_t pid;
+	pid_t pid[N];
 	pipe(tab);
 		
 	pid =fork();
