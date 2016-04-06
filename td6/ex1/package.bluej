@@ -1,10 +1,10 @@
 #BlueJ package file
 objectbench.height=100
-objectbench.width=381
+objectbench.width=415
 package.editor.height=400
 package.editor.width=560
-package.editor.x=30
-package.editor.y=30
+package.editor.x=609
+package.editor.y=128
 package.numDependencies=0
 package.numTargets=1
 package.showExtends=true
@@ -13,7 +13,7 @@ project.charset=UTF-8
 target1.editor.height=700
 target1.editor.width=900
 target1.editor.x=410
-target1.editor.y=16
+target1.editor.y=24
 target1.height=50
 target1.name=quadratique
 target1.naviview.expanded=true
