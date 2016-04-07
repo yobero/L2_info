@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class reservation
 {
@@ -19,12 +20,19 @@ public class reservation
                 throw new IllegalArgumentException("nbRest ne doit pas être négative !");
                 
             int i=0;
+            Random rand = new Random();
+            int places = rand.nextInt(400);
+            double prix2 = rand.nextDouble()*20;
+            String it;
             while(i<nbRest)
             {
-                restaurant rest = new restaurant() //valeur aléatoire
+                it = Integer.toString(i);
+                restaurant rest = new restaurant(it,places,prix2); //valeur aléatoire
                 
                 i++;
             }
+            
+            
         }
         catch (IllegalArgumentException e){
             System.out.println("ERREUR : "+e);
