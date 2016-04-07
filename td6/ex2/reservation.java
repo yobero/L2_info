@@ -71,13 +71,15 @@ public class reservation
             }
             
             i=0;
-            double chiffreAffaire;
+            double chiffreAffaire=0;
             while(i<nbRest)
             {
-                System.out.println("Localisation "+chaine.getRestaurant(i).afficheLoca() +" Taux de remplissage: "+chaine.getRestaurant(i).tauxRemplissage()+" Chiffre d'affaire: "+chaine.getRestaurant(i).chiffreAffaire());
-                chifreAffaire += chaine.getRestaurant(i).chiffreAffaire();
+                System.out.println("Localisation : "+chaine.getRestaurant(i).getLocalisation() +", Taux de remplissage: "+chaine.getRestaurant(i).tauxRemplissage()+", Chiffre d'affaire: "+chaine.getRestaurant(i).chiffreAffaire());
+                chiffreAffaire += chaine.getRestaurant(i).chiffreAffaire();
+                chaine.getRestaurant(i).affichage();
                 i++;
             }
+            System.out.println("Chiffre d'affaire total: "+chiffreAffaire);
             
             
         }

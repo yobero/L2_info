@@ -101,9 +101,4 @@ public class restaurant
    {
        System.out.println(toString());
    }
-   
-   public void afficheLoca()
-   {
-       System.out.println(getLocalisation());
-   }
 }
