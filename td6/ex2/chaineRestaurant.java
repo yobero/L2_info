@@ -16,7 +16,7 @@ public class chaineRestaurant
        this.chaine = new ArrayList<restaurant>();
     }
 
-    public void ajoutRestarant(restaurant r)
+    public void ajoutRestaurant(restaurant r)
     {
         this.chaine.add(r);
     }

@@ -92,8 +92,18 @@ public class restaurant
        return "Restaurant : "+ this.localisation+",\nNombre de places : "+ this.place+ ",\nPrix du menu a 2 plat : "+ this.prix2+ ",\n"+ this.nb2+ " menus a 2 plats vendus,\n"+ this.nb3+ " menus a 3 plats vendus\n"+ this.nb5+ " menu a 5 plats vendus.";
    }
    
+   public String getLocalisation()
+   {
+       return this.localisation;
+   }
+   
    public void affichage()
    {
        System.out.println(toString());
+   }
+   
+   public void afficheLoca()
+   {
+       System.out.println(getLocalisation());
    }
 }
