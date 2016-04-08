@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=nom
-comment0.target=client(java.lang.String)
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ client\n
-comment1.params=Serveur
-comment1.target=void\ seConnecter(serveur)
-comment1.text=les\ client\ veut\ se\ connecter
-numComments=2
