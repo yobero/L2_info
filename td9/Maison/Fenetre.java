@@ -12,7 +12,7 @@ public class Fenetre extends JFrame
         //titre
         this.setTitle("Maison");
         //dimenssion de la fenetre (300 L, 200 H)
-        this.setSize(300,200);
+        this.setSize(800,600);
         //fenetre centrée
         this.setLocationRelativeTo(null);
         //fin du programme lorque que j'appuie sur la croix
