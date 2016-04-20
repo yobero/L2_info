@@ -13,22 +13,20 @@ int main()
 	if(pid != 0)//père
 	{
 		printf("le pid de mon fils est %d\n",pid);
-		wait(&pid);
-		/**
-		 **int status;
-		 * wait(&status);
-		 * 
-		 * if (WIFEXITED(status))
-		 * 		printf("retour %d\n",WIFEXITED(status));
-		 * else
-		 * 	printf("ERROR"); */
+		int status;
+		wait(&status);
+		
+		if (WIFEXITED(status))
+		 	printf("retour %d\n",WEXITSTATUS(status));
+		else
+			printf("ERROR"); 
 	}
 	else //=0 fils
 	{
 		printf("le pid du fils est %d\n",getpid());
 		printf("Le pid du père est %d\n",getppid());
-		exit(getpid()%10);
+		exit(32);
 	}
 	
-	return 1;
+	return EXIT_SUCCESS;
 }
