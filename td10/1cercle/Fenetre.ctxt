@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Fenetre()
+comment1.params=e
+comment1.target=void\ windowActivated(java.awt.event.WindowEvent)
+comment2.params=e
+comment2.target=void\ windowDeactivated(java.awt.event.WindowEvent)
+comment3.params=e
+comment3.target=void\ windowClosing(java.awt.event.WindowEvent)
+comment4.params=e
+comment4.target=void\ windowOpened(java.awt.event.WindowEvent)
+comment5.params=e
+comment5.target=void\ windowIconified(java.awt.event.WindowEvent)
+comment6.params=e
+comment6.target=void\ windowDeiconified(java.awt.event.WindowEvent)
+comment7.params=e
+comment7.target=void\ windowClosed(java.awt.event.WindowEvent)
+numComments=8
