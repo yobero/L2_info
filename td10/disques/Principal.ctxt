@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Principal()
+comment0.text=\n\ Constructeur\ d'objets\ de\ classe\ Principal\n
+comment1.params=y
+comment1.target=int\ sampleMethod(int)
+comment1.text=\n\ Un\ exemple\ de\ m\u00E9thode\ -\ remplacez\ ce\ commentaire\ par\ le\ v\u00F4tre\n\n\ @param\ \ y\ \ \ le\ param\u00E8tre\ de\ la\ m\u00E9thode\n\ @return\ \ \ \ \ la\ somme\ de\ x\ et\ de\ y\n
+numComments=2
