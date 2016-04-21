@@ -17,8 +17,6 @@ public class Fenetre extends JFrame
         //fin du programme lorque que j'appuie sur la croix
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        addMouseListener(this);
-        
         this.setContentPane(panneau);
         
         this.setVisible(true);

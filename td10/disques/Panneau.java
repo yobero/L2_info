@@ -1,5 +1,4 @@
-import java.awt.Color;
-import java.awt.Graphics;
+import javax.swing.SwingUtilities;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import java.awt.event.*;
@@ -10,22 +9,11 @@ import java.awt.event.*;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Panneau extends JPanel
+public class Panneau extends JPanel implements MouseListener
 {
-    public boolean test;
+    private Disque disque = new Disque();
     
-    public Panneau(){
-        this.test = true;
-    }
-    
-    public void paintComponent(Graphics g){
-        if(test==true)
-            g.setColor(Color.red);
-        else g.setColor(Color.black);
-        g.fillOval(100,100,150,150);
-    }
-    
-    public void change(boolean a){
-        this.test=a;
+    public void mousePressed(MouseEvent e){
+        
     }
 }
