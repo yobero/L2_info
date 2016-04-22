@@ -9,10 +9,10 @@ import java.awt.Graphics;
  */
 public class Disque
 {
-   private int x;//point en haut a gauche du carré qui entourre le cercle
-   private int y;
-   private int rayon;
-   private Color couleur;
+   public int x;//point en haut a gauche du carré qui entourre le cercle
+   public int y;
+   public int rayon;
+   public Color couleur;
    
    void dessiner(Graphics g){
        g.setColor(this.couleur);
